@@ -1,0 +1,28 @@
+{% macro metric(label, value, detail='', key='') -%}
+<article class="research-metric"{% if key %} data-dashboard-metric="{{ key }}"{% endif %}>
+    <span>{{ label }}</span>
+    {% if key %}
+    <div class="metric-value-row">
+        <strong data-metric-value>{{ value }}</strong>
+        <svg class="metric-sparkline" viewBox="0 0 160 48" preserveAspectRatio="none" role="img" hidden>
+            <title data-metric-trend-label></title>
+            <path data-metric-sparkline fill="none"/>
+        </svg>
+    </div>
+    {% else %}<strong data-metric-value>{{ value }}</strong>{% endif %}
+    {% if detail or key %}<small data-metric-detail>{{ detail }}</small>{% endif %}
+</article>
+{%- endmacro %}
+
+{% macro duration(seconds) -%}
+{{ seconds|elapsed_time|replace(' h ', 'h ')|replace(' min', 'm')|replace(' s', 's') }}
+{%- endmacro %}
+
+{% macro ranking_metric(label, ranking, unit='', explanation='', digits=1) -%}
+<article class="research-metric{% if unit != '%' %} metric-value-ranking{% endif %}">
+    <span{% if explanation %} title="{{ explanation }}"{% endif %}>{{ label }}</span>
+    <strong>{{ ranking[0].label if ranking else '—' }}{% if ranking %} <small class="metric-winning-score">{{ ('{:,.%df}' % digits).format(ranking[0].score) }}{% if unit == '%' %}%{% endif %}</small>{% endif %}</strong>
+    {% if ranking %}<small>n={{ ranking[0].runs }}</small>{% endif %}
+    {% for item in ranking[1:] %}<small>{{ item.label }} {{ ('{:,.%df}' % digits).format(item.score) }}{% if unit == '%' %}%{% endif %} (n={{ item.runs }})</small>{% endfor %}
+</article>
+{%- endmacro %}

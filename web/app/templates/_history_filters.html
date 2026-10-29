@@ -1,0 +1,30 @@
+{% set search_label = _('Search by ID, evaluation or URL') if history_kind|default('') == 'evaluation' else _('Search by run ID, iteration ID, URL or model') %}
+{% set search_placeholder = _('ID, evaluation or URL') if history_kind|default('') == 'evaluation' else _('Run ID, iteration ID, URL or model') %}
+<label class="visually-hidden" for="{{ history_input }}">{{ search_label }}</label>
+<div class="measurement-filter"><input class="form-control form-control-sm" id="{{ history_input }}" type="search"{% if remediation_server|default(false) %} name="q" maxlength="200" value="{{ q }}"{% endif %} placeholder="{{ search_placeholder }}" title="{{ search_label }}" autocomplete="off"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m16 16 4 4"/></svg></div>
+{% if history_kind|default('') == 'evaluation' %}
+<select class="form-select form-select-sm history-strategy-filter" data-history-status{% if remediation_server|default(false) %} name="status"{% endif %} aria-label="{{ _('Status') }}" title="{{ _('Status') }}">
+<option value="">{{ _('Status') }} · {{ _('All') }}</option>
+{% for value,label in [('queued',_('Queued')),('running',_('Running')),('paused',_('Paused')),('completed',_('Completed')),('rejected',_('Rejected')),('failed',_('Failed'))] %}<option value="{{ value }}"{% if remediation_server|default(false) and filters.status == "{{ value }}" %} selected{% endif %}>{{ label }}</option>{% endfor %}
+</select>
+<select class="form-select form-select-sm history-strategy-filter" data-history-acquisition aria-label="{{ _('Acquisition type') }}" title="{{ _('Acquisition type') }}">
+<option value="">{{ _('Source') }} · {{ _('All') }}</option>
+{% for value,label in [('web',_('Web URLs'))] %}<option value="{{ value }}">{{ label }}</option>{% endfor %}
+</select>
+{% else %}
+<select class="form-select form-select-sm history-strategy-filter" data-history-status{% if remediation_server|default(false) %} name="status"{% endif %} aria-label="{{ _('Status') }}" title="{{ _('Status') }}">
+<option value="">{{ _('Status') }} · {{ _('All') }}</option>
+{% for value,label in [('queued',_('Queued')),('running',_('Running')),('stopped',_('Stopped')),('accepted',_('Accepted')),('completed',_('Completed')),('completed_with_warnings',_('Completed with warnings')),('metrics_not_achieved',_('Metrics not achieved')),('review_not_achieved',_('Review not achieved')),('failed',_('Failed'))] %}<option value="{{ value }}"{% if remediation_server|default(false) and filters.status == "{{ value }}" %} selected{% endif %}>{{ label }}</option>{% endfor %}
+</select>
+<select class="form-select form-select-sm history-strategy-filter" data-history-preservation{% if remediation_server|default(false) %} name="preservation"{% endif %} aria-label="{{ _('Accessibility and preservation') }}" title="{{ _('Accessibility and preservation') }}">
+<option value="">{{ _('Strategy') }} · {{ _('All') }}</option>
+<option value="single_shot"{% if remediation_server|default(false) and filters.preservation == "single_shot" %} selected{% endif %}>0 · Zero-shot</option>
+{% for value,label in [('current-15',_('Minimal patches')),('current-55',_('Structural and coordinated repair')),('current-75',_('HTML regeneration')),('current-90',_('Markdown regeneration')),('current-105',_('Dynamic harness'))] %}<option value="{{ value }}"{% if remediation_server|default(false) and filters.preservation == value %} selected{% endif %}>{{ loop.index }} · {{ label }}</option>{% endfor %}
+</select>
+
+<select class="form-select form-select-sm history-strategy-filter" data-history-rag{% if remediation_server|default(false) %} name="rag"{% endif %} aria-label="{{ _('RAG use') }}" title="{{ _('Filters actual use of retrieved examples, not whether RAG was enabled.') }}">
+<option value="">RAG · {{ _('All') }}</option>
+<option value="true"{% if remediation_server|default(false) and filters.rag == "true" %} selected{% endif %}>{{ _('With RAG') }}</option>
+<option value="false"{% if remediation_server|default(false) and filters.rag == "false" %} selected{% endif %}>{{ _('Without RAG') }}</option>
+</select>
+{% endif %}

@@ -1,0 +1,24 @@
+{
+  "name": "web-accessibility-harness-evaluator",
+  "version": "1.0.0",
+  "description": "Controlled evaluator for Web Accessibility Harness",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "test": "node --test tests/*.test.js",
+    "axe": "node run_axe.js",
+    "lighthouse": "node run_lighthouse.js"
+  },
+  "dependencies": {
+    "@axe-core/playwright": "4.13.0",
+    "chrome-launcher": "1.2.2",
+    "express": "5.2.1",
+    "lighthouse": "13.5.0",
+    "playwright": "1.64.0",
+    "html-validate": "11.16.2",
+    "puppeteer-core": "25.12.0"
+  },
+  "engines": {
+    "node": ">=24.21.0 <25"
+  }
+}

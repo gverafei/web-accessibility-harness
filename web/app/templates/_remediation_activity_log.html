@@ -1,0 +1,28 @@
+{% set event_icons={'acquire':'↓','transform':'◇','prompt':'✦','generate':'⚙','evaluate':'✓','rag_retrieval':'R','complete':'✓','accepted':'✓','failed':'!','refine':'↻'} %}
+{% set category_icons={
+  'llm':'M12 3l2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5Z',
+  'tool':'M14 6l4 4M7 17l-3 3M4 20l-1-1 10-10a6 6 0 0 1 8-7l-4 4 1 3 3 1 4-4a6 6 0 0 1-7 8Z',
+  'control':'M4 7h16M4 17h16M8 4v6M16 14v6',
+  'validation':'M5 12l4 4L19 6',
+  'function':'M8 5L2 12l6 7M16 5l6 7-6 7'
+} %}
+<details class="card shadow-sm mt-4 agentic-log-panel" data-report-panel="activity-log">
+  <summary><span class="agentic-log-heading"><span class="section-number">≡</span><span><strong>{{ _('Agentic activity log') }}</strong><small>{{ _('Persistent decisions and evidence produced by agents and tools.') }}</small></span></span><span class="agentic-log-count">{{ events|length }} {{ _('events') }}</span></summary>
+  <div class="agentic-log-scroll"><ol class="agentic-event-log">
+  {% for event in events %}
+    <li class="agentic-event agentic-event-{{ event.event_type }}">
+      <span class="agentic-event-icon" aria-hidden="true">{{ event_icons.get(event.event_type,'·') }}</span>
+      <time>{{ event.created_at }}</time>
+      <div>
+        <div class="activity-event-heading"><strong>{{ _(event.actor) }}</strong>
+          <span class="activity-type-badge activity-type-{{ event.activity_category }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="{{ category_icons.get(event.activity_category,category_icons.function) }}"/></svg>{{ _(event.activity_label) }}</span>
+        </div>
+        <small class="activity-event-stage">{{ event.event_type|replace('_',' ') }}{% if event.activity_model %} · {{ event.activity_model }}{% endif %}</small>
+        <small class="activity-event-description">{{ _(event.activity_description) }}</small>
+        {% if event.decision_cases %}<details class="activity-decision-questions"><summary>{{ _('Cases evaluated and answers') }} · {{ event.decision_cases|length }}</summary><div class="table-responsive"><table class="table table-sm research-table mb-0"><thead><tr><th>#</th><th>{{ _('Criterion evaluated') }}</th><th>{{ _('Element or text') }}</th><th>{{ _('Choices offered') }}</th><th>{{ _('Answer returned') }}</th></tr></thead><tbody>{% for case in event.decision_cases %}<tr><td>{{ loop.index }}</td><td>{{ case.criterion or _(event.decision_role) }}</td><td>{{ _(case.element) if case.element in ['Not recorded','Original and frozen replay','Original and repair candidate','Supplied page evidence'] else case.element }}</td><td><ul class="decision-choice-list">{% for choice in case.choices %}<li>{{ _(choice) if choice in ['No violation detected','Violation detected','Not applicable','Insufficient evidence','Usable reproduction','Essential content or appearance lost','Blank page','Access blocked','Unrelated content','Explicit adult content','Contrast measurement applies'] else choice }}</li>{% else %}<li>{{ _('Not recorded') }}</li>{% endfor %}</ul></td><td>{{ _(case.result) }}</td></tr>{% endfor %}</tbody></table></div></details>{% endif %}
+        {% if event.event_type == 'decisions_call' %}<p>{{ _(event.decision_role) }}: {% if event.decision_cases %}{{ event.decision_cases|length }} {{ _('cases evaluated') }}{% else %}{{ _(event.decision_choice) }}{% endif %} · {{ _('Input tokens') }} {{ event.decision_input_tokens if event.decision_input_tokens is not none else '—' }} / {{ _('Output tokens') }} {{ event.decision_output_tokens if event.decision_output_tokens is not none else '—' }} · {{ event.decision_cost }} ({{ event.decision_cost_status }})</p>{% else %}<p>{{ _('Full technical details are available in the JSON download.') if event.activity_message == 'Full technical details are available in the JSON download.' else event.activity_message }}</p>{% endif %}
+      </div>
+    </li>
+  {% else %}<li class="text-muted">{{ _('Activity logging starts with the next remediation run.') }}</li>{% endfor %}
+  </ol></div>
+</details>

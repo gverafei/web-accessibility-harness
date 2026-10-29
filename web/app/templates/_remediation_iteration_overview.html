@@ -1,0 +1,26 @@
+{% set visual = item.visual_review|default({'status':'not_recorded','recorded':false}) %}
+{% set checks = item.display_validation_checks or (item.strategy or {}).get('harness', {}).get('assessment', {}).get('checks', {}) %}
+{% set judgment = checks.capture_verification or {} %}
+{% set visual_labels = {'admitted':_('Accepted'),'rejected':_('Not accepted'),'review_required':_('Review required'),'not_performed':_('Not performed'),'not_recorded':_('Not recorded')} %}
+<header class="iteration-heading"><h3>{{ _("Local assembly QA") if item.strategy and item.strategy.execution_mode == 'local_replay' else _("Iteration") }} {{ item.display_iteration_number }}</h3>{% if item.iteration_number is number %}<small class="iteration-attempt">{{ _('Attempt') }} {{ item.iteration_number }}</small>{% endif %}{% if item.candidate_key %}<code>{{ item.candidate_key[:8] }}</code>{% endif %}{% if best and best.id==item.id %}<span class="badge remediation-status-accept" data-chosen-iteration="{{ item.id }}" title="{{ _('Final retained candidate') }}">✓ {{ _('Chosen') }}</span>{% else %}<span class="badge remediation-status-{{ item.decision }}">{{ _(item.decision) }}</span>{% endif %}</header>
+{% if item.strategy.harness %}<p class="iteration-selection">{{ _('Dynamic harness') if run.dynamic_level else _('Fixed intervention level') }} · {{ _('Strategy') }} {{ run.execution_route.labels.get(item.id) if run.execution_route else item.strategy.assigned_level }} · {{ _('Selected model') }} {{ item.generator_model or item.strategy.harness.worker_id }}</p>{% endif %}
+<div class="iteration-measures"><section><h4>{{ _('Accessibility measurements') }}</h4><dl><div><dt>Axe</dt><dd>{{ item.axe_violations if item.axe_violations is not none else '—' }} <span>{{ _('Target') }} ≤ {{ run.max_axe }}</span></dd></div><div><dt>Lighthouse</dt><dd>{{ item.lighthouse_score if item.lighthouse_score is not none else '—' }} <span>{{ _('Target') }} ≥ {{ run.min_lighthouse }}</span></dd></div></dl><p>{{ _('Targets reached') if item.targets_met else _('Targets not reached') }}</p></section>
+<section><h4>{{ _('Technical validation and retention') }}</h4><dl><div><dt>{{ _('Technical validation') }}</dt><dd>{{ _(item.technical_status) if item.technical_status else _('Not recorded') }}</dd></div>{% if item.strategy.harness %}<div><dt>{{ _('Best result at this iteration') }}</dt><dd>{{ _('Yes') if item.strategy.harness.retained else _('No') }}</dd></div>{% endif %}</dl><p>{{ _('Technical validity is separate from accessibility targets.') }}</p></section>
+<section class="iteration-visual-review" data-visual-status="{{ visual.status }}">
+  <h4>{{ _('Automatic visual validation') }}</h4>
+  <dl><div><dt>{{ _('Visual verdict') }}</dt><dd data-visual-decision>{{ visual_labels[visual.status] }}</dd></div></dl>
+  {% if visual.status == 'not_performed' %}
+  <p>{{ _('Visual review was not performed; candidate checks blocked it.') }}</p>
+  {% else %}
+  <p class="iteration-visual-rationale" data-visual-rationale><strong>{{ _('Recorded visual rationale') }}:</strong> {{ judgment.rationale or _('Not recorded') }}</p>
+  {% if visual.recorded and judgment.review_policy %}
+  <p>{% if judgment.blocking_confidence is number %}{{ _('Confidence in a material defect') }}: {{ '%.0f'|format(100 * judgment.blocking_confidence) }}% · {% endif %}{{ _('Impact') }}: {{ _({'none':'None','minor':'Minor','material':'Material'}.get(judgment.impact,judgment.impact)) }} · {{ _('Model estimate') }}.</p>
+  {% endif %}
+  {% endif %}
+</section></div>
+{% if run.visual_review_diagnostic %}<p class="small text-muted">{{ _('The visual judgment was recorded separately and did not block candidate selection in this run.') }}</p>{% endif %}
+{% if item.strategy.harness and item.strategy.harness.improvement and item.strategy.harness.improvement.gains is defined %}<p class="small text-muted">{{ _('Observed improvement from original') }}: {% for gain in item.strategy.harness.improvement.gains %}{{ _(gain.metric) }} {{ gain.before }} → {{ gain.after }}{% if not loop.last %} · {% endif %}{% else %}{{ _('No observed improvement') }}{% endfor %}</p>{% endif %}
+{% if item.targets_met is not defined %}<p>{{ item.decision_reason or item.feedback_text }}</p>{% endif %}
+{% if item.strategy.destination_corrections %}<details class="strategy-details"><summary>{{ _('Corrected destinations') }} · {{ item.strategy.destination_corrections|length }}</summary><div class="report-output"><div class="table-responsive"><table class="table table-sm research-table mb-0"><thead><tr><th>{{ _('Link text') }}</th><th>{{ _('Source-supported destination') }}</th></tr></thead><tbody>{% for correction in item.strategy.destination_corrections %}<tr><td>{{ correction.label }}</td><td>{{ correction.after }}</td></tr>{% endfor %}</tbody></table></div></div></details>{% endif %}
+<h4 class="iteration-subheading">{{ _('Iteration consumption') }}</h4>{% include '_remediation_iteration_accounting.html' %}
+<h4 class="iteration-subheading">{{ _('Captures and preservation') }}</h4>

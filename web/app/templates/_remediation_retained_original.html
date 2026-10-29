@@ -1,0 +1,11 @@
+<aside class="alert alert-warning remediation-report-notice" role="note">
+  <strong>{{ _('Original retained; no admissible candidate improved it.') }}</strong>
+  {% if rejected_best %}
+  {% set assessment=rejected_best.strategy.harness.assessment if rejected_best.strategy and rejected_best.strategy.harness else {} %}
+  <p>{{ _('Best measured candidate') }}: Axe {{ rejected_best.axe_violations }} · Lighthouse {{ rejected_best.lighthouse_score }}. {{ _('The candidate must pass functional and visual checks; fidelity losses are reported separately.') if assessment.fidelity_required is sameas false else _('Audit gains do not override preservation requirements.') }}</p>
+  {% set checks=rejected_best.display_validation_checks or assessment.checks or {} %}
+  {% if rejected_best.selection_review %}<p class="small">{{ _(rejected_best.selection_review.message) }}</p>{% endif %}
+  {% from '_remediation_validation_checks.html' import validation_checks with context %}
+  {{ validation_checks(checks) }}
+  {% elif not iterations %}<p class="mb-0">{{ _('No repair candidate was evaluated in this run.') }}</p>{% endif %}
+</aside>

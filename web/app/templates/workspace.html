@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}Web Accessibility Harness{% endblock %}
+{% block content %}
+{% set form_values = form_values|default(request.form) %}
+<section class="launch-workspace" aria-labelledby="launchTitle">
+<div class="launch-intro"><h1 id="launchTitle">Web Accessibility Harness<span class="terminal-caret" aria-hidden="true">_</span></h1></div>
+<form method="post" class="launch-console" data-busy-navigation id="launchForm"><input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+
+<label class="console-label" for="urls"><span aria-hidden="true">&gt;</span> {{ _('Enter the target URLs to start remediation.') }}</label><textarea id="urls" name="urls" rows="3" required spellcheck="false" placeholder="https://example.org/&#10;https://example.org/contact" aria-describedby="urlHelp">{{ form_values.get('urls','') }}</textarea><p id="urlHelp" class="console-help">{{ _('One web URL per line.') }}</p>
+<div class="launch-controls launch-primary-controls">
+<label class="capture-name-control" for="captureName">{{ _('Capture name') }}<span class="console-input"><span aria-hidden="true">&gt;</span><input id="captureName" name="capture_name" type="text" maxlength="160" value="{{ form_values.get('capture_name','') }}"></span></label>
+<label>{{ _('Strategy') }}<select name="strategy" id="launchStrategy">{% for value,label in [('P0','P0 · Zero-shot'),('P1','P1 · Minimal patches'),('P2','P2 · Coordinated repair'),('P3','P3 · HTML regeneration'),('P4','P4 · Markdown regeneration'),('P5','P5 · Adaptive selection')] %}<option value="{{ value }}"{% if form_values.get('strategy','P2')==value %} selected{% endif %}>{{ _(label) }}</option>{% endfor %}</select></label>
+<label>{{ _('Repair model') }}<select name="selected_model" required>{% for model in models %}<option value="{{ model.id }}"{% if form_values.get('selected_model',models[0].id if models else '')==model.id %} selected{% endif %}>{{ model.name }}</option>{% else %}<option value="">{{ _('Configure a model first') }}</option>{% endfor %}</select></label>
+<label>{{ _('Budget per URL (USD)') }}<input name="max_cost_usd" type="number" min="0.001" max="5" step="0.001" value="{{ form_values.get('max_cost_usd',1) }}" required></label>
+<label>{{ _('Candidates') }}<input name="max_iterations" type="number" min="1" max="10" value="{{ form_values.get('max_iterations',5) }}" required></label>
+</div><p class="console-help" id="adaptiveHelp">{{ _('P5 selects from the configured models and can revise its choice using the current page and measurements.') }}</p>
+<details class="launch-options">
+  <summary>{{ _('Targets and execution controls') }}</summary>
+  <div class="launch-controls launch-advanced">
+    <label>{{ _('Time per URL (seconds)') }}<input name="max_execution_seconds" type="number" min="30" max="7200" value="{{ form_values.get('max_execution_seconds',900) }}" required></label>
+    <label>{{ _('Attempts per candidate') }}<input name="max_generation_attempts_per_candidate" type="number" min="1" max="1000" value="{{ form_values.get('max_generation_attempts_per_candidate',20) }}" required></label>
+    <label>{{ _('Maximum Axe issues') }}<input name="max_axe" type="number" min="0" value="{{ form_values.get('max_axe',controls.axe) }}" required></label>
+    <label>{{ _('Minimum Lighthouse') }}<input name="min_lighthouse" type="number" min="0" max="100" value="{{ form_values.get('min_lighthouse',controls.lighthouse) }}" required></label>
+    <label>{{ _('Capture verification model') }}<select name="harness_verifier" required>{% for model in available.verifiers %}<option value="{{ model.id }}"{% if form_values.get('harness_verifier') == model.id or (not form_values.get('harness_verifier') and model.is_default) %} selected{% endif %}>{{ model.name }}</option>{% endfor %}</select></label>
+    <label>{{ _('ACT corpus') }}<select name="harness_corpus" required>{% for corpus in available.corpora %}<option value="{{ corpus.id }}"{% if form_values.get('harness_corpus') == corpus.id %} selected{% endif %}>ACT · {{ corpus.id[:12] }}</option>{% endfor %}</select></label>
+    <div class="launch-toggles">
+      <label class="launch-check"><input type="checkbox" name="act_grounding"{% if (request.method != 'POST' and not active_submission) or form_values.get('act_grounding') == 'on' %} checked{% endif %}> {{ _('Use RAG-ACT') }}</label>
+      <label class="launch-check"><input type="checkbox" name="reuse_cached_results" aria-describedby="frozenHelp"{% if (request.method != 'POST' and not active_submission) or form_values.get('reuse_cached_results') %} checked{% endif %}> {{ _('Use frozen evaluation') }}</label>
+    </div>
+    <p id="frozenHelp" class="launch-control-help">{{ _('Reuse the latest evaluation with matching URL and settings. If none is available, capture the page again.') }}</p>
+  </div>
+</details>
+<div class="launch-actions"><span>{{ _('Permissions, validation, and resource limits remain enforced.') }}</span><button type="submit" class="btn btn-primary"{% if (active_submission and active_submission.status != 'failed') or config.READ_ONLY or not models or not available.corpora or not available.verifiers %} disabled{% endif %}>{{ _('Start remediation') }} <span aria-hidden="true">↗</span></button></div>
+{% if not models or not available.verifiers %}<p class="console-help">{{ _('Configure generative and verification models before starting.') }} <a href="{{ url_for('components.models') }}">{{ _('Models') }}</a></p>{% endif %}{% if not available.corpora %}<p class="console-help">{{ _('Initialize the ACT corpus before starting.') }} <a href="{{ url_for('rag_maintenance.examples') }}">RAG-ACT</a></p>{% endif %}
+</form></section>
+{% endblock %}

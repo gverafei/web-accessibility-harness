@@ -1,0 +1,25 @@
+<details class="strategy-details"><summary>{{ _('Strategy used and why') }}</summary><div class="report-output">
+  <div class="strategy-grid">
+    <div><small>{{ _('Repair method') }}</small><strong>{{ _(item.strategy.approach.name) if item.strategy.approach else _('Recorded intervention') }}</strong>
+      <p>{{ _('Selector-scoped DOM patches preserve the acquired page') if item.strategy.representation == 'lossless DOM patch' else item.strategy.representation }}{% if item.strategy.patches %} · {{ item.strategy.patches.applied }} {{ _('operations applied') }}{% endif %}</p>
+    </div>
+    <div><small>{{ _('Design base') }}</small>
+      <strong>{{ item.strategy.design_base.design_name if item.strategy.design_base else _('Original page; no imposed framework') }}</strong>
+      <p>{{ _('The recorded design base applies to whole-page regeneration.') if item.strategy.design_base else _('Localized repairs preserve the source framework. Framework examples are guidance, not a selected page template.') }}</p>
+      {% if item.strategy.framework_knowledge and item.strategy.framework_knowledge.components %}
+      <details><summary>{{ _('Component guidance supplied') }}</summary><p>{{ item.strategy.framework_knowledge.framework|capitalize }} · {{ item.strategy.framework_knowledge.components|join(', ') }}</p></div></details>
+      {% endif %}
+    </div>
+    <div>
+      <small>{{ _('Generation') }}</small>
+      {% if item.get('generator_model', '').startswith('openai/') %}
+      <strong>{{ _('Requested reasoning') }} · {{ item.strategy.model_configuration.reasoning_effort or _('Not recorded') }}</strong>
+      {% else %}
+      <strong>{{ _('Temperature') }} {{ item.strategy.temperature }}</strong>
+      {% endif %}
+      <p>{{ item.strategy.model_selection }} · {{ item.strategy.reasoning_tier|capitalize }}</p>
+    </div>
+    <div><small>{{ _('Evidence') }}</small><strong>{{ item.strategy.evaluation_tools }}</strong><p>{% if item.strategy.dom_target_enforced %}DOM ≤ {{ item.strategy.dom_target }}%{% else %}{{ _('DOM divergence measured after generation') }}{% endif %}</p></div>
+    {% if item.strategy.rag and item.strategy.rag.enabled %}<div class="rag-evidence"><small>{{ _('Retrieved RAG-ACT evidence') }}</small><strong>{{ item.strategy.rag.retrieved|length }} {{ _('examples') }}</strong><p>{% for evidence in item.strategy.rag.retrieved %}<a href="{{ evidence.rule_page }}" target="_blank" rel="noopener">{{ evidence.rule_name }} · {{ evidence.expected }} · {{ evidence.score }}</a>{% if not loop.last %}<br>{% endif %}{% endfor %}</p></div>{% endif %}
+  </div>
+</details>

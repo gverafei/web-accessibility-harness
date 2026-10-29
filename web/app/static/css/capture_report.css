@@ -1,0 +1,65 @@
+.capture-report .report-action-group,
+.capture-evidence-links{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap
+}
+.capture-result{
+  padding:24px 0;
+  border-top:1px solid var(--ui-line)
+}
+.capture-result h2{
+  font-size:16px;
+  overflow-wrap:anywhere
+}
+.capture-measurements{
+  margin:16px 0
+}
+.capture-visual-report{
+  padding:16px;
+  margin:16px 0;
+  border:1px solid var(--ui-line);
+  border-radius:7px;
+  background:var(--ui-surface)
+}
+.capture-visual-report h3{
+  font-size:13px;
+  margin:0 0 10px
+}
+.capture-visual-report p{
+  font-size:12px;
+  margin:8px 0 0;
+  overflow-wrap:anywhere
+}
+.capture-findings{
+  padding:12px 0;
+  border-top:1px solid var(--ui-line);
+  font-size:12px
+}
+.capture-findings summary{
+  cursor:pointer;
+  font-weight:600
+}
+.capture-findings ul{
+  padding-left:22px;
+  margin-top:16px
+}
+.capture-findings li{
+  margin-bottom:12px;
+  overflow-wrap:anywhere
+}
+.capture-inventory{
+  margin:16px 0
+}
+.capture-inventory div{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap
+}
+.capture-inventory dt{
+  font-weight:400;
+  color:var(--ui-muted)
+}
+.capture-inventory dd{
+  overflow-wrap:anywhere
+}

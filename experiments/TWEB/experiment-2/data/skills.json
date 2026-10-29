@@ -1,0 +1,38 @@
+[
+  {
+    "id": "adaptive-evidence-grounding",
+    "version": "2.0.0",
+    "digest": "017205d3fe8b",
+    "instruction": "Retrieve only complete positive/negative pairs matching measured concepts. Record provenance, abstain from unrelated evidence and rotate pairs only after a measured plateau."
+  },
+  {
+    "id": "coordinated-component-repair",
+    "version": "3.0.0",
+    "digest": "c26c456cf9bc",
+    "instruction": "Repair bounded components from observed evidence. Partition operations by root cause with existing selectors and acyclic dependencies. A failed cause blocks its dependents, not independent repairs. Preserve recognizable design, content order and native controls."
+  },
+  {
+    "id": "grounded-accessibility-diagnosis",
+    "version": "2.0.0",
+    "digest": "359bda3cb824",
+    "instruction": "Diagnose only barriers supported by the current DOM and measured evidence. Quote a valid selector and observable cause; omit unsupported recommendations."
+  },
+  {
+    "id": "html-born-accessible-regeneration",
+    "version": "4.0.0",
+    "digest": "08c78412b73f",
+    "instruction": "Generate complete accessible HTML for the observed purpose from source HTML, context, assets and capture. Choose composition freely. Use measured accessibility, usability and visual findings to refine the candidate. Report content changes; diagnostic findings do not veto measurement."
+  },
+  {
+    "id": "markdown-born-accessible-regeneration",
+    "version": "4.0.0",
+    "digest": "322fbff296d2",
+    "instruction": "Generate complete accessible HTML from verified Markdown, contextual evidence, assets and capture. Choose composition freely. Refine using measured accessibility, usability and visual feedback. Report content changes; diagnostic findings do not veto measurement."
+  },
+  {
+    "id": "minimal-preservation-repair",
+    "version": "3.0.0",
+    "digest": "cdafa7a493df",
+    "instruction": "Apply small changes grounded in measured barriers. Target the affected element or component, never the style insertion location. Preserve content, destinations, controls and scripts. Correct measured feedback within the frozen patch permissions."
+  }
+]

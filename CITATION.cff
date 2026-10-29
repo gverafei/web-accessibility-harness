@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "If you use this research in academic work, please cite the accompanying paper once it is available. For now, referencing this repository is sufficient."
+title: "Harness Engineering for Web Accessibility: Orchestrating Automated Remediation with Agents and LLMs"
+type: software
+authors:
+  - family-names: Vera-Amaro
+    given-names: Guillermo
+  - family-names: Rojano-Cáceres
+    given-names: José Rafael
+repository-code: "https://github.com/gverafei/web-accessibility-harness"
+url: "https://github.com/gverafei/web-accessibility-harness"
+license: MIT

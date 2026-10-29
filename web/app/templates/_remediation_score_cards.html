@@ -1,0 +1,10 @@
+{% macro score_card(title, axe, lighthouse, aim) %}
+<article class="research-metric remediation-score-card">
+  <span>{{ title }}</span>
+  <div class="remediation-score-list">
+    <div><span>Axe</span><strong>{{ axe if axe is not none else '—' }}</strong></div>
+    <div><span>Lighthouse</span><strong>{{ lighthouse if lighthouse is not none else '—' }}</strong></div>
+
+  </div>
+</article>
+{% endmacro %}

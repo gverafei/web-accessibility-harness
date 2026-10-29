@@ -1,0 +1,3 @@
+{% macro section_heading(number, title, description='', heading_id='') -%}
+<div class="section-heading compact workspace-section-heading"><div><span class="section-number" aria-hidden="true">{{ '%02d'|format(number) }}</span><h2{% if heading_id %} id="{{ heading_id }}"{% endif %}>{{ title }}</h2></div>{% if description %}<p>{{ description }}</p>{% endif %}</div>
+{%- endmacro %}

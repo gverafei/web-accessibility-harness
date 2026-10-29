@@ -1,0 +1,83 @@
+{# Presentation only: every moving state is tied to recorded activity. #}
+{% set flow=namespace(current={'acquire':'context','transform':'context','prompt':'evidence','generate':'repair','evaluate':'audit'}.get(run.current_phase,'context'),seen=[],calls=0,cases=0,captures=0) %}
+{% set event_nodes={'acquire':'context','transform':'context','markdown':'context','extraction_quality':'context','prompt':'evidence','rag_retrieval':'evidence','rag_deferred':'evidence','planning':'repair','generate':'repair','patch':'repair','invalid_output':'repair','no_op':'repair','reconstruction':'repair','evaluate':'audit','metrics':'audit','decision':'retain','rollback':'retain','refine':'retain','complete':'retain','accepted':'retain'} %}
+{% for event in events %}
+  {% set node=event_nodes.get(event.event_type) %}
+  {% if event.event_type in ('decisions_call','llm_call') %}
+    {% set flow.calls=flow.calls+1 %}{% set flow.cases=flow.cases+(event.decision_cases|length) %}
+    {% set node={'Capture verification':'preserve','Level and model selection':'selection','RAG example relevance':'evidence','Page classification':'context','Semantic evaluation':'taxonomy','Complementary taxonomy evaluation':'taxonomy'}.get(event.decision_role) %}
+  {% endif %}
+  {% if node and node not in flow.seen %}{% set flow.seen=flow.seen+[node] %}{% endif %}
+{% endfor %}
+{% if run.execution_mode=='single_shot' and flow.current=='evidence' %}{% set flow.current='context' %}{% endif %}
+{% set progress=(run.progress_message or '')|lower %}
+{% if 'taxonomy' in progress or 'semantic' in progress or 'contrast supplement' in progress or 'complementary' in progress %}{% set flow.current='taxonomy' %}
+{% elif 'capture' in progress or 'preservation' in progress or 'visual verification' in progress %}{% set flow.current='preserve' %}
+{% elif 'select' in progress or 'decision' in progress %}{% set flow.current='selection' %}
+{% elif 'rag' in progress or 'retriev' in progress %}{% set flow.current='evidence' %}{% endif %}
+{% if run.live_participants and run.live_participants.current and run.current_phase!='evaluate' %}{% set flow.current=run.live_participants.current %}{% endif %}
+{% set tax_progress=run.live_taxonomy_progress or {} %}
+{% if tax_progress.status=='running' and tax_progress.completed < tax_progress.total %}{% set flow.current='taxonomy' %}{% endif %}
+{% set provider_activity=run.live_provider_activity or {} %}
+{% if provider_activity.active %}{% set flow.current=provider_activity.active[-1].stage %}{% endif %}
+{% set active_stages=namespace(keys=[flow.current]) %}
+{% set counts=run.execution_counts|default({'attempts':run.current_iteration or 0,'evaluated':0,'limit':run.max_iterations},true) %}
+{% for call in provider_activity.active or [] %}{% if call.stage not in active_stages.keys %}{% set active_stages.keys=active_stages.keys+[call.stage] %}{% endif %}{% endfor %}
+{% for item in iterations %}{% if item.screenshot_path %}{% set flow.captures=flow.captures+1 %}{% endif %}{% endfor %}
+<section class="card shadow-sm mb-4 live-loop-panel" data-live-loop data-active-node="{{ flow.current }}" data-event-kind="{{ 'feedback' if events and events[-1].event_type in ('refine','rollback') else events[-1].event_type if events else 'initial' }}" data-flow-revision="{{ (events[-1].id if events else 'initial') }}:{{ tax_progress.completed or 0 }}:{{ provider_activity.latest.id if provider_activity.latest else 'none' }}:{{ provider_activity.latest.status if provider_activity.latest else 'none' }}" aria-label="{{ _('Live remediation loop') }}">
+  <div class="card-body">
+    <header class="live-loop-heading">
+      <div><span class="live-loop-kicker"><i aria-hidden="true"></i>{{ _('Simulated activity') if run.live_demo else _('Remediation in progress') }}</span><h2>{{ _('Inside the harness') }}</h2><p>{{ _('Live activity from recorded events. Models propose; tools measure; the harness decides what to keep.') }}</p></div>
+      <div class="live-execution-state">
+        <span>{{ _('Current strategy') }}: <strong data-active-policy>{{ run.execution_route.active if run.execution_route and run.execution_route.active else _('Selection pending') }}</strong></span>
+        <span class="activity-type-badge activity-type-control" data-live-candidate-count>{{ _('Evaluated candidates') }}: {{ counts.evaluated }} / {{ counts.limit }}</span>
+        <span data-live-attempt-count>{{ _('Generation attempts') }}: {{ counts.attempts }}</span>
+        {% if not run.live_demo %}
+        <form method="post" action="{{ url_for('remediation.stop_run',run_id=run.id) }}" data-stop-run>
+          <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+          <button type="submit" class="btn btn-outline-secondary btn-sm" data-stop-label="{{ _('Stop') }}" data-stopping-label="{{ _('Stopping…') }}"{% if run.stop_requested %} disabled{% endif %}>{{ _('Stopping…') if run.stop_requested else _('Stop') }}</button>
+          <small data-stop-message data-error="{{ _('Could not request a stop. Please try again.') }}" role="status" hidden></small>
+        </form>
+        {% if run.stop_requested %}<small role="status">{{ _('Finishing the current candidate; no further generation will start.') }}</small>{% endif %}
+        {% endif %}
+      </div>
+    </header>
+      <div class="live-loop-current" role="status"><span class="live-loop-pulse" aria-hidden="true"></span><div><strong>{{ _('Current activity') }}</strong><p>{% if tax_progress.status=='running' and tax_progress.completed < tax_progress.total %}{{ _('Contextual cases') if tax_progress.stage=='contextual' else _('Contrast and captions') }} · {{ tax_progress.completed }}/{{ tax_progress.total }}{% elif flow.current=='audit' and run.current_phase=='evaluate' %}{{ run.display_progress_message or run.progress_message }}{% else %}{{ _(run.progress_message) if run.live_demo else _(run.live_participants.latest_activity) if run.live_participants and run.live_participants.latest_activity else run.display_progress_message or run.progress_message or _('Waiting for an available worker') }}{% endif %}</p></div></div>
+      <div class="loading-progress-track" role="progressbar" aria-label="{{ _('Reported progress') }}" aria-valuenow="{{ run.progress_percent or 0 }}" aria-valuemin="0" aria-valuemax="100"><div style="width:{{ run.progress_percent or 0 }}%"></div></div>
+    <div class="live-loop-layout"><div>
+      <div class="live-loop-diagram" style="--loop-progress:{{ (run.progress_percent or 0)*3.6 }}deg">
+        <svg class="live-loop-links" viewBox="0 0 1000 400" preserveAspectRatio="none" aria-hidden="true"><defs><marker id="liveArrow" markerWidth="7" markerHeight="7" refX="6" refY="3.5" orient="auto"><path d="M0 0L7 3.5L0 7"/></marker></defs>
+          <path data-flow-from="context" data-flow-to="evidence" d="M195 100H305"/><path data-flow-from="evidence" data-flow-to="selection" d="M445 100H555"/><path data-flow-from="selection" data-flow-to="repair" d="M695 100H805"/>
+          <path data-flow-from="repair" data-flow-to="audit" d="M875 162V254"/><path data-flow-from="audit" data-flow-to="taxonomy" d="M805 314H695"/><path data-flow-from="taxonomy" data-flow-to="preserve" d="M555 314H445"/><path data-flow-from="preserve" data-flow-to="retain" d="M305 314H195"/>
+
+          {% if events and events[-1].event_type=='accepted' %}<path class="live-loop-accepted" d="M125 374V392H270"/>{% endif %}
+                  {% set packet_path={'context':'M20 100H55','evidence':'M195 100H305','selection':'M445 100H555','repair':'M695 100H805','audit':'M875 162V254','taxonomy':'M805 314H695','preserve':'M555 314H445','retain':'M305 314H195'}.get(flow.current) %}
+          {% if packet_path %}<g class="live-event-packet" style="offset-path:path('{{ packet_path }}')"><path class="packet-page" d="M-7-10H2.5L7-5.5V10H-7Z"/><path class="packet-fold" d="M2.5-10V-5.5H7"/><path class="packet-code" d="M-3.5-1.5L-5.5 .5L-3.5 2.5M3.5-1.5L5.5 .5L3.5 2.5M1.5-2.5L-.5 3.5"/></g>{% endif %}
+        </svg>
+        {% for key,icon,title,role,description in [('context','◇',_('Acquisition'),_('Load and verify'),_('Source, findings and controls')),('selection','✦',_('Choose the action'),_('Decisions LLM') if run.dynamic_level else _('Fixed policy'),_('Level and worker, or stop') if run.dynamic_level else _('Assigned level and worker')),('repair','⚙',_('Generate candidate'),_('Worker LLM'),_('Plan, generate or refine')),('evidence','R',_('Retrieve knowledge'),_('RAG-ACT tool'),_('Applicable examples and feedback')),('audit','✓',_('Measure accessibility'),_('Evaluator tools'),_('Axe and Lighthouse')),('taxonomy','≡',_('Assess the taxonomy'),_('Contextual judges'),_('Syntactic, semantic and layout')),('retain','↻',_('Retain or continue'),_('Deterministic control'),_('Keep an admissible improvement')),('preserve','▣',_('Check usability'),_('Visual review'),_('Content, controls and captures'))] %}
+        {% set participants=run.live_participants.stages.get(key) if run.live_participants else none %}
+        <article data-live-stage="{{ key }}" class="live-loop-node live-loop-{{ key }} {% if key in active_stages.keys %}is-active{% elif key in flow.seen %}has-evidence{% endif %}"><span class="live-stage-ring{% if key=='taxonomy' and tax_progress.total %} is-measured{% endif %}" style="--stage-progress:{{ (tax_progress.completed / tax_progress.total * 360) if key=='taxonomy' and tax_progress.total else 0 }}deg" aria-hidden="true"></span><span class="live-loop-icon" aria-hidden="true">{{ icon }}</span><div><small>{{ role }}</small><strong>{{ title }}</strong><p>{{ description }}</p></div><span class="live-loop-state">{{ _('Not used') if (key=='selection' and not run.dynamic_level and key not in flow.seen) or (key=='evidence' and run.execution_mode=='single_shot') else _('In progress') if key in active_stages.keys else _('Recorded') if key in flow.seen else _('Pending') }}</span>
+          {% set consultation_state=namespace(call=provider_activity.latest if provider_activity.latest and provider_activity.latest.stage==key and flow.current==key else none) %}{% for call in provider_activity.active or [] %}{% if call.stage==key %}{% set consultation_state.call=call %}{% endif %}{% endfor %}{% set consultation=consultation_state.call %}
+          {% set show_taxonomy_progress=key=='taxonomy' and key in active_stages.keys and tax_progress.status=='running' and tax_progress.total and tax_progress.completed < tax_progress.total %}
+          {% if (consultation and consultation.stage==key and key in active_stages.keys) or show_taxonomy_progress or (key in active_stages.keys and participants and participants.actors) %}
+          <div class="live-stage-details">
+          {% if show_taxonomy_progress %}<small class="live-stage-count">{{ tax_progress.completed }}/{{ tax_progress.total }} {{ _('cases evaluated') }}</small>{% endif %}
+          {% if key in active_stages.keys and participants and participants.actors %}<div class="live-stage-satellites" aria-label="{{ _('Participating agents') }}">{% for actor in participants.actors[-2:] %}<span class="live-satellite activity-type-{{ actor.category }}" data-live-actor="{{ actor.event_id }}" data-actor-key="{{ actor.identity or actor.name }}" data-actor-calls="{{ actor.calls }}" title="{{ _(actor.name) }} · {{ _(actor.kind) }}{% if actor.model %} · {{ actor.model }}{% endif %}"><b aria-hidden="true">{{ '✦' if actor.category=='llm' else '◇' if actor.category=='control' else '⚙' }}</b><small>{{ _(actor.short) }}</small><em>×{{ actor.calls }}</em></span>{% endfor %}</div>{% endif %}
+          {% if consultation and consultation.stage==key and key in active_stages.keys %}<span class="live-model-chip{% if consultation.pending %} is-consulting{% endif %}" data-live-call="{{ consultation.id }}" data-call-state="{{ 'request' if consultation.pending else 'response' if consultation.returned else 'interrupted' }}" title="{{ consultation.model }} · {{ _('via') }} {{ consultation.provider }}"><b>✦ {{ consultation.model|replace('openai/gpt-6-luna-decisions','GPT-6 Luna · Decisions')|replace('openai/gpt-6-luna@high','GPT-6 Luna · High')|replace('openai/gpt-6-luna','GPT-6 Luna')|replace('openai/gpt-6.1-sol','GPT-6.1 Sol') }}</b><small>{{ _('LLM request') if consultation.pending else _('LLM response') }}</small></span>{% endif %}
+          </div>
+          {% endif %}
+</article>
+        {% endfor %}
+        {% if events and events[-1].event_type=='accepted' %}<span class="live-accepted-output">✓ {{ _('Chosen result') }}</span>{% endif %}
+      </div>
+      <dl class="live-loop-metrics"><div><dt>{{ _('Decisions responses') }}</dt><dd>{{ flow.calls }}</dd></div><div><dt>{{ _('Recorded decision cases') }}</dt><dd>{{ flow.cases }}</dd></div><div><dt>{{ _('Saved candidate captures') }}</dt><dd>{{ flow.captures }}</dd></div><div><dt>{{ _('Simulation') if run.live_demo else _('Recorded cost') }}</dt><dd>{% if run.live_demo %}∞{% else %}${{ '%.6f'|format(run.total_cost_usd or 0) }}{% endif %}</dd></div></dl>
+    </div><aside class="live-loop-evidence">
+      <h3>{{ _('Live participants') }}</h3>
+      <div class="live-participant-roster">{% if run.live_participants %}{% for key,title in [('context',_('Acquisition and context')),('selection',_('Decisions LLM')),('repair',_('Generator and procedures')),('evidence',_('RAG-ACT retriever')),('audit',_('Evaluator tools')),('taxonomy',_('Taxonomy judges')),('preserve',_('Visual and functional checks')),('retain',_('Acceptance coordinator'))] %}
+        {% set stage=run.live_participants.stages[key] %}<section class="live-participant-row{% if key in active_stages.keys %} is-working{% endif %}" data-live-participant="{{ key }}" data-stage-calls="{{ stage.calls }}"><div><strong>{{ title }}</strong><span>×{{ stage.calls }}</span></div><small>{% if stage.actors %}{{ _(stage.actors[-1].name) }}{% if stage.actors[-1].model %} · {{ stage.actors[-1].model }}{% endif %}{% else %}{{ _('Pending') }}{% endif %}</small>
+        {% if key=='taxonomy' and key in active_stages.keys and tax_progress.status=='running' and tax_progress.total and tax_progress.completed < tax_progress.total %}<div class="live-participant-meter" role="progressbar" aria-valuenow="{{ tax_progress.completed }}" aria-valuemin="0" aria-valuemax="{{ tax_progress.total }}"><span style="width:{{ 100*tax_progress.completed/tax_progress.total }}%"></span></div><small>{{ _('Contextual cases') if tax_progress.stage=='contextual' else _('Contrast and captions') }} · {{ tax_progress.completed }}/{{ tax_progress.total }}</small>{% else %}<div class="live-participant-meter invocation-meter{% if key in active_stages.keys %} is-running{% endif %}" aria-label="{{ _('Invocation activity') }}"><span></span></div><small class="live-participant-state">{{ _('In progress') if key in active_stages.keys else _('Recorded') if stage.calls else _('Pending') }}</small>{% endif %}</section>
+      {% endfor %}{% endif %}</div>
+
+    </aside></div>
+  </div>
+</section>

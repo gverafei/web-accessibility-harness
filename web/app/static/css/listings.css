@@ -1,0 +1,127 @@
+/* Assignment actions use the same icon grammar in reports and list footers. */
+form[action*="/assign"] > button { display: inline-flex; align-items: center; gap: .3rem; }
+form[action*="/assign"] > button svg { width: .9rem; height: .9rem; fill: none; stroke: currentColor; stroke-width: 1.6; }
+.sidebar-link.sidebar-child { padding-inline-start: 1.4rem; }
+
+/* Compact list typography shared by tables and their card presentation. */
+:root { --list-text-size: .8rem; --list-detail-size: .7rem; }
+.table, .research-table { font-size: var(--list-text-size); }
+.history-list-view :is(.evaluation-title, .remediation-page-name) { font-size: var(--list-text-size); line-height: 1.4; }
+.history-list-view :is(.evaluation-identity, .remediation-page-identity) > small { font-size: var(--list-detail-size); line-height: 1.4; }
+#taxonomyCatalog { scroll-margin-top: 4rem; }
+
+/* One bordered list grammar, matching the comparison and URL tables. */
+html[data-theme] :is(.table-responsive, .measurement-table-wrap, .research-table-wrap):has(> table) {
+  border: 1px solid var(--ui-line);
+  border-radius: 6px;
+  background: var(--ui-surface);
+}
+html[data-theme] :is(.table-responsive, .measurement-table-wrap, .research-table-wrap) > table { margin-bottom: 0; }
+html[data-theme] :is(.table, .research-table) > thead > tr > th {
+  background: color-mix(in srgb, var(--ui-blue) 3%, var(--ui-surface));
+  border-bottom: 1px solid var(--ui-line);
+  color: color-mix(in srgb, var(--ui-blue) 25%, var(--ui-ink));
+  font-weight: 600; text-transform: uppercase; letter-spacing: .025em;
+}
+html[data-theme] :is(.table, .research-table) > tbody > tr > :is(th,td) { border-bottom-color: var(--ui-line); }
+/* Fixed identity cells must mask the measurements scrolling beneath them. */
+html[data-theme] .measurement-table :is(td.measurement-url, td.row-number) {
+  background: var(--ui-surface);
+}
+html[data-theme] .measurement-table .row-number {
+  position: sticky;
+  left: 0;
+  z-index: 3;
+}
+html[data-theme] .measurement-table thead :is(th:first-child, th:nth-child(2)) {
+  background: var(--ui-table-head, color-mix(in srgb, var(--ui-blue) 3%, var(--ui-surface)));
+}
+.evaluation-page-preview { display: flex; align-items: center; gap: .55rem; margin-top: .45rem; }
+.measurement-url .evaluation-page-preview .page-preview { margin: 0; }
+html[data-theme] .history-list-view[data-history-view="cards"] { border: 0; background: transparent; }
+.measurement-filter .form-control { padding: .3rem 2.15rem .3rem .7rem; min-height: 2rem; font-size: var(--list-text-size); }
+.measurement-filter svg { position: absolute; top: 50%; right: .7rem; width: 1rem; height: 1rem; transform: translateY(-50%); pointer-events: none; fill: none; stroke: var(--ui-muted); stroke-width: 2; stroke-linecap: round; }
+
+html[data-theme] .list-controls-row {
+  display: flex; flex-direction: row; align-items: flex-end; flex-wrap: nowrap;
+  gap: .6rem; overflow-x: auto; padding: .25rem .2rem .45rem;
+}
+.list-controls-row > div:not(.measurement-filter):not(.list-select-grow) { flex: 0 0 auto; }
+.list-controls-row .measurement-pagination { margin-left: auto; white-space: nowrap; gap: .5rem; font-size: var(--list-detail-size); }
+.list-controls-row .list-filter-checkbox label { display: flex; align-items: center; gap: .4rem; white-space: nowrap; margin: 0; font-size: var(--list-detail-size); }
+.list-controls-row > button { flex-shrink: 0; }
+.async-list-status:empty { display: none; }
+#taxonomyBrowseMessage { margin: 0 0 .4rem; }
+.taxonomy-results { overflow-anchor: none; }
+#taxonomyCategory { width: 10rem; max-width: none; }
+.taxonomy-results table { table-layout: fixed; width: 100%; }
+.taxonomy-results thead th:nth-child(1) { width: 22%; }
+.taxonomy-results thead th:nth-child(2) { width: 12%; }
+.taxonomy-results thead th:nth-child(3) { width: 48%; }
+.taxonomy-results thead th:nth-child(4) { width: 18%; }
+.taxonomy-results :is(th,td) { overflow-wrap: anywhere; }
+.list-controls-row select:not([name="size"]) { max-width: 10rem; }
+.list-controls-row select[name="size"] { width: 4.7rem; }
+
+.measurement-filter { position: relative; display: flex; align-items: center; width: min(360px,100%); margin: 0 0 .65rem auto; }
+.measurement-filter > span { display: none; }
+.report-pagination-toolbar { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: .65rem; overflow-x: auto; }
+.report-pagination-toolbar .measurement-filter { flex: 0 1 260px; width: min(260px,100%); margin: 0; }
+.report-pagination-toolbar .measurement-pagination { flex: 0 0 auto; margin-left: auto; padding: 0; }
+.list-controls-row .measurement-filter { flex: 0 1 16rem; width: 16rem; min-width: 10rem; margin: 0; }
+.list-controls-row > div:first-child { min-width: 10rem; }
+.list-controls-row .list-filter-checkbox { align-self: center; }
+
+@media(max-width:1300px){.list-controls-row .measurement-pagination label>span{display:none}}
+
+/* Shared pagination used by all list toolbars. */
+.measurement-pagination{display:flex;align-items:center;justify-content:flex-end;gap:.65rem;padding:.75rem .2rem}
+.measurement-pagination label{display:flex;align-items:center;gap:.45rem;color:var(--muted);font-size:.78rem}
+.measurement-pagination select{width:auto;min-height:30px;padding:.25rem 1.8rem .25rem .5rem}
+.measurement-pagination-status{white-space:nowrap;text-align:right;color:var(--muted);font-size:var(--list-detail-size)}
+.measurement-pagination .btn{padding:.28rem .58rem}
+.measurement-pagination .pagination-actions .btn{display:grid;place-items:center;width:32px;height:32px;padding:0;border-radius:0}
+.measurement-pagination .pagination-actions .btn:first-child{border-radius:8px 0 0 8px}
+.measurement-pagination .pagination-actions .btn:last-child{border-radius:0 8px 8px 0}
+.measurement-pagination .pagination-actions .btn+.btn{margin-left:-1px}
+.measurement-pagination .pagination-actions svg{width:17px;height:17px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.measurement-filter:has(input:not(:placeholder-shown)) svg{display:none}
+
+/* These source controls share the list row, with a flexible group selector. */
+.list-controls-row .list-select-grow{flex:1 1 12rem;min-width:6rem}
+.list-controls-row .list-select-grow select{width:100%;max-width:none}
+.comparison-source-controls.list-controls-row .measurement-filter{flex:0 1 20rem;width:20rem;min-width:8rem}
+.list-filter-bar .measurement-filter{flex:0 1 18rem;width:18rem;margin:0}
+
+.comparison-pane-controls,.comparison-source-controls{min-height:4.5rem}
+
+.list-controls-row .form-label{white-space:nowrap}
+
+.comparison-remove-bar .btn{width:12.5rem;min-height:2rem;justify-content:center}
+
+.list-filter-bar .measurement-pagination{padding:0;flex:0 0 auto}
+html[data-theme] .list-filter-bar:has([data-history-pagination]){flex-wrap:nowrap;overflow-x:auto;overflow-y:hidden;justify-content:flex-start}
+.list-filter-bar:has([data-history-pagination]) .measurement-filter{min-width:8rem}
+
+.list-filter-bar .list-selection-actions{flex:0 0 auto}
+.list-filter-bar .list-selection-actions .btn{display:inline-flex;align-items:center;gap:.3rem;white-space:nowrap}
+.list-filter-bar .history-strategy-filter{flex:0 1 7rem;width:7rem;min-width:5.5rem;font-size:var(--list-text-size)}
+.list-filter-bar:has([data-history-pagination]) .history-view-toggle{margin-left:auto}
+
+@media(max-width:1700px){
+ .list-filter-bar:has([data-history-pagination]) .measurement-pagination label{font-size:0;gap:0}
+ .list-filter-bar:has([data-history-pagination]) .measurement-pagination select{font-size:var(--list-text-size)}
+ .list-filter-bar:has([data-history-pagination]) .history-view-toggle button span,
+ .list-filter-bar:has([data-history-pagination]) .list-selection-actions label span{display:none}
+ .list-filter-bar:has([data-history-pagination]) .measurement-filter{flex-basis:10rem}
+}
+
+.list-filter-bar [data-history-selection-count]{font-size:var(--list-detail-size)}
+.list-filter-bar:has([data-history-status]) .measurement-filter{flex-basis:13rem;min-width:12rem}
+
+.history-list-view .run-execution-metrics{font-size:var(--list-detail-size);line-height:1.5;white-space:nowrap}
+
+/* Keep every navigation item reachable in short desktop and mobile viewports. */
+.app-sidebar { display: flex; flex-direction: column; }
+.sidebar-head { flex: 0 0 auto; }
+.sidebar-nav { flex: 1 1 auto; min-height: 0; overflow-y: auto; overscroll-behavior: contain; }

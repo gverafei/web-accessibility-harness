@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('Agents') }}{% endblock %}
+{% block content %}
+<header class="app-page-heading"><h1>{{ _('Agents') }}</h1><p>{{ _('Specialist tasks coordinated around the current page and its measured results.') }}</p></header>
+<div class="table-responsive harness-panel">
+  <table class="table align-middle">
+    <thead><tr><th>{{ _('Agent or coordinator') }}</th><th>{{ _('Task') }}</th><th>{{ _('Receives') }}</th><th>{{ _('Produces') }}</th><th>{{ _('Execution') }}</th></tr></thead>
+    <tbody>{% for name, task, inputs, outputs, executor in agents %}
+      <tr><td><strong>{{ _(name) }}</strong></td><td>{{ _(task) }}</td><td>{{ _(inputs) }}</td><td>{{ _(outputs) }}</td><td>{{ _(executor) }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</div>
+{% endblock %}

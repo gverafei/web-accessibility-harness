@@ -1,0 +1,6 @@
+{% from '_pagination_icons.html' import pagination_icon %}
+<nav class="measurement-pagination" aria-label="{{ pagination_label }}">
+<label><span>{{ _('Rows per page') }}</span> <select name="size" class="form-select form-select-sm">{% for n in sizes %}<option value="{{ n }}"{% if n==size %} selected{% endif %}>{{ n }}</option>{% endfor %}</select></label>
+<span class="pagination-actions">{% for n,label,icon,disabled in [(1,_('First page'),'⇤',page==1),(page-1,_('Previous page'),'←',page==1),(page+1,_('Next page'),'→',page==pages),(pages,_('Last page'),'⇥',page==pages)] %}{% if disabled %}<span class="btn btn-outline-secondary disabled" aria-disabled="true" aria-label="{{ label }}">{{ pagination_icon(icon) }}</span>{% else %}<a class="btn btn-outline-secondary" href="{{ browse_url(n) }}" aria-label="{{ label }}" title="{{ label }}">{{ pagination_icon(icon) }}</a>{% endif %}{% endfor %}</span>
+<span class="measurement-pagination-status">{{ _('Page') }} {{ page }} {{ _('of') }} {{ pages }} · {{ matched }} {{ result_label }}</span>
+</nav>

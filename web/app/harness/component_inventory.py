@@ -1,0 +1,21 @@
+"""Local component inventory; task roles are separate from executable tools."""
+AGENTS = (
+    ('Coordinator', 'Maintain the run state, dispatch tasks and select the best measured repair.',
+     'Measurements and remaining budget', 'Selected candidate and execution trace', 'Deterministic runtime'),
+    ('Source verifier', 'Check that the stored page and its replay show usable content.',
+     'Source capture and replay evidence', 'Source verification findings', 'Luna vision'),
+    ('Component planner', 'Group related defects and plan coordinated operations for P2.',
+     'DOM, selectors and measured defects', 'Root causes and operation dependencies', 'Assigned repair worker'),
+    ('Repair diagnostician', 'Diagnose supported root causes when a patch loop stagnates.',
+     'Current DOM, measured styles and failed repair feedback', 'Grounded recommendations within the fixed strategy', 'Assigned repair worker'),
+    ('Repair generator', 'Produce constrained patches or complete HTML for the selected strategy.',
+     'Current candidate, skills and feedback', 'Patch operations or HTML', 'Assigned repair worker'),
+    ('Contextual judge', 'Judge applicable contextual criteria against the taxonomy.',
+     'Criterion rubric, page context and candidate census', 'Contextual judgments and coverage', 'Decisions Luna'),
+    ('Image-alternative judge', 'Assess image alternatives using verified pixels and functional context.',
+     'Image pixels, alternative text and page context', 'Image-specific judgments and coverage', 'Luna light'),
+    ('Visual reviewer', 'Check the candidate’s legibility, visible controls and resources.',
+     'Candidate capture and deterministic checks', 'Visual findings for refinement', 'Luna vision'),
+    ('Route planner and decision adviser', 'Plan the route and assess continuation in dynamic mode.',
+     'Page profile, current-run trajectory and budget', 'Structured decisions', 'Decisions Luna'),
+)

@@ -1,0 +1,25 @@
+{
+  "schema": "a11yharness/1",
+  "version": "governed-p1-p6-v4",
+  "authority": "deterministic controller",
+  "workers": {
+    "P1": "bounded minimal attributes",
+    "P2": "localized scoped repair",
+    "P3": "root-cause grouped coordinated repair",
+    "P4": "complete HTML regeneration with source evidence and no prescribed framework",
+    "P5": "preservation-checked local Markdown regeneration",
+    "P6": "closed selection among admissible P1-P5/model actions or stop"
+  },
+  "judges": {
+    "version": "retained-taxonomy-assessment-v2",
+    "status": "integrated; development plumbing and coverage checked; expert agreement unvalidated",
+    "purpose": "supplemental outcomes, never acceptance thresholds",
+    "agreement_with_experts": "not established"
+  },
+  "selection": {
+    "controller": "Decisions Luna",
+    "context": "current page and within-run feedback",
+    "cross_page_training": false,
+    "worker_profile": "gpt-controlled-triad-v1"
+  }
+}

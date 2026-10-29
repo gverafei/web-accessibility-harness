@@ -1,0 +1,24 @@
+.model-catalog-table th{white-space:nowrap;font-size:.78rem;color:#365466}
+.model-catalog-table td:nth-child(2){min-width:250px}
+.model-catalog-table td:nth-child(3),.model-catalog-table td:nth-child(4){min-width:140px}
+.model-token-limits{white-space:nowrap;font-variant-numeric:tabular-nums}
+.model-catalog-save-area{max-width:min(100%,30rem)}
+.model-catalog-status{display:block;min-height:1.25rem;margin-top:.25rem;color:var(--muted);font-size:.75rem;line-height:1.25rem;text-align:right}
+.model-catalog-status[data-state="success"]{color:#17633c;font-weight:700}
+.model-catalog-status[data-state="error"]{color:#a52626;font-weight:700}
+.model-catalog-status[data-state="unsaved"]{color:#9a5a00}
+html[data-theme="dark"] .model-catalog-status[data-state="success"]{color:#7ad5a1}
+html[data-theme="dark"] .model-catalog-status[data-state="error"]{color:#ff9a9a}
+html[data-theme="dark"] .model-catalog-status[data-state="unsaved"]{color:#f0b768}
+@media(prefers-color-scheme:dark){html[data-theme="system"] .model-catalog-status[data-state="success"]{color:#7ad5a1}html[data-theme="system"] .model-catalog-status[data-state="error"]{color:#ff9a9a}html[data-theme="system"] .model-catalog-status[data-state="unsaved"]{color:#f0b768}}
+.model-provider-search-row{max-width:30rem}
+.model-provider-search-controls{display:flex;align-items:stretch;gap:.5rem}
+.model-provider-search-controls input{min-width:0}
+.model-provider-search-controls button{flex:none}
+.model-provider-results{max-height:360px;overflow:auto;display:grid;gap:.5rem;margin-top:.75rem}
+.model-provider-option{display:grid;gap:.15rem;text-align:left;padding:.75rem 1rem;border:1px solid #b8c9da;border-radius:.6rem;background:var(--ui-surface);color:var(--ui-ink)}
+.model-provider-option:hover,.model-provider-option:focus-visible{border-color:#2161ad;background:color-mix(in srgb,#2161ad 8%,var(--ui-surface))}
+.model-provider-option small{color:var(--ui-muted)}
+
+.model-provider-option:disabled { cursor: not-allowed; border-style: dashed; border-color: var(--ui-line); background: var(--ui-paper); color: var(--ui-muted); }
+.model-provider-option:disabled:hover { background: var(--ui-surface); border-color: var(--ui-line); }

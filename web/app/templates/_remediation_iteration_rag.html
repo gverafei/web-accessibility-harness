@@ -1,0 +1,10 @@
+{% set rag=item.strategy.rag if item.strategy and item.strategy.rag else none %}
+<details class="strategy-details iteration-rag-evidence"><summary>{{ _('RAG examples and process details') }} <span class="rag-chip">{% if rag and rag.retrieved %}{{ _('RAG-ACT used') }} · {{ rag.retrieved|length }} {{ _('examples') }}{% else %}{{ _('RAG-ACT not used') }}{% endif %}</span></summary><div class="report-output">
+{% if rag and rag.retrieved %}
+<div class="mt-2" role="note">
+  <p class="small text-muted">{{ _('ACT examples guide repairs; passed/failed labels describe the examples, not this candidate.') }}</p><ul class="mb-0 mt-1">{% for evidence in rag.retrieved %}<li><a href="{{ evidence.rule_page }}" target="_blank" rel="noopener">{{ evidence.rule_name }}</a> · {{ _('Passing example') if evidence.expected=='passed' else _('Failing example') if evidence.expected=='failed' else _(evidence.expected) }}{% if evidence.rule_id and evidence.rule_id.startswith('platform-axe-') %} · {{ _('Complementary guidance example — not an official ACT testcase') }}{% endif %}</li>{% endfor %}</ul>
+</div>
+{% else %}
+<p class="small text-muted mt-2 mb-0">{{ _(item.rag_explanation or 'The reason was not recorded.') }}{% if rag and rag.retrieval_quality and rag.retrieval_quality.missing_concepts %} {{ _('Criteria without examples') }}: {{ rag.retrieval_quality.missing_concepts|join(', ') }}.{% endif %}</p>
+{% endif %}
+</div></details>

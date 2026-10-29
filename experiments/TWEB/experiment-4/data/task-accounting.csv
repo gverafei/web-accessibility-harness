@@ -1,0 +1,8 @@
+role,calls,input_tokens,output_tokens,cost_usd
+Component planning,50,388889,45468,0.069198025
+Contextual assessment,528,10049793,0,1.0049793
+Diagnosis,130,1897136,131314,0.295364950
+Image alternatives,25,233844,3676,0.031066625
+Repair generation,232,7158300,277568,1.002887215
+Route planning,241,11986162,0,1.1986162
+Visual verification,128,3942991,20462,0.503095275

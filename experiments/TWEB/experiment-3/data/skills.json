@@ -1,0 +1,20 @@
+[
+  {
+    "id": "adaptive-evidence-grounding",
+    "version": "2.0.0",
+    "digest": "017205d3fe8b",
+    "instruction": "Retrieve only complete positive/negative pairs matching measured concepts. Record provenance, abstain from unrelated evidence and rotate pairs only after a measured plateau."
+  },
+  {
+    "id": "grounded-accessibility-diagnosis",
+    "version": "2.0.0",
+    "digest": "359bda3cb824",
+    "instruction": "Diagnose only barriers supported by the current DOM and measured evidence. Quote a valid selector and observable cause; omit unsupported recommendations."
+  },
+  {
+    "id": "markdown-born-accessible-regeneration",
+    "version": "4.0.0",
+    "digest": "322fbff296d2",
+    "instruction": "Generate complete accessible HTML from verified Markdown, contextual evidence, assets and capture. Choose composition freely. Refine using measured accessibility, usability and visual feedback. Report content changes; diagnostic findings do not veto measurement."
+  }
+]

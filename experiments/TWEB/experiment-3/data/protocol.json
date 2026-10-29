@@ -1,0 +1,1047 @@
+{
+  "experiment": 3,
+  "sources": 1,
+  "runs": 12,
+  "evaluated_versions": 20,
+  "initial_messages_sha256": "ab3733a8a01453105ea8b78f437a750f48059f9d88605c37e60a25b4e36ebacb",
+  "source_sha256": "6d34b9516e8808a0979a4e4bd09eeed778d1345ea7ebd897f9867e0600e23fb1",
+  "summary_sha256": "8bbe8386ec667d6e161b2cf64b3708cb39cab0c7cd54628ce923e039dfcb117a",
+  "source_binding": {
+    "audit_id": "record:281c411ef48427316b97fba1427e2870ed9b9cc03e9087ac342e0fdeddff6bd2",
+    "capture_id": "record:66a59de7b7bc8c8a91b734f3444ca5a5fab5919fc9cdb3033c15e0d0925705fb",
+    "evaluator_runtime_sha256": "da9f04c998bca4c96f61219eddf5faccb0ffe7b7b228acd94c065b6f534d6d1b",
+    "input_sha256": "6d34b9516e8808a0979a4e4bd09eeed778d1345ea7ebd897f9867e0600e23fb1",
+    "native_package_sha256": "e73342abe076244ebf8726324a36f5e0cc55b1fb390a7f3e90d46006d4a1693a",
+    "preflight_basis": "Same frozen TIME bytes and resources; current instrument calibration reproduces reference Axe/Lighthouse and repeatability.",
+    "reference_document_sha256": "3dd3b6b19949a38e82f0ef938dca0182fd90a9122862deda96617bccdafa2553",
+    "replay_id": "time-haiku-high-20261020-time-source-calibration-replay",
+    "source_artifact_id": "60e3035c70fe4c7abbdc47c09a4f82f1",
+    "sql_source_id": 358,
+    "version": "frozen-admitted-source-binding-v1"
+  },
+  "original_failed": {
+    "Syntactic": 1,
+    "Semantic": 64,
+    "Layout": 9
+  },
+  "cost_scope": "Actual ledger consumption per selected execution, including generation, assessment and all proposals; historical development charges remain in the shared budget.",
+  "image_reference_analysis_version": "static-image-variant-identity-v1",
+  "recorded_runs": {
+    "1276": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "e56f9e3771dab223fc255f5c88e7ca31a230f62e41393bb1787bfe21d0f491ce",
+        "family": "openai",
+        "id": "openai/gpt-6-luna",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 0.09999999999999999,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6-luna",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 0.5,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 0.19999999999999998,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 0.75
+          }
+        ],
+        "pricing_source": "OpenRouter openai endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.75,
+            "prompt": 0.19999999999999998
+          },
+          "only": [
+            "openai"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1277": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "5dd7aed030d24e4cbfb00f82071d5be58868a3918dab0e3916913340504d417e",
+        "family": "openai",
+        "id": "openai/gpt-6-luna@high",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 0.09999999999999999,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6-luna",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 0.5,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 0.19999999999999998,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 0.75
+          }
+        ],
+        "pricing_source": "OpenRouter openai endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 0.75,
+            "prompt": 0.19999999999999998
+          },
+          "only": [
+            "openai"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1278": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "6ed540eeb6a5e3d7cf0441a092c3dd5587f14023a27a359a196316e3579fca0d",
+        "family": "anthropic",
+        "id": "anthropic/claude-haiku-5.5",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 0.09999999999999999,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-haiku-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 0.5,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 0.5,
+            "min_prompt_tokens": 100000,
+            "output_usd_per_million": 2.5
+          }
+        ],
+        "pricing_source": "OpenRouter anthropic endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 2.5,
+            "prompt": 0.5
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1279": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "b7f38678633c710b73e67246294628f203e4d43567fe3d928a83656c1ded904d",
+        "family": "anthropic",
+        "id": "anthropic/claude-haiku-5.5@high",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 0.09999999999999999,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-haiku-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 0.5,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 0.5,
+            "min_prompt_tokens": 100000,
+            "output_usd_per_million": 2.5
+          }
+        ],
+        "pricing_source": "OpenRouter anthropic endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 2.5,
+            "prompt": 0.5
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1274": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "e9d8129b168f776099cdcad5d0f0e88204e342515f4e7025f3b314d209ef4af7",
+        "family": "openai",
+        "id": "openai/gpt-6.1-sol",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 1.0,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6.1-sol",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 5.0,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 2.0,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 7.5
+          }
+        ],
+        "pricing_source": "OpenRouter openai/flex endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 7.5,
+            "prompt": 2.0
+          },
+          "only": [
+            "openai/flex"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1275": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "c6ff92a42ac81149e40cfb9e8cfd4dbf8bb0c28599a74da026fb7a15d00e695c",
+        "family": "openai",
+        "id": "openai/gpt-6.1-sol@high",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 1.0,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6.1-sol",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 5.0,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 2.0,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 7.5
+          }
+        ],
+        "pricing_source": "OpenRouter openai/flex endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 7.5,
+            "prompt": 2.0
+          },
+          "only": [
+            "openai/flex"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1272": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "ff8d60832467c094d26f68a2e79325e62777e2968d9ac4b4a9c4b82ce1675dea",
+        "family": "anthropic",
+        "id": "anthropic/claude-sonnet-5.5",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 2.0,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-sonnet-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 10.0,
+        "pricing_overrides": [],
+        "pricing_source": "OpenRouter anthropic endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 10.0,
+            "prompt": 2.0
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1273": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "5c7a57111fa94abb0b9d1a35767435227dc21b76ceaf6e99287cd1abada16841",
+        "family": "anthropic",
+        "id": "anthropic/claude-sonnet-5.5@high",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 2.0,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-sonnet-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 10.0,
+        "pricing_overrides": [],
+        "pricing_source": "OpenRouter anthropic endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 10.0,
+            "prompt": 2.0
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1269": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "56a548a382b526e2ca5c6196430f7b5358dfbcbe9e85ae60fb91e0c1a2b04d81",
+        "family": "openai",
+        "id": "openai/gpt-6-astra",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 5.0,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6-astra",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 25.0,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 10.0,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 37.5
+          }
+        ],
+        "pricing_source": "OpenRouter openai/flex endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 37.5,
+            "prompt": 10.0
+          },
+          "only": [
+            "openai/flex"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true,
+        "vision_pricing_source": "https://developers.openai.com/api/docs/guides/images-vision (2026-10-08): maximum 30000 patches, high2500, low256; multiplier1.2 plus one token rounding margin",
+        "vision_token_bounds": {
+          "auto": 36001,
+          "high": 3001,
+          "low": 309,
+          "original": 36001
+        }
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1270": {
+      "worker": {
+        "context_length": 1050000,
+        "digest": "88a1fbda3677695ffe526ae7d06ae98c80e49a8f2b63d8d5e42f75a45aece809",
+        "family": "openai",
+        "id": "openai/gpt-6-astra@high",
+        "input_modalities": [
+          "file",
+          "image",
+          "text"
+        ],
+        "input_usd_per_million": 5.0,
+        "max_completion_tokens": 128000,
+        "model": "openai/gpt-6-astra",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 25.0,
+        "pricing_overrides": [
+          {
+            "input_usd_per_million": 10.0,
+            "min_prompt_tokens": 272000,
+            "output_usd_per_million": 37.5
+          }
+        ],
+        "pricing_source": "OpenRouter openai/flex endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 37.5,
+            "prompt": 10.0
+          },
+          "only": [
+            "openai/flex"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "seed",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true,
+        "vision_pricing_source": "https://developers.openai.com/api/docs/guides/images-vision (2026-10-08): maximum 30000 patches, high2500, low256; multiplier1.2 plus one token rounding margin",
+        "vision_token_bounds": {
+          "auto": 36001,
+          "high": 3001,
+          "low": 309,
+          "original": 36001
+        }
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1271": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "46bfe30cbc4553c6cfb9aab13dd50f657f05cc19be65a3841080de4dd3f14f86",
+        "family": "anthropic",
+        "id": "anthropic/claude-opus-5.5",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 4.0,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-opus-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 20.0,
+        "pricing_overrides": [],
+        "pricing_source": "OpenRouter anthropic endpoint snapshot 2026-10-21; family-confirmation/endpoints.json",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 20.0,
+            "prompt": 4.0
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "low",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true,
+        "vision_pricing_source": "https://platform.claude.com/docs/en/build-with-claude/vision (2026-10-08): Claude 4.7 and later max 4784 visual tokens per image; one-token rounding margin",
+        "vision_token_bounds": {
+          "auto": 4785,
+          "high": 4785,
+          "low": 4785,
+          "original": 4785
+        }
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 24,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 10.0,
+        "max_calls": 200,
+        "max_cost_usd": 10.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "95ba95d1b0fc3e3c4b1429278d8a2982121735b3861d551fda0e392640a4afc2",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    },
+    "1266": {
+      "worker": {
+        "context_length": 1000000,
+        "digest": "e190f22a4374c5232591790d351c477eb29f4300a5debb819f6db3fa867d16d8",
+        "family": "anthropic",
+        "id": "anthropic/claude-opus-5.5@high",
+        "input_modalities": [
+          "text",
+          "image",
+          "file"
+        ],
+        "input_usd_per_million": 4.0,
+        "max_completion_tokens": 128000,
+        "model": "anthropic/claude-opus-5.5",
+        "output_modalities": [
+          "text"
+        ],
+        "output_usd_per_million": 20.0,
+        "pricing_overrides": [],
+        "pricing_source": "https://openrouter.ai/api/v1/models/anthropic/claude-opus-5.5/endpoints standard Anthropic endpoint snapshot2026-10-21",
+        "provider": "openrouter",
+        "provider_route": {
+          "allow_fallbacks": false,
+          "max_price": {
+            "completion": 20.0,
+            "prompt": 4.0
+          },
+          "only": [
+            "anthropic"
+          ],
+          "require_parameters": true
+        },
+        "reasoning_effort": "high",
+        "schema": "a11yharness/1",
+        "supported_parameters": [
+          "include_reasoning",
+          "max_completion_tokens",
+          "max_tokens",
+          "reasoning",
+          "reasoning_effort",
+          "response_format",
+          "stop",
+          "structured_outputs",
+          "tool_choice",
+          "tools",
+          "verbosity"
+        ],
+        "temperature_supported": false,
+        "vision": true,
+        "vision_pricing_source": "https://platform.claude.com/docs/en/build-with-claude/vision (2026-10-08): Claude 4.7 and later max 4784 visual tokens per image; one-token rounding margin",
+        "vision_token_bounds": {
+          "auto": 4785,
+          "high": 4785,
+          "low": 4785,
+          "original": 4785
+        }
+      },
+      "attempt_limit": 10,
+      "repair_budget": {
+        "max_call_cost_usd": 5.0,
+        "max_calls": 24,
+        "max_cost_usd": 5.0,
+        "max_output_tokens": 128000,
+        "max_seconds": 1800.0
+      },
+      "review_budget": {
+        "max_call_cost_usd": 5.0,
+        "max_calls": 200,
+        "max_cost_usd": 5.0,
+        "max_output_tokens": 8192,
+        "max_seconds": 1800.0
+      },
+      "stop_at_perfect_audit": true,
+      "time_policy": "budget-only-progress-v1",
+      "intervention_version": "two-patch-creative-regeneration-v2",
+      "decision_model": "openai/gpt-6-luna-decisions",
+      "contextual_model": "openai/gpt-6-luna-decisions",
+      "image_model": "openai/gpt-6-luna",
+      "visual_model": "openai/gpt-6-luna",
+      "runtime_digest": "871100f2e660ae2588400fed5be2785f323cb3a452d819f55b2e93635feda24b",
+      "targets": {
+        "max_axe": 5,
+        "min_lighthouse": 90.0
+      }
+    }
+  },
+  "source_integrity_checks": {
+    "records": 684,
+    "screenshots": 13
+  }
+}

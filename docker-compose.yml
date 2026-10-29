@@ -1,0 +1,107 @@
+name: web-accessibility-harness
+
+services:
+  web:
+    build:
+      context: ./web
+    # Compile catalogs hidden by the source bind mount before serving requests.
+    command:
+      - sh
+      - -c
+      - >-
+        pybabel compile -d /app/translations &&
+        exec gunicorn --bind 0.0.0.0:5000 --workers 2 --threads 4
+        --timeout 60 main:app
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:${WEB_HOST_PORT:-80}:5000"
+    env_file:
+      - .env
+    volumes:
+      - ./web/app:/app
+      - ./results:/results
+      - ./data:/data
+      - ./datasets:/datasets
+    depends_on:
+      - db
+      - evaluator
+      - dataset-server
+      - qdrant
+    networks:
+      - accessibility_net
+
+  worker:
+    profiles: ["worker"]
+    build:
+      context: ./web
+    command: ["python", "worker.py"]
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./web/app:/app
+      - ./results:/results
+      - ./data:/data
+      - ./datasets:/datasets
+    depends_on:
+      - db
+      - evaluator
+      - dataset-server
+      - qdrant
+    networks:
+      - accessibility_net
+
+  evaluator:
+    init: true
+    build:
+      context: ./evaluator
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./results:/results
+      - ./data:/data
+    networks:
+      - accessibility_net
+
+  dataset-server:
+    build:
+      context: ./dataset_server
+    restart: unless-stopped
+    volumes:
+      - ./datasets:/datasets:ro
+    networks:
+      - accessibility_net
+
+  db:
+    image: web-accessibility-harness-db
+    build:
+      context: ./db
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - mysql_data:/var/lib/mysql
+    networks:
+      - accessibility_net
+
+  qdrant:
+    image: web-accessibility-harness-qdrant
+    build:
+      context: ./qdrant
+    environment:
+      QDRANT__TELEMETRY_DISABLED: "true"
+    restart: unless-stopped
+    volumes:
+      - qdrant_data:/qdrant/storage
+    networks:
+      - accessibility_net
+
+
+volumes:
+  mysql_data:
+  qdrant_data:
+
+networks:
+  accessibility_net:
+    driver: bridge

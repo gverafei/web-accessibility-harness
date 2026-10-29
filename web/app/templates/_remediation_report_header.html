@@ -1,0 +1,55 @@
+{% from '_remediation_identity.html' import preservation_colors with context %}
+{% from '_report_heading.html' import report_heading %}
+{% from '_portable_export.html' import portable_export, csv_export with context %}
+{% set metadata %}<span>{{ run.title }}</span><small>{{ _('Started') }} {{ run.created_at }}</small>{% endset %}
+{% set tags %}
+      <span class="remediation-report-approach">{{ _('Zero-shot — single call') if run.execution_mode=='single_shot' else _(run.presentation_name) if run.presentation_name else _('Intervention approach') }}</span>
+      <span>{{ run.transformation_format|upper }}</span>
+      {% if not (run.get('generator_model', '').startswith('openai/') and run.get('model_presentation', {}).get('reasoning_effort') != 'none') %}<span>{{ _('Requested temperature') }} {{ '%.2f'|format(run.temperature|float) }}</span>{% endif %}
+      {% if run.execution_mode in ['regenerate_only','regenerate_refine'] %}<span>{{ _('Whole-page regeneration — single call') if run.execution_mode == 'regenerate_only' else _('Whole-page regeneration + localized refinement') }}</span>{% endif %}
+{% endset %}
+{% set actions %}
+  {% if run.status in ['accepted','completed_with_warnings','failed'] %}<div class="report-action-group"><span>{{ _('Export') }}</span><div>{{ csv_export(url_for('remediation.download_run_csv',run_id=run.id)) }}{{ portable_export(url_for('remediation.export_run',run_id=run.id)) }}<a class="btn btn-sm btn-outline-primary" href="{{ url_for('remediation.download_run_trace',run_id=run.id) }}">{{ _('Download technical JSON') }}</a></div></div>{% endif %}
+  {% if run.status == 'accepted' %}{% endif %}
+{% endset %}
+{% set kicker %}ATPGE · {{ _('Remediation report') }} #{{ run.id }}{% endset %}
+{{ report_heading(kicker, run.source_name or run.source_url, metadata, actions, tags, preservation_colors.get(run.presentation_priority,'#18529d')) }}
+{% if run.import_provenance_json %}<p class="text-muted small" role="note">{{ _('Imported remediation evidence. Costs and timestamps are historical; this import did not execute models or evaluators.') }}</p>{% endif %}
+{% set has_candidate=rejected_best or (report_candidate_available if report_candidate_available is defined else best) %}
+{% set error_text=(run.error_message or '')|lower %}
+{% if not run.axe_counting_policy %}<p class="text-muted small">{{ _("Axe scores exclude Best Practices. Historical acceptance statuses remain as originally recorded.") }}</p>{% endif %}
+{% if run.status == 'completed_with_warnings' and not run.error_message and not run.stop_notice and not (run.harness_outcome and run.harness_outcome.selected.original) %}
+<section class="alert alert-warning remediation-report-notice" role="note" aria-label="{{ _('Completed with warnings') }}">
+  <strong>{{ _('Completed with warnings') }}</strong>
+  {% set warnings=namespace(found=false) %}
+  <ul class="mb-2 mt-2">
+    {% if best and best.axe_violations is defined and best.axe_violations is not none and run.max_axe is defined and run.max_axe is not none and best.axe_violations > run.max_axe %}
+    {% set warnings.found=true %}<li>{{ _('Axe target not reached') }}: {{ best.axe_violations }} · {{ _('Required thresholds') }}: Axe ≤ {{ run.max_axe }}.</li>
+    {% endif %}
+    {% if best and best.lighthouse_score is defined and best.lighthouse_score is not none and run.min_lighthouse is defined and run.min_lighthouse is not none and best.lighthouse_score < run.min_lighthouse %}
+    {% set warnings.found=true %}<li>{{ _('Lighthouse target not reached') }}: {{ best.lighthouse_score }} · {{ _('Required thresholds') }}: Lighthouse ≥ {{ run.min_lighthouse }}.</li>
+    {% endif %}
+    {% if best and best.strategy is defined and best.strategy.content_gate and not best.strategy.content_gate.passed %}
+    {% set warnings.found=true %}<li>{{ _('Content preservation is below the reference levels. Review the retention measurements below.') }}</li>
+    {% endif %}
+    {% if not warnings.found %}<li>{{ run.progress_message or _('Review the iteration decisions below for the recorded warning.') }}</li>{% endif %}
+  </ul>
+  {% if has_candidate %}<p class="mb-0">{{ _('The best measured candidate remains available; the retained result is reported separately.') }}</p>{% endif %}
+</section>
+{% endif %}
+{% if run.stop_notice and run.status == 'completed_with_warnings' %}
+<section class="alert alert-warning remediation-report-notice" role="note">
+  <strong>{{ _('Resource limit reached') }}</strong>
+  <p class="mb-0">{{ run.stop_notice.message }}</p>
+</section>
+{% elif run.status == 'failed' or (run.error_message and run.status == 'completed_with_warnings') %}
+<section class="alert alert-danger remediation-report-error remediation-report-notice" role="alert">
+  <span class="remediation-report-error-icon" aria-hidden="true">!</span>
+  <div>
+    <strong>{{ _('Refinement interrupted; evaluated result retained') if has_candidate else _('Remediation stopped; no evaluated candidate available') }}</strong>
+    <p>{% if '402' in error_text %}{{ _('OpenRouter rejected the request because of insufficient credit or a billing limit (HTTP 402).') }}{% elif 'timeout' in error_text or 'timed out' in error_text %}{{ _('The API did not respond within the allowed time.') }}{% elif 'connection' in error_text or 'network' in error_text or 'name resolution' in error_text %}{{ _('A connection to the API could not be established. Check the network and service availability.') }}{% else %}{{ _('The process encountered an error and could not continue.') }}{% endif %}</p>
+    <p class="remediation-report-error-result">{{ _('The evaluated candidate remains available below; the interruption does not erase its results.') if has_candidate else _('No evaluated result can be returned. Resolve the error before starting another run.') }}</p>
+
+  </div>
+</section>
+{% endif %}

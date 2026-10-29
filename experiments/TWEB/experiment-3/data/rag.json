@@ -1,0 +1,351 @@
+[
+  {
+    "run_id": 1276,
+    "iteration": 1,
+    "retrieval_id": "record:2db63441f0f8b85c6b9822d34d1959cef6f0b034735d6575fcae391f46f6d6d7",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1277,
+    "iteration": 1,
+    "retrieval_id": "record:50b143e45578a147c603afbf9f084832b5e918a4cbc3eef784b72192ba97802a",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1277,
+    "iteration": 2,
+    "retrieval_id": "record:86a722042e68950f1912e0c7141b0dcc65a98449afae2a6fc7d1b80dc605a52b",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "599d7eee1c552e9c4d1afdd865a5051a131a829f35de36fb89508c5ff9aa359e",
+    "requested_rules": [
+      "color-contrast",
+      "link-name"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "5c8dbdde-bcea-5631-85fa-f5a4573521c3",
+      "142333f8-4128-5226-9165-32be85685ac1"
+    ]
+  },
+  {
+    "run_id": 1277,
+    "iteration": 3,
+    "retrieval_id": "record:2fc040ad89dc5ce55668f20d6bb3e50e25fd408609db430b48ac905e7fb66f4c",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "4bacef2f8267dc5acc4196a59d921050d1c4b2a1f966b2e31cc79696cef5e083",
+    "requested_rules": [
+      "link-name"
+    ],
+    "injected": [
+      "5c8dbdde-bcea-5631-85fa-f5a4573521c3",
+      "142333f8-4128-5226-9165-32be85685ac1"
+    ]
+  },
+  {
+    "run_id": 1277,
+    "iteration": 4,
+    "retrieval_id": "record:b970478a71fd447936730d311e1b6f692ced029e43922d315b2dcf12db4d49ab",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "7e7f79138372f4229a01d945945e1d3e6dcdb8e953ab236bda1bbb1e5b020132",
+    "requested_rules": [
+      "link-name"
+    ],
+    "injected": [
+      "5c8dbdde-bcea-5631-85fa-f5a4573521c3",
+      "142333f8-4128-5226-9165-32be85685ac1"
+    ]
+  },
+  {
+    "run_id": 1277,
+    "iteration": 5,
+    "retrieval_id": "record:8c77669c310ee4dc5c3c2fe0084fd3c37acebe67aa6c38b0a8cabe5ac9fcd833",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "1aa81faa3f2a6683a6512503f1e1bbc8d66bc12d654e7d15c4acc362deb74123",
+    "requested_rules": [
+      "link-name"
+    ],
+    "injected": [
+      "5c8dbdde-bcea-5631-85fa-f5a4573521c3",
+      "142333f8-4128-5226-9165-32be85685ac1"
+    ]
+  },
+  {
+    "run_id": 1278,
+    "iteration": 1,
+    "retrieval_id": "record:adc3d610e6edd4ce619a8cfdd188050d88d99305ee178fc0cb618f1983cae3d7",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1278,
+    "iteration": 2,
+    "retrieval_id": "record:9e85655aff6e2a72fd2a1331317ef0e063e0ea7e39445c7531c4d00b57a028b0",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "5f3d40e1607fc6c7fb64539586ee8124fe21d65e9a51b5bf8e405ba47f93f929",
+    "requested_rules": [],
+    "injected": []
+  },
+  {
+    "run_id": 1279,
+    "iteration": 1,
+    "retrieval_id": "record:df797ec35497ce05e1e674abcfa47a47e4cb831f519a60db09b95bd913d44ff6",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1274,
+    "iteration": 1,
+    "retrieval_id": "record:8be1d8aaff69bdcc311e13a4336fc2d4a95e46176fe5ba44021f1ca3d9083a76",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1275,
+    "iteration": 1,
+    "retrieval_id": "record:e569290b40488b4ac9540d02d1fb10a9fd44f535598dc4716c5146bd6b7752a4",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1272,
+    "iteration": 1,
+    "retrieval_id": "record:6ca0207bd28d47c467198ebdfcb4b2113c5243a725c1a7aaf5c73d36bbd1c002",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1273,
+    "iteration": 1,
+    "retrieval_id": "record:58022a45f61be920de75cee819d9608bca1a2640ff3e126023d2f196f3cfe0df",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1273,
+    "iteration": 2,
+    "retrieval_id": "record:54bedb7077784e375998837da128d7d46c5913c74da72babcda7a0ba035347af",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8510140a63f2055a864960d960120e8237b234354710bd77c8c31da520c811e1",
+    "requested_rules": [
+      "scrollable-region-focusable",
+      "target-size"
+    ],
+    "injected": [
+      "8d01ffa1-a0ed-5bc9-924e-63641a0a8bef",
+      "aca90513-cc34-5d3b-9e39-64aff369b8f0"
+    ]
+  },
+  {
+    "run_id": 1273,
+    "iteration": 3,
+    "retrieval_id": "record:c46b4bb218f93a3443fad6c31a268172f546daf45d133a604a495c51d4eb85be",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "cc26ec9b278550d5b3736ef7e1cd9e145ab77cb151ca2a84e270faf845750be8",
+    "requested_rules": [
+      "target-size"
+    ],
+    "injected": []
+  },
+  {
+    "run_id": 1269,
+    "iteration": 1,
+    "retrieval_id": "record:687e4fc1569c1dd3ca6ae7ba4a558afa0559170f16bbfecc7676d529222fae65",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1270,
+    "iteration": 1,
+    "retrieval_id": "record:d2a55ec0943c880e93036a32c6a29cbc508718e7b0335b68d40f8d82664caf76",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1270,
+    "iteration": 2,
+    "retrieval_id": "record:a9d93324c53a61d692fe6ecbfd66be812166bfbffbf54c0b1f72962ecfd1cc3a",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "801281e46655b6309048d538a2242dc125f7c47c0c655be670f21b242b3535fb",
+    "requested_rules": [
+      "target-size"
+    ],
+    "injected": []
+  },
+  {
+    "run_id": 1271,
+    "iteration": 1,
+    "retrieval_id": "record:88ac88f44470bc0ad72ffb0ab267f0f844afa230881fbfe008d9e130aea5f616",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  },
+  {
+    "run_id": 1266,
+    "iteration": 1,
+    "retrieval_id": "record:dfe856407068f2af1bbd001f1583da6302226efe9d48e8b329df8514097d1697",
+    "corpus_id": "record:021d074b4465480b362959fc9234f74626c43a105fec3757a0f2f7709ea4cbb9",
+    "corpus_hash": "2f09b0426d51a900b5efd701779cc7e83155a506dd6fd22561171b576e6008b8",
+    "method": "mapped",
+    "query_sha256": "8282bb16a538b00b1a7d54748d9890ca61a2f9c2c94bd17a8496d71e3680a527",
+    "requested_rules": [
+      "color-contrast",
+      "label"
+    ],
+    "injected": [
+      "2260fb9d-3990-5628-b73b-8f0ab1676ea4",
+      "5fcd90e3-b964-543d-8ff1-0a1cde2f3f4b",
+      "3090309d-bb12-5b7c-b759-27588b28fb59",
+      "2bfcc764-b63c-5a9d-8148-60e59acd84c4"
+    ]
+  }
+]

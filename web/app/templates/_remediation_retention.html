@@ -1,0 +1,14 @@
+{% if best and best.retention_summary and best.retention_summary.measures %}
+{% from '_section_heading.html' import section_heading %}
+<section class="card shadow-sm mb-4 retention-report" aria-labelledby="contentRetentionTitle"><div class="card-body">
+  {{ section_heading(3, _('Content retention'), heading_id='contentRetentionTitle') }}
+  <div class="table-responsive w-100">
+    <table class="table table-sm mb-0 retention-detail-table">
+      <thead><tr><th scope="col">{{ _('Content') }}</th><th scope="col">{{ _('Source') }}</th><th scope="col">{{ _('Candidate') }}</th><th scope="col">{{ _('Retained') }}</th></tr></thead>
+      <tbody>{% for row in best.retention_summary.rows %}
+        <tr><th scope="row">{{ _(row.label) }}</th><td>{{ '{:,}'.format(row.source) if row.source is not none else '—' }}</td><td{% if row.label == 'Banners and media' %} title="{{ _('Original banners and media found in the candidate') }}"{% endif %}>{{ '{:,}'.format(row.candidate) if row.candidate is not none else '—' }}</td><td>{{ '%.2f'|format(row.percent) ~ '%' if row.percent is not none else '—' }}</td></tr>
+      {% endfor %}</tbody>
+    </table>
+  </div>
+</div></section>
+{% endif %}

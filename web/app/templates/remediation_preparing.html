@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% from '_report_heading.html' import report_heading %}
+{% block title %}{{ _('Remediation in progress') }}{% endblock %}
+{% block body_class %}remediation-detail{% endblock %}
+{% block content %}
+{% set data=submission.data %}
+{% set title=data.capture_name or (data.urls[0] if data.urls|length == 1 else _('Remediation in progress')) %}
+{% set metadata %}{% for url in data.urls %}<span>{{ url }}</span>{% endfor %}{% endset %}
+{% set tags %}<span>{{ data.strategy }}</span><span>{{ _('Budget per URL (USD)') }}: {{ data['values'].max_cost_usd }}</span>{% endset %}
+{{ report_heading(_('Remediation report'), title, metadata, none, tags) }}
+
+<section class="preparation-activity" data-submission-status="{{ url_for('workspace.submission_status',ident=submission.id) }}"
+         data-status="{{ progress.status }}" data-phase="{{ progress.phase }}"
+         data-connection-message="{{ _('Waiting to reconnect. The current task will not be submitted again.') }}"
+         role="{{ 'alert' if progress.status == 'failed' else 'status' }}"
+         aria-live="polite" aria-busy="{{ 'false' if progress.status == 'failed' else 'true' }}">
+  <div class="harness-loader" aria-hidden="true"><span>&gt;_</span></div>
+  <h2>{{ _('Preparing remediation') }}</h2>
+  <p data-submission-message>{{ progress.message }}</p>
+  <ol class="preparation-steps" aria-label="{{ _('Execution stages') }}">
+    {% for phase,label in [('queued',_('Queued')),('capturing',_('Capture and baseline measurements')),('preparing',_('Prepare remediation'))] %}
+    <li data-preparation-step="{{ phase }}"{% if progress.phase == phase %} aria-current="step"{% endif %}>{{ label }}</li>
+    {% endfor %}
+  </ol>
+  <a class="history-action" href="{{ url_for('experiments.experiment_report',experiment_id=data.experiment_id) }}">{{ _('View capture report') }}</a>
+</section>
+{% endblock %}

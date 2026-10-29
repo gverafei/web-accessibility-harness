@@ -1,0 +1,24 @@
+{% from '_section_heading.html' import section_heading %}
+{% from '_button_icons.html' import save_icon %}{% set decision_editor=decision_editor|default(false) %}{% set catalog=catalog|default([]) %}{% set decision_catalog=decision_catalog|default([]) %}
+<section class="mb-4 model-catalog-editor" id="modelCatalogEditor" data-kind="{{ 'decisions' if decision_editor else 'generative' }}" data-endpoint="{{ url_for('model_catalog.get_decision_catalog' if decision_editor else 'model_catalog.get_catalog') }}">
+  <div class="model-catalog-content">
+    {{ section_heading(1, _('Decision models') if decision_editor else _('Generative models')) }}
+    <div class="settings-toolbar">
+      <p class="settings-toolbar-description text-muted mb-0">{{ _('Choose decision models and their order.') if decision_editor else _('Choose the models, reasoning settings, colors and order offered by the model slider. Existing runs keep their frozen identities.') }}</p>
+      <div class="settings-toolbar-actions d-flex flex-wrap align-items-center justify-content-end gap-2">
+        <button type="button" class="btn btn-outline-secondary btn-sm text-nowrap" id="discoverModelsButton"><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5v14M5 12h14"/></svg>{{ _('Add model from OpenRouter') }}</button>
+        <button type="button" id="saveModelsButton" class="btn btn-primary btn-sm text-nowrap">{{ save_icon() }}{{ _('Save model catalogue') }}</button>
+      </div>
+    </div>
+    <span class="model-catalog-status mb-2" role="status" aria-live="polite" id="modelCatalogStatus"></span>
+    <div class="table-responsive"><table class="table align-middle model-catalog-table"><thead><tr><th>{{ _('Position') }}</th><th>{{ _('Model') }}</th>{% if not decision_editor %}<th>{{ _('Reasoning') }}</th><th>{{ _('Color') }}</th>{% endif %}<th>{{ _('Input context (tokens)') }}</th><th>{{ _('Maximum output (tokens)') }}</th><th>{{ _('Enabled') }}</th><th>{{ _('Default') }}</th><th>{{ _('Actions') }}</th></tr></thead><tbody id="modelCatalogRows"></tbody></table></div>
+    <div class="model-provider-picker mt-3 border rounded p-3" id="modelProviderPicker" hidden>
+      <div class="model-provider-search-row"><label class="form-label" for="providerModelSearch">{{ _('Search provider models') }}</label><div class="model-provider-search-controls"><input type="search" id="providerModelSearch" class="form-control" placeholder="{{ _('Search by name, provider or model ID') }}"><button type="button" class="btn btn-outline-secondary" id="closeProviderPicker">{{ _('Close') }}</button></div></div>
+      <p id="providerModelStatus" class="form-text" role="status" aria-live="polite"></p>
+      <p class="form-text">{{ _('Decision models with image support and published token limits.') if decision_editor else _('Compatible text and JSON models. Screenshot verification requires vision.') }}</p>
+      <div id="providerModelResults" class="model-provider-results"></div>
+    </div>
+  </div>
+</section>
+<script type="application/json" id="initialModelChoices">{{ (decision_catalog if decision_editor else catalog)|tojson }}</script>
+<script src="{{ url_for('static', filename='js/model_catalog_settings.js', v='20261016-model-reasoning') }}" defer></script>

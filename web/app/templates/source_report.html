@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% from '_summary_metric.html' import metric %}
+{% from '_report_heading.html' import report_heading %}
+{% from '_remediation_preview.html' import capture_preview with context %}
+{% block title %}{{ _('Capture #%(id)s',id=experiment.id) }}{% endblock %}
+{% block body_class %}capture-report{% endblock %}
+{% block extra_head %}<link rel="stylesheet" href="{{ url_for('static',filename='css/capture_report.css',v='20261028-report') }}">{% endblock %}
+{% block content %}
+{% set metadata %}<span>{{ _('Capture #%(id)s',id=experiment.id) }} · {{ _({'completed':'Completed','running':'Running','queued':'Queued','failed':'Failed'}.get(experiment.status,experiment.status)) }}</span><small>{{ experiment.created_at }}</small>{% endset %}
+{% set actions %}<div class="report-action-group"><a class="btn btn-sm btn-outline-primary" href="{{ url_for('experiments.download_experiment_csv',experiment_id=experiment.id) }}">{{ _('Download CSV') }}</a><a class="btn btn-sm btn-outline-primary" href="{{ url_for('experiments.download_experiment_json',experiment_id=experiment.id) }}">{{ _('Export data') }}</a></div>{% endset %}
+{{ report_heading(_('Capture report'),experiment.title,metadata,actions) }}
+<div class="summary-metrics metric-grid">
+  {{ metric(_('Completed URLs'),summary.completed ~ ' / ' ~ summary.total) }}
+  {{ metric(_('Axe issue instances'),summary.axe_instances if summary.axe_instances is not none else '—') }}
+  {{ metric(_('Average Lighthouse'),('%.1f'|format(summary.lighthouse_mean)) if summary.lighthouse_mean is not none else '—') }}
+  {{ metric(_('Total run time'),summary.seconds|elapsed_time) }}
+</div>
+{% for result in results %}
+<section class="capture-result" id="source-{{ result.id }}">
+  <h2><a href="{{ result.url }}" target="_blank" rel="noopener">{{ result.url }}</a></h2>
+  <p class="text-muted">{{ _('Record') }} #{{ result.id }} · {{ _({'completed':'Completed','running':'Running','queued':'Queued','failed':'Failed'}.get(result.status,result.status)) }}{% if result.evaluated_at %} · {{ result.evaluated_at }}{% endif %}</p>
+  <div class="summary-metrics metric-grid capture-measurements">
+    {{ metric('Axe',result.axe_wcag_violations if result.axe_wcag_violations is not none else '—') }}
+    {{ metric('Lighthouse',result.lighthouse_score if result.lighthouse_score is not none else '—') }}
+    {{ metric(_('DOM nodes'),result.dom_nodes if result.dom_nodes is defined else '—') }}
+    {{ metric(_('Images'),result.images if result.images is defined else '—') }}
+    {{ metric(_('Links'),result.links if result.links is defined else '—') }}
+  </div>
+  {{ capture_preview(_('Acquired'),url_for('experiments.experiment_screenshot',experiment_id=experiment.id,result_id=result.id) if result.screenshot_path else none,url_for('experiments.source_page',experiment_id=experiment.id,result_id=result.id) if result.source_snapshot_path else none,_('Saved capture'),_('Open saved page')) }}
+  <div class="capture-visual-report">
+    <h3>{{ _('Automatic visual validation') }}</h3>
+    {% set visual=result.report.visual %}
+    {% if visual %}<strong>{{ _({'admitted':'Accepted','rejected':'Not accepted','review_required':'Review required'}.get(visual.status,'Not recorded')) }}</strong>{% if visual.rationale %}<p>{{ visual.rationale }}</p>{% endif %}
+    {% else %}<p>{{ _('No acquisition visual verdict was recorded.') }}</p>{% endif %}
+  </div>
+  <details class="capture-findings"><summary>{{ _('Axe findings') }} · {{ result.report.axe_findings|length }} {{ _('rules') }}</summary>
+    <ul>{% for finding in result.report.axe_findings %}<li><strong>{{ finding.rule }}</strong> · {{ finding.description }}<p>{{ _('Instances') }}: {{ finding.instances }}{% if finding.impact %} · {{ _('Impact') }}: {{ _(finding.impact) }}{% endif %}{% if finding.criteria %} · WCAG {{ finding.criteria|join(', ') }}{% endif %}</p></li>{% else %}<li>{{ _('No recorded findings are available for this section.') }}</li>{% endfor %}</ul>
+  </details>
+  <details class="capture-findings"><summary>{{ _('Lighthouse findings') }} · {{ result.report.lighthouse_findings|length }}</summary>
+    <ul>{% for finding in result.report.lighthouse_findings %}<li><strong>{{ finding.title }}</strong></li>{% else %}<li>{{ _('No recorded findings are available for this section.') }}</li>{% endfor %}</ul>
+  </details>
+  <details class="capture-findings"><summary>{{ _('Capture evidence') }}</summary>
+    <dl class="capture-inventory">{% for key,label in [('page_title','Page title'),('language_declared','Language'),('headings','Headings'),('buttons','Buttons'),('forms','Forms'),('inputs','Inputs'),('images_without_alt','Images without alternative text'),('execution_seconds','Execution time (s)')] %}{% if result[key] is defined and result[key] is not none %}<div><dt>{{ _(label) }}</dt><dd>{{ result[key] }}</dd></div>{% endif %}{% endfor %}</dl>
+    <div class="capture-evidence-links">{% for tool,key,label in [('axe','axe_raw_path','Axe JSON'),('lighthouse','lighthouse_raw_path','Lighthouse JSON'),('response','response_source_path','Response HTML'),('rendered','source_snapshot_path','Rendered DOM')] %}{% if result[key] %}<a class="btn btn-sm btn-outline-primary" href="{{ url_for('experiments.download_raw_result',experiment_id=experiment.id,result_id=result.id,tool=tool) }}">{{ _(label) }}</a>{% endif %}{% endfor %}</div>
+  </details>
+  {% if result.error_message %}<p class="alert alert-warning">{{ result.error_message }}</p>{% endif %}
+</section>
+{% else %}<p role="status">{{ _('Capture is queued. The worker will process the URLs in the background.') }}</p>{% endfor %}
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='js/remediation_detail.js',v='20261028-capture-previews') }}"></script>{% endblock %}

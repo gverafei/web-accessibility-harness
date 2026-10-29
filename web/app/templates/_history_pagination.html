@@ -1,0 +1,5 @@
+<nav class="measurement-pagination" data-history-pagination{% if history_standard_params|default(false) %} data-standard-params="true"{% endif %} data-table="{{ history_table }}" data-input="{{ history_input }}" aria-label="{{ _('Pagination') }}">
+<label>{{ _('Rows per page') }} <select class="form-select form-select-sm" aria-label="{{ _('Rows per page') }}" title="{{ _('Rows per page') }}"><option selected>5</option><option>10</option><option>25</option><option>50</option><option>100</option><option>200</option></select></label>
+<span class="pagination-actions">{% for action,label,path in [('first',_('First page'),'M18 6l-6 6 6 6M6 5v14'),('previous',_('Previous page'),'M15 6l-6 6 6 6'),('next',_('Next page'),'M9 6l6 6-6 6'),('last',_('Last page'),'M6 6l6 6-6 6M18 5v14')] %}<button type="button" class="btn btn-outline-secondary" data-page-action="{{ action }}" aria-label="{{ label }}" title="{{ label }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="{{ path }}"/></svg></button>{% endfor %}</span>
+<span class="measurement-pagination-status" aria-live="polite"></span>
+</nav>

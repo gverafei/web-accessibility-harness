@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+{% from 'harness/macros.html' import token with context %}
+{% from '_button_icons.html' import save_icon %}
+{% block title %}{{ _('Models') }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/configuration.css') }}">
+{% endblock %}
+{% block content %}
+<header class="app-page-heading">
+  <h1>{{ _('Models') }}</h1>
+  <p>{{ _('Choose the models available for generation, decisions and local execution.') }}</p>
+</header>
+<nav class="workspace-tabs" aria-label="{{ _('Model catalogues') }}">
+  {% for key, label in [('generative', 'Generative models'), ('decisions', 'Decision models'), ('local', 'Local LLM (Ollama)')] %}
+  <a href="{{ url_for('components.models', tab=key) }}"{% if tab == key %} aria-current="page"{% endif %}>{{ _(label) }}</a>
+  {% endfor %}
+</nav>
+{% if tab != 'local' %}
+  {% include '_model_catalog_editor.html' %}
+{% else %}
+<form class="harness-panel" method="post" action="{{ url_for('components.local_models') }}" data-guarded>
+  {{ token() }}
+  <div class="d-flex gap-2 flex-wrap justify-content-end mb-3">
+    <button class="btn btn-outline-secondary" type="button" id="refreshOllamaModels"
+      data-models-url="{{ url_for('experiments.ollama_models') }}"
+      data-vision-label="{{ _('Text and images') }}" data-text-label="{{ _('Text only') }}"
+      data-unverified-label="{{ _('Capabilities not verified') }}"
+      data-success="{{ _('Installed models loaded.') }}" data-empty="{{ _('No installed models found.') }}"
+      data-error="{{ _('Could not load installed models.') }}">{{ _('Refresh installed models') }}</button>
+    <button class="btn btn-primary" type="submit">{{ save_icon() }}{{ _('Save model settings') }}</button>
+  </div>
+  <div class="harness-grid">
+    <label class="harness-field" for="ollama_base_url">
+      <span class="field-label">{{ _('Ollama server address') }}</span>
+      <input class="form-control" id="ollama_base_url" name="ollama_base_url" value="{{ settings.ollama_base_url }}" placeholder="http://host.docker.internal:11434">
+    </label>
+    <label class="harness-field" for="ollama_model">
+      <span class="field-label">{{ _('Installed local model') }}</span>
+      <select class="form-select" id="ollama_model" name="ollama_model">
+        <option value="">{{ _('Not configured') }}</option>
+        {% if settings.ollama_model %}<option value="{{ settings.ollama_model }}" selected>{{ settings.ollama_model }}</option>{% endif %}
+      </select>
+    </label>
+  </div>
+  <p class="form-text">{{ _('Refresh the installed model list to choose a model. Clear both fields to disable the local connection.') }}</p>
+  <p id="ollamaModelsStatus" class="form-text" role="status" aria-live="polite"></p>
+</form>
+{% endif %}
+{% endblock %}
+{% block scripts %}
+{% if tab == 'local' %}<script src="{{ url_for('static', filename='js/local_llm_settings.js') }}"></script>{% endif %}
+{% endblock %}

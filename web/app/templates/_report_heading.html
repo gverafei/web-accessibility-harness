@@ -1,0 +1,11 @@
+{% macro report_heading(kicker, title, metadata, actions, tags=none, accent='#2f9e66') %}
+<header class="report-heading remediation-report-heading" style="--approach-color:{{ accent }}">
+  <div class="remediation-report-heading-main">
+    <span class="remediation-report-kicker">{{ kicker }}</span>
+    <h1>{{ title }}</h1>
+    <div class="remediation-report-run-name">{{ metadata }}</div>
+    {% if tags %}<div class="remediation-report-tags">{{ tags }}</div>{% endif %}
+  </div>
+  {% if actions %}<div class="report-heading-actions">{{ actions }}</div>{% endif %}
+</header>
+{% endmacro %}

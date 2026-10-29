@@ -1,0 +1,5 @@
+{% macro export_icon(compact=false) %}<svg{% if not compact %} class="button-icon"{% endif %} viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>{% endmacro %}
+{% macro csv_export(href) %}<a href="{{ href }}" class="btn btn-primary" download>{{ export_icon() }}{{ _('Download CSV') }}</a>{% endmacro %}
+{% macro portable_export(href, compact=false) %}
+<a href="{{ href }}" class="{{ 'btn btn-sm experiment-action experiment-action-export history-action' if compact else 'btn btn-primary' }} warp-export" title="{{ _('Export data') }}" aria-label="{{ _('Export data') }}" download>{{ export_icon(compact) }}<span>{{ _('Export data') }}</span></a>
+{% endmacro %}

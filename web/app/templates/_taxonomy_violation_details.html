@@ -1,0 +1,6 @@
+<div class="table-responsive mt-3"><table class="table taxonomy-violation-table">
+<caption>{{ _('Detected violations by taxonomy type and detector') }}</caption>
+<thead><tr><th>{{ _('Category') }}</th><th>{{ _('Taxonomy violation') }}</th><th>{{ _('Detector') }}</th><th>{{ _('Before remediation') }}</th>{% if paired %}<th>{{ _('After remediation') }}</th>{% endif %}<th>{{ _('Affected elements') }}</th></tr></thead>
+<tbody>{% for row in detail.rows %}<tr><td>{{ _(row.category) }}</td><th scope="row"><a href="{{ url_for('taxonomy.index',q=row.type) }}#{{ row.type }}"><code>{{ row.type }}</code></a></th><td>{{ _(row.detector) }}</td><td>{{ row.before }}</td>{% if paired %}<td>{{ row.after }}</td>{% endif %}<td><details><summary>{{ _('View evidence') }}</summary><ul>{% for evidence in row.evidence %}<li><strong>{{ _('Before remediation') if evidence.phase=='original' else _('After remediation') }}</strong>: <code>{{ evidence.target }}</code>{% if evidence.text %}<p>{{ evidence.text }}</p>{% endif %}</li>{% endfor %}</ul></details></td></tr>{% endfor %}</tbody>
+</table></div>
+{% if detail.missing %}<p>{{ _('Some saved detector evidence is unavailable. Counts remain historical.') }}</p>{% endif %}

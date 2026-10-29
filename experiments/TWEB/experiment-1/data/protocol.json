@@ -1,0 +1,22 @@
+{
+  "scope": "Experiment 1, evidence package for the thirty manuscript runs",
+  "cohort_source_sha256": "313c07a458a0cffdcdfc3aa4c4409feae754a0f82e6a355f792715c2cff76bb9",
+  "sources": 5,
+  "runs": 30,
+  "evaluated_versions": 116,
+  "repair_worker": "GPT-Luna 6 high",
+  "max_proposals": 10,
+  "max_call_usd": 5,
+  "max_run_usd": 5,
+  "time_reference_seconds": 1800,
+  "targets": {
+    "max_axe": 5,
+    "min_lighthouse": 90
+  },
+  "cost_allocation": "Equal allocation of each source assessment across its six selected runs",
+  "images": "480px maximum viewport thumbnails derived from the exact saved screenshot artifacts",
+  "source_integrity_checks": {
+    "records": 3015,
+    "blob_reads": 35
+  }
+}

@@ -1,0 +1,247 @@
+{
+  "format_version": 3,
+  "input_package": "experiment-3",
+  "experiment": 3,
+  "inputs": {
+    "data/sources.csv": "0be04fecbd09f6c3024d6127a380e5e1f2e119a516e6d6ac18187fe771c7e3ff",
+    "data/runs.csv": "da1aa3c94946f04c34d06357a31d6427ef54818125475e6e4bd4e33663f4080d"
+  },
+  "code": {
+    "experiment-3/plot_results.py": "cefee92b4df7ef6348da76c94c9268f70cc4d774845ea5af377801fada83bac4",
+    "plotting/__init__.py": "0d224e07782905955aeffd618c4e827daf87719b2174becf1d54d317470784bc",
+    "plotting/check_figure_resolution.py": "b3d1d25491ebe05a55d10e33887ddc4c7c368cd625b4f6131b5b94a82d2757c7",
+    "plotting/evidence.py": "fe76463b31039d7a45bef0cf5f50d871e9448c7267daa84d9dae4fe0e90a99f4",
+    "plotting/fixed_outcomes.py": "25efed0e6295a15b05bff6ebea260e67e03c75aeb825c256080fd712c345f27e",
+    "plotting/iteration_returns.py": "83378c45d40131e2eef3dd694cd8ee7fd80d339e1c839f9454efda6f8141fbd3",
+    "plotting/model_families.py": "6fb11a966f9a217a929737babd4b296e02cc248f2c1ae765cc0344021eec927b",
+    "plotting/model_plot_style.py": "99f4b142dff2718bd212edee443472c124a81199ed2eb72090bc5a0bfa9059ac",
+    "plotting/repeatability.py": "62c8dba1e6fce44ab8ca5585f1314d4520000feeefb7ba425563e7c15a13c4fe",
+    "plotting/resource_shares.py": "923c9adc118b8834c19c103858ab99c705b61e3173279ae026c7f3f6f9b9d4ac",
+    "plotting/retention_cost.py": "2c4cb52d1384062a4b92b09b0acd54055e61e85cae3f43332c731a333064b746",
+    "plotting/taxonomy.py": "ac73e346068fc3163c150f567b83080198b32cb9b0c675c561aa3c3a65cbb229",
+    "plotting/tradeoffs.py": "7cb387d07664a446ec5479cf90ad7dbc543f702965ffec01692a8f767f03de19"
+  },
+  "software": {
+    "python": "3.13.2",
+    "matplotlib": "3.10.6",
+    "numpy": "2.3.3",
+    "pillow": "11.3.0"
+  },
+  "figures": [
+    {
+      "file": "figure-09-time-worker-family-tradeoff.png",
+      "figure_number": 9,
+      "paper_label": "fig:worker-family-tradeoff",
+      "sha256": "58bff1e86b19f470eef95afde08fc61aa0ecf5d2540cd7413b9b63b9bfa2cbbe",
+      "width_px": 8228,
+      "height_px": 4722,
+      "metadata_dpi": [
+        1199.9976,
+        1199.9976
+      ],
+      "effective_dpi_at_7_inches": 1175.4285714285713,
+      "max_print_width_inches_at_1000_dpi": 8.228,
+      "resampled": false,
+      "pixel_sha256": "b8dee4e81718bf3e6bcc5e6f65a7205f0379ee16b50d67a2066f6e482a875545"
+    }
+  ],
+  "statistics": {
+    "points": [
+      {
+        "profile": "luna-light",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Luna 6",
+        "color": "#215F97",
+        "marker": "o",
+        "x": 0.050501625,
+        "y": 30.073333333333334
+      },
+      {
+        "profile": "luna-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Luna 6",
+        "color": "#215F97",
+        "marker": "o",
+        "x": 0.1674425,
+        "y": 52.953333333333326
+      },
+      {
+        "profile": "haiku-low",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Haiku 5.5",
+        "color": "#B87316",
+        "marker": "o",
+        "x": 0.201574425,
+        "y": 54.88999999999999
+      },
+      {
+        "profile": "haiku-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Haiku 5.5",
+        "color": "#B87316",
+        "marker": "o",
+        "x": 0.261640375,
+        "y": 76.35666666666667
+      },
+      {
+        "profile": "sol-light",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Sol 6.1",
+        "color": "#D4A900",
+        "marker": "o",
+        "x": 0.250241275,
+        "y": 37.00666666666667
+      },
+      {
+        "profile": "sol-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Sol 6.1",
+        "color": "#D4A900",
+        "marker": "o",
+        "x": 0.3118009,
+        "y": 54.916666666666664
+      },
+      {
+        "profile": "sonnet-light",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Sonnet 5.5",
+        "color": "#E2673D",
+        "marker": "o",
+        "x": 0.5045928,
+        "y": 42.21333333333334
+      },
+      {
+        "profile": "sonnet-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Sonnet 5.5",
+        "color": "#E2673D",
+        "marker": "o",
+        "x": 0.9213354,
+        "y": 83.18333333333334
+      },
+      {
+        "profile": "astra-light",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Astra 6",
+        "color": "#8996A8",
+        "marker": "o",
+        "x": 1.017390075,
+        "y": 25.84
+      },
+      {
+        "profile": "astra-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Astra 6",
+        "color": "#8996A8",
+        "marker": "o",
+        "x": 1.6910748,
+        "y": 50.663333333333334
+      },
+      {
+        "profile": "opus-light",
+        "metric": "content_retention",
+        "label": "light",
+        "model_label": "Opus 5.5",
+        "color": "#C73345",
+        "marker": "o",
+        "x": 1.171463075,
+        "y": 77.08666666666667
+      },
+      {
+        "profile": "opus-high",
+        "metric": "content_retention",
+        "label": "high",
+        "model_label": "Opus 5.5",
+        "color": "#C73345",
+        "marker": "o",
+        "x": 1.379076375,
+        "y": 85.30333333333333
+      }
+    ],
+    "connections": [
+      [
+        "luna-light",
+        "luna-high"
+      ],
+      [
+        "haiku-low",
+        "haiku-high"
+      ],
+      [
+        "sol-light",
+        "sol-high"
+      ],
+      [
+        "astra-light",
+        "astra-high"
+      ],
+      [
+        "opus-light",
+        "opus-high"
+      ],
+      [
+        "sonnet-light",
+        "sonnet-high"
+      ]
+    ],
+    "quadrants": {
+      "retention": {
+        "x_boundary": 0.3595610657454447,
+        "y_boundary": 50.0,
+        "preferred": "upper-left"
+      }
+    },
+    "model_legend": [
+      {
+        "label": "Luna 6",
+        "colors": [
+          "#215F97"
+        ]
+      },
+      {
+        "label": "Haiku 5.5",
+        "colors": [
+          "#B87316"
+        ]
+      },
+      {
+        "label": "Sol 6.1",
+        "colors": [
+          "#D4A900"
+        ]
+      },
+      {
+        "label": "Sonnet 5.5",
+        "colors": [
+          "#E2673D"
+        ]
+      },
+      {
+        "label": "Astra 6",
+        "colors": [
+          "#8996A8"
+        ]
+      },
+      {
+        "label": "Opus 5.5",
+        "colors": [
+          "#C73345"
+        ]
+      }
+    ],
+    "selected_configurations": 12
+  },
+  "input_evidence_unchanged": true,
+  "provider_calls": 0,
+  "database_connections": 0
+}

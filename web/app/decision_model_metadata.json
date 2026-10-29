@@ -1,0 +1,406 @@
+{
+  "upstage/solar-decide-flash": {
+    "model": "upstage/solar-decide-flash",
+    "label": "Upstage: Solar Decide Flash",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 524288,
+    "max_completion_tokens": 471859,
+    "input_usd_per_million": 0.05,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "upstage",
+    "response_model": "upstage/solar-decide-flash-20261008"
+  },
+  "perplexity/pplx-decider-v1.1-27b": {
+    "model": "perplexity/pplx-decider-v1.1-27b",
+    "label": "Perplexity: Decider V1.1 27B",
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 262144,
+    "max_completion_tokens": 235929,
+    "input_usd_per_million": 0.02,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "perplexity",
+    "response_model": "perplexity/pplx-decider-v1.1-27b-20261006"
+  },
+  "openai/gpt-6-luna-decisions": {
+    "model": "openai/gpt-6-luna-decisions",
+    "label": "OpenAI: GPT-6 Luna Decisions",
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 1050000,
+    "max_completion_tokens": 945000,
+    "input_usd_per_million": 0.1,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "openai",
+    "response_model": "openai/gpt-6-luna-decisions-20261006"
+  },
+  "liquid/d1": {
+    "model": "liquid/d1",
+    "label": "LiquidAI: d1",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 65536,
+    "max_completion_tokens": 58982,
+    "input_usd_per_million": 0.04,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "liquid",
+    "response_model": "liquid/d1-20260930"
+  },
+  "cloudflare/clef-flash": {
+    "model": "cloudflare/clef-flash",
+    "label": "Cloudflare: Clef Flash",
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 65536,
+    "max_completion_tokens": 14745,
+    "input_usd_per_million": 0.021,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "cloudflare",
+    "response_model": "cloudflare/clef-flash"
+  },
+  "cloudflare/clef": {
+    "model": "cloudflare/clef",
+    "label": "Cloudflare: Clef",
+    "input_modalities": [
+      "text",
+      "image"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 65536,
+    "max_completion_tokens": 58982,
+    "input_usd_per_million": 0.24,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "cloudflare",
+    "response_model": "cloudflare/clef"
+  },
+  "togethercomputer/tev1-4b-experimental": {
+    "model": "togethercomputer/tev1-4b-experimental",
+    "label": "Together: Tev1 4B Experimental",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 32768,
+    "max_completion_tokens": 8,
+    "input_usd_per_million": 0.042,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "togethercomputer",
+    "response_model": "togethercomputer/tev1-4b-experimental-20260923"
+  },
+  "inception/mercury-decide": {
+    "model": "inception/mercury-decide",
+    "label": "Inception: Mercury Decide",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 65536,
+    "max_completion_tokens": 58982,
+    "input_usd_per_million": 0.02,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "inception",
+    "response_model": "inception/mercury-decide-20260930"
+  },
+  "inception/mercury-decide:free": {
+    "model": "inception/mercury-decide:free",
+    "label": "Inception: Mercury Decide (free)",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 65536,
+    "max_completion_tokens": 58982,
+    "input_usd_per_million": 0.0,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "inception",
+    "response_model": "inception/mercury-decide-20260930"
+  },
+  "upstage/solar-decide": {
+    "model": "upstage/solar-decide",
+    "label": "Upstage: Solar Decide",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 524288,
+    "max_completion_tokens": 471859,
+    "input_usd_per_million": 0.05,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "upstage",
+    "response_model": "upstage/solar-decide-20260928"
+  },
+  "respan/span-01": {
+    "model": "respan/span-01",
+    "label": "Respan: Span-01",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 0,
+    "max_completion_tokens": 0,
+    "input_usd_per_million": 0.02,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "respan",
+    "response_model": "respan/span-01-20260925"
+  },
+  "respan/span-01-lite": {
+    "model": "respan/span-01-lite",
+    "label": "Respan: Span-01 Lite",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 0,
+    "max_completion_tokens": 0,
+    "input_usd_per_million": 0.0,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "respan",
+    "response_model": "respan/span-01-lite-20260925"
+  },
+  "respan/span-01-lite:free": {
+    "model": "respan/span-01-lite:free",
+    "label": "Respan: Span-01 Lite (free)",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 0,
+    "max_completion_tokens": 0,
+    "input_usd_per_million": 0.0,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "respan",
+    "response_model": "respan/span-01-lite-20260925"
+  },
+  "jaredpalmer/kev-4b": {
+    "model": "jaredpalmer/kev-4b",
+    "label": "Jared Palmer: Kev 4B",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 8192,
+    "max_completion_tokens": 7372,
+    "input_usd_per_million": 0.042,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "jaredpalmer",
+    "response_model": "jaredpalmer/kev-4b-20260924"
+  },
+  "~typesafe/jev-latest": {
+    "model": "~typesafe/jev-latest",
+    "label": "TypeSafe: Jev Latest",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 64000,
+    "max_completion_tokens": 57600,
+    "input_usd_per_million": 0.042,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "~typesafe",
+    "response_model": "~typesafe/jev-latest"
+  },
+  "typesafe/jev-1.13": {
+    "model": "typesafe/jev-1.13",
+    "label": "TypeSafe: Jev 1.13",
+    "input_modalities": [
+      "text"
+    ],
+    "output_modalities": [
+      "decisions"
+    ],
+    "vision": false,
+    "temperature_supported": false,
+    "reasoning_supported": false,
+    "supported_parameters": [],
+    "context_length": 64000,
+    "max_completion_tokens": 57600,
+    "input_usd_per_million": 0.042,
+    "output_usd_per_million": 0.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions (2026-10-08T23:04:23.442241+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models?output_modalities=decisions",
+    "metadata_checked_at": "2026-10-08T23:04:23.442241+00:00",
+    "pricing_overrides": [],
+    "provider": "openrouter",
+    "family": "typesafe",
+    "response_model": "typesafe/jev-1.13-20260917"
+  }
+}
