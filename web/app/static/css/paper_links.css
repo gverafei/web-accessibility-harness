@@ -1,0 +1,83 @@
+/* Reviewer manuscripts share the shell's theme, controls and keyboard focus. */
+html[data-theme] .app-topbar {
+    height: auto;
+    min-height: 40px;
+    padding-block: .2rem;
+}
+
+.paper-links {
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    min-width: 0;
+    margin-inline: auto;
+}
+
+.paper-link {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: .45rem;
+    min-height: 28px;
+    padding: .2rem .6rem;
+    border: 1px solid var(--ui-control-line);
+    border-radius: 5px;
+    background: var(--ui-surface);
+    color: var(--ui-blue);
+    font-size: .75rem;
+    font-weight: 600;
+    line-height: 1.35;
+    text-decoration: none;
+}
+
+.paper-link:hover {
+    border-color: var(--ui-blue);
+    background: color-mix(in srgb, var(--ui-blue) 8%, var(--ui-surface));
+    color: var(--ui-blue);
+}
+
+.paper-link:focus-visible {
+    outline: 2px solid var(--ui-blue);
+    outline-offset: 2px;
+}
+
+.paper-pdf-icon {
+    flex: 0 0 18px;
+    width: 18px;
+    height: 21px;
+    color: var(--ui-red);
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 1.3;
+    stroke-linejoin: round;
+}
+
+.paper-pdf-icon text {
+    fill: currentColor;
+    stroke: none;
+    font: 700 7px var(--ui-font);
+}
+
+@media (max-width: 700px) {
+    html[data-theme] .app-topbar {
+        flex-wrap: wrap;
+    }
+
+    .app-topbar > .nav-utilities {
+        margin-left: auto;
+    }
+
+    .paper-links {
+        order: 3;
+        flex-basis: 100%;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .paper-link {
+        justify-content: flex-start;
+    }
+}

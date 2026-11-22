@@ -1,0 +1,33 @@
+{
+  "schema": "a11yharness/1",
+  "version": "page-guided-controller-v4",
+  "authority": "deterministic controller",
+  "workers": {
+    "P1": "minimal attributes, adjunct labels and scoped accessibility CSS",
+    "P2": "bounded semantic subtree repairs and verified root-cause dependency graph",
+    "P3": "new accessible HTML design from source purpose, description, category, URL and capture; no imposed template",
+    "P4": "new accessible HTML design from verified Markdown and contextual reference evidence; no imposed template",
+    "P5": "closed selection among admissible P1-P4/model actions or stop"
+  },
+  "judges": {
+    "version": "retained-taxonomy-assessment-v18",
+    "status": "integrated; development plumbing and coverage checked; expert agreement unvalidated",
+    "purpose": "supplemental outcomes, never acceptance thresholds",
+    "agreement_with_experts": "not established"
+  },
+  "selection": {
+    "controller": "Decisions Luna",
+    "context": "page profile, measured within-run feedback and remaining resources",
+    "cross_page_weight_training": false,
+    "skill_updates": "evidence-backed revision, passed tests and explicit new runtime freeze"
+  },
+  "wire_ids": {
+    "P1": 1,
+    "P2": 3,
+    "P3": 4,
+    "P4": 5,
+    "P5": 6
+  },
+  "preservation": "Measured source content/control/DOM/layout fidelity for all levels; not an acceptance gate. P1/P2 generator scope remains conservative/coordinated; P3/P4 design is free.",
+  "acceptance": "Current diagnostic mode measures imperfect proposals and selects the best actual remediation. Usability, visual review and fidelity provide feedback and reported outcomes. Typed operations, source identity, monetary limits and the attempt cap remain deterministic."
+}

@@ -1,0 +1,21 @@
+{% set runtime=item.strategy.agentic_runtime %}
+<details class="strategy-details runtime-evidence" data-report-panel="runtime">
+  <summary>{{ _("Agent runtime evidence") }} · {{ item.runtime_skills|length }} {{ _("skills") }} · {{ item.runtime_tools|length }} {{ _("tool calls") }}</summary>
+  <div class="report-output"><div class="runtime-evidence-grid">
+    <section><h3>{{ _("Procedures followed") }}</h3>
+      {% for skill in item.runtime_skills %}<p><strong>{{ skill.id|replace('-',' ')|capitalize }}</strong><small>{{ _(skill.description) }}</small></p>
+      {% else %}<p>{{ _("No agent skill was activated for this scientific baseline.") }}</p>{% endfor %}
+    </section>
+    <section><h3>{{ _("Software tools executed") }}</h3>
+      {% for call in item.runtime_tools %}<p><strong>{{ call.tool|replace('_',' ')|capitalize }}</strong><span class="runtime-call-status runtime-call-{{ call.status }}">{{ _(call.status) }}</span><small>{{ _(call.description) }} · {{ '%.3f'|format(call.seconds|float) }} s</small></p>
+      {% else %}<p>{{ _("No tool call was recorded.") }}</p>{% endfor %}
+    </section>
+    {% if runtime.agent_tasks %}
+    <section><h3>{{ _('Completed agent tasks') }}</h3>
+      {% for task in runtime.agent_tasks %}
+      <p><strong>{{ _(task.agent) }}</strong><span class="runtime-call-status runtime-call-{{ task.status }}">{{ _(task.status) }}</span><small>{{ _(task.goal) }} · {{ '%.3f'|format(task.seconds|float) }} s</small></p>
+      {% endfor %}
+    </section>
+    {% endif %}
+  </div></div>
+</details>

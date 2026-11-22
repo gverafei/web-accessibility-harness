@@ -1,0 +1,10 @@
+{
+  "anthropic/claude-opus-5.5": {
+    "vision_token_bounds": {"auto": 4785, "original": 4785, "high": 4785, "low": 4785},
+    "vision_pricing_source": "https://platform.claude.com/docs/en/build-with-claude/vision (2026-10-08): Claude 4.7 and later max 4784 visual tokens per image; one-token rounding margin"
+  },
+  "openai/gpt-6-astra": {
+    "vision_token_bounds": {"auto": 36001, "original": 36001, "high": 3001, "low": 309},
+    "vision_pricing_source": "https://developers.openai.com/api/docs/guides/images-vision (2026-10-08): maximum 30000 patches, high2500, low256; multiplier1.2 plus one token rounding margin"
+  }
+}

@@ -1,0 +1,1 @@
+<small>{% if best and best.strategy and best.strategy.recovery %}{{ _('Token count unavailable') }}{% else %}{{ run.total_input_tokens + run.total_output_tokens }} {{ _('tokens') }}{% endif %} · {{ '%.1f'|format(run.execution_seconds|float) }} s</small>

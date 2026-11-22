@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block extra_head %}{% include '_history_view_head.html' %}{% endblock %}
+{% block title %}{{ _('Captures') }}{% endblock %}
+{% block content %}<header class="app-page-heading"><h1>{{ _('Captures') }}</h1><p>{{ _('Frozen page inputs and their baseline measurements.') }}</p></header>
+{% from '_summary_metric.html' import metric %}<div class="summary-metrics metric-grid mb-4">{{ metric(_('Captures'),summary.total_experiments) }}{{ metric(_('Completed'),summary.completed_experiments) }}{{ metric(_('Average Axe'),('%.1f'|format(summary.average_axe)) if summary.average_axe is defined and summary.average_axe is not none else '—') }}{{ metric(_('Average Lighthouse'),('%.1f'|format(summary.average_lighthouse)) if summary.average_lighthouse is defined and summary.average_lighthouse is not none else '—') }}</div>
+<div class="card console-listing"><div class="card-body"><div class="list-filter-bar">{% set history_input='evaluationListFilter' %}{% set history_kind='evaluation' %}{% include '_history_filters.html' %}{% set history_target='evaluationHistoryView' %}{% include '_history_view_toggle.html' %}{% set history_table='evaluationHistoryTable' %}{% include '_history_pagination.html' %}</div>
+<div id="evaluationHistoryView" class="table-responsive history-list-view" data-history-view="table"><table id="evaluationHistoryTable" class="table table-hover align-middle evaluation-history-table"><thead><tr><th>{{ _('Capture') }}</th><th>{{ _('Progress') }}</th><th>Axe</th><th>Lighthouse</th></tr></thead>{% for item in experiments %}<tbody data-history-entry data-status="{{ item.status }}" data-acquisition="web"><tr data-filter-row><td class="evaluation-identity" data-label="{{ _('Capture') }}"><span class="evaluation-title">{{ item.title }}</span><small>#{{ item.id }} · {{ item.created_at }}</small><small>{{ item.urls.splitlines()|length }} URLs</small></td><td data-label="{{ _('Progress') }}">{{ _(item.status) }}<small>{{ item.completed_urls }}/{{ item.urls.splitlines()|length }}</small></td><td data-label="Axe">{{ item.axe_total if item.axe_total is not none else '—' }}</td><td data-label="Lighthouse">{{ item.lighthouse_mean if item.lighthouse_mean is not none else '—' }}</td></tr><tr class="history-actions-row"><td colspan="4"><div class="experiment-actions"><a class="history-action" href="{{ url_for('experiments.experiment_report',experiment_id=item.id) }}">{{ _('View report') }}</a><a class="history-action" href="{{ url_for('experiments.download_experiment_csv',experiment_id=item.id) }}">{{ _('Download CSV') }}</a>
+<form method="post" action="{{ url_for('experiments.delete_experiment',experiment_id=item.id) }}"
+      data-list-delete data-confirm-danger="true"
+      data-confirm="{{ _('Delete this capture and its stored results? This action cannot be undone.') }}"
+      data-confirm-label="{{ _('Delete') }}"
+      data-delete-error="{{ _('Deletion could not be confirmed. Refresh the list before trying again.') }}">
+  <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
+  <button type="submit" class="btn btn-sm experiment-action experiment-action-delete history-action"
+          {% if item.status in ['queued','running'] %}disabled{% endif %}>
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M9 7V4h6v3m-9 0 1 13h10l1-13M10 11v5m4-5v5"/></svg>
+    <span>{{ _('Delete') }}</span>
+  </button>
+</form></div></td></tr></tbody>{% endfor %}<tbody data-history-empty hidden><tr><td colspan="4">{{ _('No records match your search.') }}</td></tr></tbody></table></div></div></div>{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='js/record_lists.js',v='history-pagination-v2') }}" defer></script>{% endblock %}

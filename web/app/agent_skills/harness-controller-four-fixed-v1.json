@@ -1,0 +1,32 @@
+{
+  "schema": "a11yharness/1",
+  "version": "preservation-first-four-fixed-v1",
+  "authority": "deterministic controller",
+  "workers": {
+    "P1": "minimal attributes, adjunct labels and scoped accessibility CSS",
+    "P2": "bounded semantic subtree repairs and verified root-cause dependency graph",
+    "P3": "complete HTML regeneration preserving original architecture and native tasks",
+    "P4": "verified Markdown plus source structure/styles, exact tasks and capture",
+    "P5": "closed selection among admissible P1-P4/model actions or stop"
+  },
+  "judges": {
+    "version": "retained-taxonomy-assessment-v2",
+    "status": "integrated; development plumbing and coverage checked; expert agreement unvalidated",
+    "purpose": "supplemental outcomes, never acceptance thresholds",
+    "agreement_with_experts": "not established"
+  },
+  "selection": {
+    "controller": "Decisions Luna",
+    "context": "current page and within-run feedback",
+    "cross_page_training": false,
+    "worker_profile": "gpt-controlled-triad-v1"
+  },
+  "wire_ids": {
+    "P1": 1,
+    "P2": 3,
+    "P3": 4,
+    "P4": 5,
+    "P5": 6
+  },
+  "preservation": "Source content and native task contracts, source hierarchy/grouping/order and recognizable design precede accessibility scores."
+}

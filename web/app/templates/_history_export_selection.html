@@ -1,0 +1,5 @@
+{% from '_portable_export.html' import export_icon %}
+<form id="remediationExportSelection" class="list-selection-actions" method="post" action="{{ url_for('remediation.export_runs') }}" data-history-selection=".remediation-history-table" data-busy-download>
+  <button class="btn btn-sm btn-primary" type="submit" data-history-export aria-label="{{ _('Export selected') }}" disabled title="{{ _('Export all selected runs, including those hidden by the filter.') }}">{{ export_icon() }}<span>{{ _('Export') }}</span><span class="visually-hidden" data-history-selection-count aria-live="polite" hidden></span></button>
+  <label class="d-flex align-items-center mb-0" title="{{ _('Select all visible completed remediations') }}"><input class="form-check-input m-0" type="checkbox" data-history-select-all aria-label="{{ _('Select all visible completed remediations') }}"><span>{{ _('Select all') }}</span></label>
+</form>

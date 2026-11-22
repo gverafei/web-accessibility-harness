@@ -1,0 +1,35 @@
+/* Evaluation records share the visual grammar of remediation evidence. */
+.evaluation-summary-grid{grid-template-columns:repeat(4,minmax(0,1fr))}
+@media(max-width:1200px){.evaluation-summary-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:700px){.evaluation-summary-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:420px){.evaluation-summary-grid{grid-template-columns:1fr}}
+.evaluation-history-scroll{max-width:100%;contain:inline-size layout paint;overscroll-behavior-x:contain;overflow:auto}
+.evaluation-history-table{table-layout:fixed;width:100%;min-width:1120px}
+.evaluation-history-table th:nth-child(1){width:23%}
+.evaluation-history-table th:nth-child(2){width:19%}
+.evaluation-history-table th:nth-child(3){width:12%}
+.evaluation-history-table th:nth-child(4){width:17%}
+.evaluation-history-table th:nth-child(5){width:14%}
+.evaluation-history-table th:nth-child(6){width:15%}
+.evaluation-history-table td{font-weight:400;overflow-wrap:anywhere;vertical-align:middle}
+.evaluation-identity .evaluation-title{display:block;color:var(--ink);line-height:1.4}
+.evaluation-identity small,.evaluation-progress>small,.evaluation-frozen{display:block;margin-top:.22rem;color:var(--muted);font-size:.68rem;font-weight:400;line-height:1.4}
+.evaluation-progress-line{display:flex;align-items:center;gap:.55rem;margin:.45rem 0 .25rem}
+.evaluation-progress-line .experiment-progress{flex:1;margin:0}
+.evaluation-progress-percent{color:var(--muted);font-size:.72rem;font-weight:600}
+.evaluation-source-chip,.evaluation-tool-chip{display:inline-flex;align-items:center;gap:.45rem;padding:.38rem .55rem;border:1px solid #99b9d8;border-radius:9px;background:#f4f9fd;color:#246b9e}
+.evaluation-source-chip i{font-style:normal;font-size:1rem}
+.evaluation-source-chip small,.evaluation-tool-chip small{display:block;color:var(--muted);font-size:.58rem;font-weight:400;line-height:1.2}
+.evaluation-chip-label{display:block;font-size:.7rem;font-weight:600;line-height:1.25}
+.evaluation-tools{display:flex;flex-wrap:wrap;gap:.35rem}
+.evaluation-tool-chip{max-width:100%}
+.evaluation-tool-chip strong{overflow-wrap:anywhere}
+.tool-wave{border-color:#d2b372;background:#fff9ec;color:#865610}
+.evaluation-cost{font-size:.76rem;white-space:nowrap}
+.evaluation-cost>small{display:block;margin-top:.25rem;color:var(--muted);font-size:.66rem;font-weight:400;white-space:normal}
+.evaluation-history-table .experiment-actions{display:flex;flex-wrap:nowrap;justify-content:flex-end;gap:.3rem;min-width:0}
+.evaluation-history-table .experiment-actions form{margin:0;min-width:0}
+.evaluation-history-table .experiment-actions .evaluation-delete-form{margin-left:.35rem}
+.evaluation-history-table .experiment-actions .experiment-action{width:2rem;height:2rem;min-width:0;padding:.25rem}
+html[data-theme="dark"] .evaluation-source-chip,html[data-theme="dark"] .evaluation-tool-chip{background:#142536}
+html[data-theme="dark"] .tool-wave{background:#332817}

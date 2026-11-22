@@ -1,0 +1,16 @@
+{% extends 'base.html' %}{% from 'harness/macros.html' import token,field with context %}
+{% block content %}
+<h1>{{ _('Configuration') }}</h1>
+<form method="post" class="harness-panel" data-guarded>{{ token() }}
+<div class="harness-grid">
+<label class="harness-field"><span class="field-label">{{ _('OpenRouter credential') }} · {{ _('configured') if configured.openrouter_api_key else _('not configured') }}</span><input type="password" name="openrouter_api_key" class="form-control" autocomplete="new-password" placeholder="{{ _('Leave blank to retain server credential') }}"></label>
+{{ field('openrouter_base_url','OpenRouter base URL',settings.openrouter_base_url) }}
+</div><button class="btn btn-primary">{{ _('Save server settings') }}</button></form>
+<nav class="workspace-tabs" aria-label="{{ _('Model catalogues') }}">
+<a href="?tab=generative"{% if tab!='decisions' %} aria-current="page"{% endif %}>{{ _('Generative models') }}</a>
+<a href="?tab=decisions"{% if tab=='decisions' %} aria-current="page"{% endif %}>{{ _('Decision models') }}</a></nav>
+{% if tab=='decisions' %}
+{% set decision_editor=true %}
+{% endif %}
+{% include '_model_catalog_editor.html' %}
+{% endblock %}

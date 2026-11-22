@@ -1,0 +1,21 @@
+const {chromium}=require('playwright');
+const assert=require('node:assert/strict');
+const {visibleImagesSettled}=require('../visible_images');
+const test=require('node:test');
+test('only potentially visible pending images delay settlement without changing the document',async()=>{
+ const browser=await chromium.launch({executablePath:'/usr/bin/chromium-browser',headless:true,args:['--no-sandbox']});
+ const page=await browser.newPage({viewport:{width:800,height:600}});
+ await page.setContent(`<style>img{width:40px;height:40px} #hidden{visibility:hidden} #faded{opacity:0} #clip{position:absolute;left:100px;top:100px;width:50px;height:50px;overflow:hidden} #outside{position:absolute;left:100px;top:0}</style><img id="visible"><img id="hidden"><div id="faded"><img id="transparent"></div><div id="clip"><img id="outside"></div>`);
+ await page.evaluate(()=>{for(const image of document.images){image.setAttribute('src','data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg"/>');Object.defineProperty(image,'complete',{value:false,configurable:true});}});
+ const before=await page.content();
+ assert.equal(await page.evaluate(visibleImagesSettled),false);
+ await page.evaluate(()=>Object.defineProperty(document.querySelector('#visible'),'complete',{value:true,configurable:true}));
+ assert.equal(await page.evaluate(visibleImagesSettled),true);
+ assert.equal(await page.content(),before);
+ await page.evaluate(()=>document.querySelector('#outside').style.left='0px');
+ assert.equal(await page.evaluate(visibleImagesSettled),false);
+ await page.evaluate(()=>Object.defineProperty(document.querySelector('#outside'),'complete',{value:true,configurable:true}));
+ assert.equal(await page.evaluate(visibleImagesSettled),true);
+ console.log('PASS: visible pending image waits, hidden/transparent/clipped images do not; revealing clipped image waits; predicate preserves DOM');
+ await browser.close();
+});

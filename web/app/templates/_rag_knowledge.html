@@ -1,0 +1,36 @@
+{% from '_section_heading.html' import section_heading %}
+<section class="card shadow-sm" id="ragKnowledge"
+ data-status-url="{{ url_for('rag_maintenance.status') }}"
+ data-sync-url="{{ url_for('rag_maintenance.synchronize') }}"
+ data-labels='{{ {
+  "initialize":_("Initialize knowledge"), "update":_("Update knowledge"),
+  "available":_("Available"), "empty":_("Not initialized"), "unavailable":_("Vector database unavailable"),
+  "queued":_("Waiting for the worker"), "starting":_("Starting synchronization"),
+  "download":_("Downloading ACT examples"), "prepare":_("Preparing examples"),
+  "index":_("Indexing examples"), "verify":_("Verifying the new corpus"),
+  "completed":_("Synchronization completed"), "failed":_("Synchronization failed"),
+  "unknown":_("Not recorded"), "loadError":_("Could not load synchronization status. Try again."),
+  "blocked":_("Wait for queued or running remediations to finish before synchronizing."),
+  "confirm":_("Update the local RAG-ACT corpus? Future runs will use the new examples. Previous corpus snapshots and saved run evidence will be preserved. No LLM calls are made."),
+  "interrupted":_("Synchronization was interrupted. Start it again explicitly."),
+  "syncError":_("Synchronization failed. The previous corpus was preserved. See worker logs.")
+ }|tojson }}'>
+ <div class="card-body p-4">
+  {{ section_heading(1, _('RAG-ACT knowledge')) }}
+  <p class="text-muted">{{ _('Initialize or update the examples used by adaptive retrieval. This is separate from enabling RAG-ACT in a remediation. No LLM or paid embedding calls are made.') }}</p>
+  <dl class="row g-3 mb-3">
+   <div class="col-sm-6 col-xl-3"><dt class="form-label">{{ _('Corpus status') }}</dt><dd id="ragCorpusStatus" class="mb-0">—</dd></div>
+   <div class="col-sm-6 col-xl-3"><dt class="form-label">{{ _('Official ACT examples') }}</dt><dd id="ragOfficialCount" class="mb-0">—</dd></div>
+   <div class="col-sm-6 col-xl-3"><dt class="form-label">{{ _('Platform-authored examples') }}</dt><dd id="ragComplementaryCount" class="mb-0">—</dd></div>
+   <div class="col-sm-6 col-xl-3"><dt class="form-label">{{ _('Last synchronization') }}</dt><dd id="ragSyncDate" class="mb-0">—</dd></div>
+  </dl>
+  <div class="d-flex flex-wrap align-items-center gap-3">
+   <button class="btn btn-sm btn-outline-primary" type="button" id="ragSynchronize" disabled><svg class="button-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.6M4 4v4.6h4.6"/></svg><span id="ragSynchronizeLabel">{{ _('Initialize knowledge') }}</span></button>
+   <span class="form-text m-0" id="ragBlockedReason"></span>
+  </div>
+  <div id="ragSyncProgress" class="mt-3" hidden>
+   <div class="progress" role="progressbar" aria-label="{{ _('Corpus synchronization progress') }}" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0"><div class="progress-bar" style="width:0%"></div></div>
+  </div>
+  <p id="ragSyncMessage" class="form-text mb-0 mt-2" role="status" aria-live="polite"></p>
+ </div>
+</section>

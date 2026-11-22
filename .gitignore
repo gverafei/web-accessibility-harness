@@ -1,0 +1,62 @@
+# Local configuration and credentials
+.env
+.env.*
+!.env.example
+
+# Experiment outputs and local databases
+results/
+datasets/
+/research/
+/data/
+/qa/
+/AGENTS.md
+*.db
+*.sqlite
+*.sqlite3
+
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+.venv/
+.venv-docs/
+venv/
+
+# Generated local documentation
+/site/
+
+# Node.js
+node_modules/
+npm-debug.log*
+
+# Compiled translations and generated catalogs
+*.mo
+web/messages.pot
+
+# Editors and operating systems
+.DS_Store
+.idea/
+.vscode/
+*.swp
+*~
+._*
+.$*
+
+# Runtime service data must remain private
+/db/data/
+/qdrant/storage/
+
+# Local development guidance
+.agents/
+.codex/
+CLAUDE.md
+
+# LaTeX report build products
+*.aux
+*.log
+*.out
+*.fls
+*.fdb_latexmk
+*.synctex.gz

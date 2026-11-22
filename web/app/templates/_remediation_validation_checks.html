@@ -1,0 +1,34 @@
+{% macro validation_checks(checks, include_passed=false, include_visual=true) -%}
+{% set reasons=namespace(found=false) %}
+<ul class="mb-0">
+  {% if include_passed and checks.audit %}{% set reasons.found=true %}<li>{{ _('Accessibility audit') }}: {{ _('Axe and Lighthouse measurements were recorded.') if checks.audit == 'completed' else _('The audit did not complete.') }}</li>{% endif %}
+  {% if include_visual and checks.capture_verification and (include_passed or checks.capture_verification.status == 'rejected' or checks.capture_verification.warnings) %}
+  {% if checks.candidate_usability and checks.candidate_usability.status == 'rejected' and not checks.capture_verification.evidence_refs %}
+  {% set reasons.found=true %}<li>{{ _('Visual review was not performed; candidate checks blocked it.') }}</li>
+  {% else %}
+  {% set reasons.found=true %}<li>{{ _('Visual verification rejected the candidate') if checks.capture_verification.status == 'rejected' else _('Visual verification') }}{% if checks.capture_verification.status != 'rejected' %}: {{ _(checks.capture_verification.status) }}{% endif %}{% for code,label in [('visible_content_loss','visible content loss'),('essential_control_loss','essential control loss'),('visible_image_loss','visible image loss')] %}{% if code in (checks.capture_verification.rationale or '') %} · {{ _(label) }}{% endif %}{% endfor %}.</li>
+  {% if checks.capture_verification.review_policy %}
+  <li>{% if checks.capture_verification.blocking_confidence is number %}{{ _('Confidence in a material defect') }}: {{ '%.0f'|format(100 * checks.capture_verification.blocking_confidence) }}% · {% endif %}{{ _('Impact') }}: {{ _({'none':'None','minor':'Minor','material':'Material'}.get(checks.capture_verification.impact,checks.capture_verification.impact)) }} · {{ _('Model estimate') }}.</li>
+  {% endif %}
+  {% if checks.capture_verification.rationale %}<li>{{ _('Recorded visual rationale') }}: {{ checks.capture_verification.rationale }}</li>{% endif %}
+  {% endif %}
+  {% endif %}
+  {% if checks.candidate_usability and checks.candidate_usability.metrics and checks.candidate_usability.metrics.broken_images is number %}<li>{{ _('Images not loading in the recorded resource inventory') }}: {{ checks.candidate_usability.metrics.broken_images }}.</li>{% endif %}
+  {% if checks.candidate_usability %}{% for reason in checks.candidate_usability.reasons %}{% set reasons.found=true %}<li>{{ _({'unverified_candidate_destination':'Candidate destinations are not supported by the supplied source.', 'broken_visible_resources':'The candidate has broken visible images.', 'broken_visible_media':'The candidate has broken visible media.', 'unresolved_local_control_target':'Candidate links or controls have unresolved local targets.', 'blank_candidate':'The candidate has no observable meaningful content.'}.get(reason,reason)) }}</li>{% endfor %}
+  {% if checks.candidate_usability.metrics and checks.candidate_usability.metrics.unverified_destinations %}<li>{{ _('Destinations requiring correction') }}: <ul>{% for target in checks.candidate_usability.metrics.unverified_destinations %}<li>{{ target.target }}</li>{% endfor %}</ul></li>{% endif %}{% endif %}
+  {% if include_visual and checks.capture_verification and 'native_control_state_changed' in (checks.capture_verification.rationale or '') %}
+  {% set reasons.found=true %}<li>{{ _('Original native control values or selections were not preserved.') }}</li>
+  {% endif %}
+  {% if checks.observable_preservation and (include_passed or checks.observable_preservation.status == 'violated') %}
+  {% set reasons.found=true %}<li>{{ _('Source fidelity is reported separately; it does not block acceptance') if checks.source_fidelity_enforced is defined and not checks.source_fidelity_enforced else (_('Content preservation requirements were not met') if checks.observable_preservation.status == 'violated' else _('Content preservation requirements were met')) }}.{% set retention=checks.observable_preservation.retention %}{% if retention %} {{ _('Retained content') }}: {% for key,label in [('text_percent','Text'),('links_percent','Links'),('images_percent','Images')] %}{{ _(label) }} {{ '%.1f'|format(retention[key]) if retention[key] is number else '—' }}%{% if not loop.last %} · {% endif %}{% endfor %}.{% endif %}</li>
+  {% endif %}
+  {% if checks.observable_preservation and checks.observable_preservation.source_structure is defined and checks.observable_preservation.source_structure.status == 'violated' %}
+  {% set structure=checks.observable_preservation.source_structure %}{% set reasons.found=true %}
+  {% if not structure.source_word_order_preserved %}<li>{{ _('Original content order was not preserved.') }}</li>{% endif %}
+  {% if structure.missing_native_control_ownership %}<li>{{ _('Original native control or form contracts were not preserved.') }}</li>{% endif %}
+  {% endif %}
+  {% if checks.syntax and (include_passed or checks.syntax.state in ['failed','violated']) %}{% set reasons.found=true %}<li>{{ _('HTML validation') }}: {{ _('Passed') if checks.syntax.state == 'passed' else _('Failed') if checks.syntax.state in ['failed','violated'] else _('Not assessed') }}{% if checks.syntax.errors is defined %} · {{ checks.syntax.errors|length }} {{ _('validation findings') }}{% endif %}.</li>{% endif %}
+  {% if checks.syntax_nonregression and (include_passed or checks.syntax_nonregression.state in ['failed','violated']) %}{% set reasons.found=true %}<li>{{ _('Source-relative HTML validation') }}: {{ _('No new errors') if checks.syntax_nonregression.state == 'passed' else _('New errors detected') if checks.syntax_nonregression.state in ['failed','violated'] else _('Not assessed') }} · {{ _('Introduced') }} {{ checks.syntax_nonregression.introduced|length if checks.syntax_nonregression.introduced is defined else '—' }} · {{ _('Inherited') }} {{ checks.syntax_nonregression.inherited|length if checks.syntax_nonregression.inherited is defined else '—' }}.</li>{% endif %}
+  {% if not reasons.found %}<li>{{ _('The recorded selection retained the original. Review the iteration decisions below for the available assessment.') if not include_passed else _('No detailed validation assessment was recorded. Consult the technical JSON for available evidence.') }}</li>{% endif %}
+</ul>
+{%- endmacro %}

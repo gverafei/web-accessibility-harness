@@ -1,0 +1,11 @@
+{% set checks = item.display_validation_checks or (item.strategy or {}).get('harness', {}).get('assessment', {}).get('checks', {}) %}
+{% if checks or item.selection_review or item.technical_status and item.technical_status != 'passed' %}
+<details id="validation-{{ item.id }}" class="strategy-details">
+  <summary>{{ _('Validation findings') }}</summary>
+  <div class="report-output">
+    {% if item.selection_review %}<p class="small">{{ _(item.selection_review.message) }}</p>{% endif %}
+    {% from '_remediation_validation_checks.html' import validation_checks with context %}
+    {{ validation_checks(checks, true, false) }}
+  </div>
+</details>
+{% endif %}

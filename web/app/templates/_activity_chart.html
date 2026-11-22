@@ -1,0 +1,8 @@
+    {% macro chart(key,title,activity=false,prefix='dashboardChart-',explore_url=none,empty_text=none,show_explore=true) %}
+    <article class="card activity-chart">
+        <header><h2>{{ title }}</h2>{% if show_explore %}<a href="{{ explore_url or url_for('remediation.runs') }}">{{ _('Explore') }} ›</a>{% endif %}</header>
+        {% if activity %}<div class="activity-chart-switch"><label class="visually-hidden" for="activityMeasure-{{ key }}">{{ _('Activity measure') }}</label><select id="activityMeasure-{{ key }}" data-activity-measure="{{ key }}" class="form-select form-select-sm">{% for value,label in [('cost',_('Remediation cost')),('runs',_('Runs')),('iterations',_('Evaluated iterations')),('tokens',_('Total tokens')),('input_tokens',_('Input tokens')),('output_tokens',_('Output tokens'))] %}<option value="{{ value }}">{{ label }}</option>{% endfor %}</select></div>{% endif %}
+        <div class="activity-chart-frame"><canvas id="{{ prefix }}{{ key }}" aria-label="{{ title }}" role="img"></canvas><p class="activity-empty" hidden>{{ empty_text or _('No measurements in this period.') }}</p></div>
+        <div class="activity-chart-legend" data-chart-legend="{{ key }}" aria-label="{{ _('Chart series') }}"></div>
+    </article>
+    {% endmacro %}

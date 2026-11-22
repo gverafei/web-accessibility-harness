@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('Tools') }}{% endblock %}
+{% block content %}
+<header class="app-page-heading"><h1>{{ _('Tools') }}</h1><p>{{ _('Executable capabilities available to the harness. Each tool has a defined input and result.') }}</p></header>
+<p class="text-muted">{{ tools|length }} {{ _('registered tools') }} · {{ _('New executable tools are added through the source code.') }}</p>
+<div class="table-responsive harness-panel">
+  <table class="table align-middle">
+    <thead><tr><th>{{ _('Tool') }}</th><th>{{ _('Task') }}</th><th>{{ _('Inputs') }}</th><th>{{ _('Result') }}</th><th>{{ _('Changes the page') }}</th></tr></thead>
+    <tbody>{% for tool in tools %}
+      <tr><td><strong>{{ tool.name }}</strong><div class="text-muted small">v{{ tool.version }}</div></td><td>{{ _(tool.description) }}</td><td>{{ tool.required_inputs|join(' · ') }}</td><td>{{ _(tool.output_type) }}</td><td>{{ _('Yes') if tool.mutates_candidate else _('No') }}</td></tr>
+    {% endfor %}</tbody>
+  </table>
+</div>
+<p class="small text-muted mt-3">{{ _('Source files') }} · <code>web/app/remediation_tools.py</code> · <code>web/app/remediation_jobs.py</code></p>
+{% endblock %}

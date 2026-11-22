@@ -1,0 +1,14 @@
+<div class="capture-comparison-metrics">
+  {% if item.original_dom_nodes is not none and item.candidate_dom_nodes is not none %}
+  <div title="{{ _('Number of opening and closing tags in the sequence used for DOM divergence. Selected semantic attributes affect the comparison, not the count.') }}">
+    <span>{{ _('HTML structure') }}:</span>
+    <small>{{ _('Original') }}: {{ '{:,}'.format(item.original_dom_nodes) }} · {{ _('Candidate') }}: {{ '{:,}'.format(item.candidate_dom_nodes) }}</small>
+  </div>
+  {% endif %}
+  {% if item.visual_similarity_percent is not none %}
+  <div title="{{ _('Color similarity between resized upper-page screenshots; higher values mean more similar colors, not better accessibility.') }}">
+    <span>{{ _('Visual similarity (RGB)') }}:</span>
+    <small>{{ '%.2f'|format(item.visual_similarity_percent) }}%</small>
+  </div>
+  {% endif %}
+</div>

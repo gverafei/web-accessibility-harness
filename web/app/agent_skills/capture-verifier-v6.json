@@ -1,0 +1,37 @@
+{
+  "schema": "a11yharness/1",
+  "version": "capture-evidence-verifier-v6",
+  "role": "capture evidence verification agent",
+  "entry_points": [
+    "before first repair",
+    "each candidate iteration"
+  ],
+  "tools": [
+    "frozen capture and screenshot",
+    "local replay visible-content/resource/control checks",
+    "approved multimodal Decisions model with one closed evidence classification; explicit generative alternative"
+  ],
+  "output": {
+    "status": [
+      "admitted",
+      "rejected",
+      "review_required"
+    ],
+    "rationale": "brief evidence-grounded rationale",
+    "evidence_refs": "existing artifact or check identifiers"
+  },
+  "limits": "campaign review and shared stage budget; no acquisition outside declared source; no repair generation",
+  "authority": "Classify observable evidence; runtime interprets the result under the frozen source/candidate review mode. Cannot change limits or tools.",
+  "content_scope": "gambling eligible; explicit adult content, access blocks, parked pages and spam redirects excluded",
+  "baseline": "Verify a reproducible user-facing source and report resource or control defects for recovery before repair. Do not infer unseen backend behavior.",
+  "candidate": "Assess observable usability, imagery, controls and composition under the assigned intervention. P1/P2 preserve recognizable source design; P3/P4 may redesign. In diagnostic mode findings guide correction and are reported, without rejecting a measured proposal.",
+  "decision_mapping": {
+    "usable": "admitted",
+    "insufficient": "review_required",
+    "blank": "rejected",
+    "blocked": "rejected",
+    "unrelated": "rejected",
+    "degraded": "rejected",
+    "out_of_scope": "rejected"
+  }
+}

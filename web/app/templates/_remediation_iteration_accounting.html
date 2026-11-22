@@ -1,0 +1,5 @@
+{% if item.strategy and item.strategy.recovery %}
+<small>{{ _('Iteration token counts, cost and duration unavailable; the original run totals are shown above.') }}</small>
+{% else %}
+<p class="iteration-consumption">{{ _("Recorded model consumption") }}: {{ item.input_tokens + item.output_tokens }} {{ _("tokens") }} · ${{ '%.6f'|format(item.cost_usd|float) }} · {{ '%.1f'|format(item.execution_seconds|float) }} s</p>
+{% endif %}

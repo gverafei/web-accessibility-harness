@@ -1,0 +1,6 @@
+{% if item.continuation_note %}
+<p class="small text-muted iteration-continuation" role="note">
+  <strong>{{ item.continuation_note.label }}</strong> · {{ item.continuation_note.reason }}
+  {% if item.continuation_note.findings %}<span>{{ item.continuation_note.findings|join(' · ') }}.</span>{% endif %}
+</p>
+{% endif %}

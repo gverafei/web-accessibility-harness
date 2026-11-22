@@ -1,0 +1,8 @@
+<nav class="app-breadcrumbs" aria-label="{{ _('Breadcrumbs') }}">
+ <ol>
+  <li><a class="breadcrumb-home" href="{{ url_for('workspace.launch') }}" aria-label="{{ _('Home') }}" title="{{ _('Home') }}"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7M5 9v12h5v-7h4v7h5V9"/></svg></a></li>
+  {% for crumb in breadcrumbs %}
+  <li>{% if crumb.url %}<a href="{{ crumb.url }}">{{ crumb.label }}</a>{% else %}<span aria-current="page">{{ crumb.label }}</span>{% endif %}</li>
+  {% endfor %}
+ </ol>
+</nav>

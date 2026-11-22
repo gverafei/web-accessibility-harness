@@ -1,0 +1,172 @@
+{
+  "schema": "a11yharness/1",
+  "authority": "deterministic runtime; advisory instructions cannot grant tools or change limits",
+  "contracts": [
+    {
+      "id": "governed-four-fixed",
+      "version": "preservation-first-four-fixed-v1",
+      "path": "harness-controller-four-fixed-v1.json"
+    },
+    {
+      "id": "capture-evidence-verifier",
+      "version": "capture-evidence-verifier-v5",
+      "path": "capture-verifier-v5.json"
+    }
+  ],
+  "schema_version": "1.0",
+  "skills": [
+    {
+      "id": "grounded-accessibility-diagnosis",
+      "version": "2.0.0",
+      "stages": [
+        "prompt"
+      ],
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tools": [
+        "inspect_dom",
+        "read_axe_evidence",
+        "read_lighthouse_evidence"
+      ],
+      "instruction": "Diagnose only barriers supported by the current DOM and measured evidence. Quote a valid selector and observable cause; omit unsupported recommendations.",
+      "sources": [
+        "WCAG 2.2",
+        "WAI-ARIA",
+        "Axe evidence"
+      ]
+    },
+    {
+      "id": "minimal-preservation-repair",
+      "version": "2.0.0",
+      "stages": [
+        "generate"
+      ],
+      "steps": [
+        1,
+        2
+      ],
+      "tools": [
+        "apply_constrained_patch"
+      ],
+      "instruction": "Apply the smallest selector-scoped HTML or CSS change that addresses grounded evidence. Preserve content, URLs, behavior, layout structure and scripts.",
+      "sources": [
+        "Preservation policy"
+      ]
+    },
+    {
+      "id": "coordinated-component-repair",
+      "version": "2.0.0",
+      "stages": [
+        "generate"
+      ],
+      "steps": [
+        3
+      ],
+      "tools": [
+        "plan_components",
+        "apply_constrained_patch",
+        "capture_screenshot"
+      ],
+      "instruction": "Repair bounded semantic components with complete observed evidence. Root-cause groups partition operations exactly once; dependencies use existing selectors and an acyclic graph. Preserve native contracts, content order and recognizable original design.",
+      "sources": [
+        "Component inventory",
+        "Captured screenshot"
+      ]
+    },
+    {
+      "id": "html-born-accessible-regeneration",
+      "version": "2.0.0",
+      "stages": [
+        "generate"
+      ],
+      "steps": [
+        4
+      ],
+      "tools": [
+        "extract_content_inventory",
+        "capture_screenshot"
+      ],
+      "instruction": "Regenerate from complete admitted HTML with original capture, exact structure/style evidence and native task inventory. Source architecture and tasks take precedence over accessibility scores. No imposed framework or generic redesign.",
+      "sources": [
+        "Frozen HTML",
+        "Design-base contract"
+      ]
+    },
+    {
+      "id": "markdown-born-accessible-regeneration",
+      "version": "2.0.0",
+      "stages": [
+        "generate"
+      ],
+      "steps": [
+        5
+      ],
+      "tools": [
+        "extract_markdown",
+        "extract_content_inventory",
+        "capture_screenshot"
+      ],
+      "instruction": "Regenerate from verified Markdown plus original capture, complete source structure/style evidence and exact native controls. Restore the original architecture and tasks; Markdown is not permission to remove controls, summarize or redesign.",
+      "sources": [
+        "Frozen Markdown",
+        "UI inventory",
+        "Design-base contract"
+      ]
+    },
+    {
+      "id": "adaptive-evidence-grounding",
+      "version": "2.0.0",
+      "stages": [
+        "prompt"
+      ],
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tools": [
+        "retrieve_accessibility_evidence"
+      ],
+      "instruction": "Retrieve only complete positive/negative pairs matching measured concepts. Record provenance, abstain from unrelated evidence and rotate pairs only after a measured plateau.",
+      "sources": [
+        "W3C ACT",
+        "Source-attributed complementary guidance"
+      ]
+    },
+    {
+      "id": "measured-evaluation-and-rollback",
+      "version": "2.0.0",
+      "stages": [
+        "evaluate",
+        "decide"
+      ],
+      "steps": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "tools": [
+        "evaluate_candidate",
+        "measure_content_retention",
+        "compare_visual_evidence",
+        "select_best_candidate"
+      ],
+      "instruction": "Evaluate every executable candidate. Keep thresholds distinct from preservation evidence, rank reproducibly and retain the best measured iteration after regression.",
+      "sources": [
+        "Axe",
+        "Lighthouse",
+        "Deterministic retention metrics"
+      ]
+    }
+  ],
+  "intervention_version": "preservation-first-four-fixed-v1"
+}

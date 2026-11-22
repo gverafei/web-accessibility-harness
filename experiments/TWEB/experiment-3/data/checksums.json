@@ -1,0 +1,30 @@
+{
+  "algorithm": "SHA-256",
+  "files": {
+    "data/generation-prompts.csv": "1aca604e93f85041c67c2e434f94499c75f8d550370cf0c4dac6aac50fa0b36e",
+    "data/iterations.csv": "80e2701b8ddb82961d7e65a789a183f6c52f139566c692adef7239470aa16d14",
+    "data/message-parts.csv": "a0aee58a449021005c4d9ea17e958896af411bbce1b04d8e33fbfdf1a148cc7e",
+    "data/prompt-examples.json": "5f7536fb9e5a713bf6c09d0e6d906b98c70f04861a1540a12710440b8cac1edf",
+    "data/prompt-instructions.json": "460dcb22aad4b59de67153646fa0ca00010a94387c5c148ecea080bcc8a2cbf9",
+    "data/protocol.json": "b3fcf42a649129d5c53f86b38a5b81be5e172b51a41367e68d7e8046027e8ba8",
+    "data/rag.json": "37289c8a2a6e1edfe879ffefc58e1034cb56e7e9c23c25aafa4e00c2062fd3bc",
+    "data/requests.csv": "54e63ec085b6ca9a9b25c636413d26b42af02b3cd53915ee9b4cd36ae76878e4",
+    "data/runs.csv": "da1aa3c94946f04c34d06357a31d6427ef54818125475e6e4bd4e33663f4080d",
+    "data/skills.json": "4d6cda3b0d516e4c0f0d72256ec2a8bda5a162edd8b817c96fbdf391b36664ea",
+    "data/sources.csv": "0be04fecbd09f6c3024d6127a380e5e1f2e119a516e6d6ac18187fe771c7e3ff",
+    "data/taxonomy.csv": "4c48fbbd30dc25a79e50505faf60649458bdd3b891633c242410e309b676c2c4",
+    "thumbnails/sql-run-1266-selected.jpg": "d4234c00886141baa20aee2d44f793debf9cc3842995cfa40759be7971d72b10",
+    "thumbnails/sql-run-1269-selected.jpg": "69bd782050438eb2afd2463327fa9792dd0f75eb23749cb8b2a020eb646cd185",
+    "thumbnails/sql-run-1270-selected.jpg": "963337cc83c9a38567c5016724c81880d84322cf7f2bc6e4304eec7cd9284686",
+    "thumbnails/sql-run-1271-selected.jpg": "54b9d99436cc46d99eb7dd4711a484c5fd04a03118d2d825ae25f02c22401591",
+    "thumbnails/sql-run-1272-selected.jpg": "7841fe1c2ee53bf07a83c4f0a462f26e5206d3675ace34a9e7897773404cfb85",
+    "thumbnails/sql-run-1273-selected.jpg": "a9864b63e9189e28a6576d24b7562be8ec2e128f235283e43cac2607fb3c6c8a",
+    "thumbnails/sql-run-1274-selected.jpg": "1b8dae5df7797c49d510aa5d7e66b96658ec89995ed0c2561e95c621c0ff9ed0",
+    "thumbnails/sql-run-1275-selected.jpg": "1775ba7bff1c1f0eb5b3938f86cb1b784eb6073634bdd17351bbbd2a82434039",
+    "thumbnails/sql-run-1276-selected.jpg": "50a51b20dbf0bfd27a4810ec98ba1abb751e9f8d1892b6462f6556d979f04686",
+    "thumbnails/sql-run-1277-selected.jpg": "6b20a48d7ae91c52c30f00b23411422c04406eb8a1da9adeb1640cfef53fe384",
+    "thumbnails/sql-run-1278-selected.jpg": "b5f7442d4c52f9ae492f72f4eef2be0fbb625f86f17e7e307192628af4b157d4",
+    "thumbnails/sql-run-1279-selected.jpg": "b211cd857a96e6588452317660bdc99f7cea8edc8d3a5ca0aaadbfc58524bae9",
+    "thumbnails/time-source.jpg": "e7c74fc021a66b33d0a53fc494d63daec8ec8943de02b95cdf2f0cc38db5ec9c"
+  }
+}

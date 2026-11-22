@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}{{ _('Skills') }}{% endblock %}
+{% block content %}
+<header class="app-page-heading">
+  <h1>{{ _('Skills') }}</h1>
+  <p>{{ _('Task instructions used by the harness. Skills are maintained in the source code.') }}</p>
+</header>
+<p class="text-muted">{{ skills|length }} {{ _('skills') }}</p>
+<div class="table-responsive harness-panel">
+  <table class="table align-middle">
+    <thead><tr><th>{{ _('Skill') }}</th><th>{{ _('Used for') }}</th><th>{{ _('Instructions') }}</th></tr></thead>
+    <tbody>
+    {% for skill in skills %}
+      <tr>
+        <td><strong>{{ skill.id }}</strong><div class="text-muted small">{{ skill.version }}</div></td>
+        <td>{{ skill.stages|join(' · ') }}<div class="text-muted small">{{ _('Associated tools') }} · {{ skill.tools|join(' · ') }}</div></td>
+        <td><details><summary>{{ _('Read instructions') }}</summary><p class="mt-2">{{ skill.instruction }}</p></details></td>
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>
+<p class="small text-muted mt-3">{{ _('Source file') }} · <code>{{ source_path }}</code></p>
+{% endblock %}

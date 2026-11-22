@@ -1,0 +1,49 @@
+{% from '_pagination_icons.html' import pagination_icon %}
+{% extends 'base.html' %}
+{% from '_section_heading.html' import section_heading %}
+{% block title %}{{ _('Accessibility taxonomy') }}{% endblock %}
+{% block content %}
+<header class="app-page-heading"><div><h1>{{ _('Accessibility taxonomy') }}</h1><p>{{ _('Explore the categories, criteria, evidence and detectors used before and after remediation.') }}</p></div></header>
+<section class="card shadow-sm mb-4"><div class="card-body p-4">
+{{ section_heading(1, _('What is measured')) }}
+<p>{{ _('The Web Accessibility Harness taxonomy includes %(total)s criteria: %(syntactic)s syntactic, %(semantic)s semantic and %(layout)s layout. Catalog criteria are not failure counts on a page.',total=total,syntactic=category_counts.Syntactic,semantic=category_counts.Semantic,layout=category_counts.Layout) }}</p>
+<div class="table-responsive"><table class="table"><thead><tr><th>{{ _('Category') }}</th><th>{{ _('Criterion') }}</th><th>{{ _('Current measurement') }}</th></tr></thead><tbody>
+<tr><th>{{ _('Syntactic') }} · {{ category_counts.Syntactic }}</th><td>{{ _('Required elements, attributes and valid HTML/ARIA structure.') }}</td><td>{{ _('Executable Axe findings under the selected WCAG profile. Unexecuted diagnostic rules are omitted from this catalog.') }}</td></tr>
+<tr><th>{{ _('Semantic') }} · {{ category_counts.Semantic }}</th><td>{{ _('Whether an existing name, role, language or description matches the content or purpose.') }}</td><td>{{ _('By default, GPT-Luna 6 Decisions assesses %(count)s contextual criteria; GPT-Luna 6 light assesses image alternatives from verified image evidence. Each run records its selected assessment models. Missing evidence remains unassessed. Audio, captions and audiovisual controls are outside the current scope.',count=contextual_count) }}</td></tr>
+<tr><th>{{ _('Layout') }} · {{ category_counts.Layout }}</th><td>{{ _('Contrast, zoom, spacing and target size.') }}</td><td>{{ _('Axe according to the selected WCAG profile; measured contrast and Decisions supplement inconclusive contrast cases.') }}</td></tr>
+</tbody></table></div>
+<p class="mb-0">{{ _('Counts are observed failures, not a complete accessibility score. Zero means no failures among judged cases; it does not mean that unobserved cases passed.') }}</p>
+</div></section>
+<section class="card shadow-sm mb-4" id="taxonomyCatalogPanel" data-load-error="{{ _('Could not update the catalog. Previous results remain visible.') }}"><div class="card-body p-4">
+<div id="taxonomyCatalog">{{ section_heading(2, _('Violation catalog')) }}</div>
+<form method="get" action="{{ url_for('taxonomy.index') }}" id="taxonomyFilters" role="search">
+<div class="report-pagination-toolbar list-controls-row">
+<div class="measurement-filter"><label for="taxonomySearch" class="visually-hidden">{{ _('Search criteria') }}</label><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4"/></svg><input id="taxonomySearch" type="search" name="q" maxlength="200" value="{{ q }}" class="form-control form-control-sm" placeholder="{{ _('Search criteria') }}"></div>
+<div><label for="taxonomyCategory" class="visually-hidden">{{ _('Category') }}</label><select id="taxonomyCategory" name="category" class="form-select form-select-sm"><option value="">{{ _('All categories') }}</option>{% for value in ['Syntactic','Semantic','Layout'] %}<option value="{{ value }}"{% if value==category %} selected{% endif %}>{{ _(value) }}</option>{% endfor %}</select></div>
+
+{% set pagination_label = _('Taxonomy pagination') %}{% set result_label = _('criteria') %}
+{% include '_catalog_pagination.html' %}</div>
+</form>
+<p id="taxonomyBrowseMessage" class="async-list-status form-text" role="status" aria-live="polite"></p>
+<div class="table-responsive taxonomy-results"><table class="table taxonomy-violation-table"><thead><tr><th>{{ _('Taxonomy violation') }}</th><th>{{ _('Category') }}</th><th>{{ _('Criterion') }}</th><th>{{ _('Detector and scope') }}</th></tr></thead><tbody>
+{% for row in rows %}<tr id="{{ row.id }}"><th scope="row"><code>{{ row.id }}</code><br><small>WCAG {{ row.wcag|join(', ') }} · {{ _(row.impact|title) }}</small></th><td>{{ _(row.category) }}</td><td>{{ row.criterion }}<details><summary>{{ _('Evidence and criteria') }}</summary><p>{{ _(row.evidence) }}</p>{% if row.supplementary_information %}<p>{{ _('Source evidence requirement') }}: <span lang="en">{{ row.supplementary_information }}</span></p>{% endif %}<p>{{ _('Canonical definition') }}: <span lang="en">{{ row.description }}</span></p>{% for adaptation in row.adaptations %}<p><strong>{{ _('Web Accessibility Harness operational criterion') }}:</strong> {{ _(adaptation.criterion) }}</p>{% endfor %}{% if row.rubric %}<p>{{ _('Current judge rubric') }}: <span lang="en">{{ row.rubric }}</span></p>{% endif %}</details></td><td>{{ _(row.detector) }}<br><small>{{ _(row.support) }}</small></td></tr>{% else %}<tr><td colspan="4">{{ _('No matching types.') }}</td></tr>{% endfor %}
+</tbody></table></div>
+</div></section>
+<section class="card shadow-sm mb-4"><div class="card-body p-4">
+{{ section_heading(3, _('How criteria are assessed')) }}
+<p>{{ _('These rules specify the evidence used to assess image alternatives, contrast and contextual meaning, and to compare results before and after remediation.') }}</p>
+<div class="table-responsive"><table class="table"><thead><tr><th>{{ _('Assessment') }}</th><th>{{ _('Criterion') }}</th><th>{{ _('Detector and scope') }}</th></tr></thead><tbody>{% for item in curation.adaptations %}<tr><th>{{ _(item.title) }}<br>{% for typ in item.types %}<small><code>{{ typ }}</code></small><br>{% endfor %}</th><td>{{ _(item.criterion) }}</td><td>{{ _(item.detector) }}</td></tr>{% endfor %}</tbody></table></div><p class="small mb-0">{{ _('Assessment rules version') }}: <code>{{ curation.version }}</code></p>
+</div></section>
+<section class="card shadow-sm mb-4"><div class="card-body p-4">
+{{ section_heading(4, _('How to read before and after')) }}
+<p>{{ _('A missing image alternative is a syntactic failure. Once an alternative is added, its meaning can be judged separately. A change from zero to two semantic failures can therefore describe inadequate new alternatives, rather than two previously valid alternatives becoming worse.') }}</p>
+<p>{{ _('Reports distinguish judged cases, missing evidence and excluded types. Removing content does not count as repair. The complementary judge is blind to the generator, level and previous verdicts, and does not set remediation thresholds.') }}</p>
+<p class="mb-0">{{ _('Axe and Lighthouse improvements do not guarantee semantic improvements. These measurements are automated observations, not expert human validation.') }}</p>
+</div></section>
+<section class="card shadow-sm mb-4"><div class="card-body p-4">
+{{ section_heading(5, _('Source and versions')) }}
+<p><a href="{{ catalog.source.repository }}">AccessGuruLLM</a> · MIT · <code>{{ catalog.source.commit }}</code></p><p>{{ _('Web Accessibility Harness taxonomy version') }}: <code>{{ catalog.version }}</code> · Axe {{ axe_version }}</p><p class="mb-0">{{ _('Source attribution and the original license remain available.') }}</p>
+</div></section>
+{% endblock %}
+
+{% block scripts %}<script src="{{ url_for('static',filename='js/taxonomy_filters.js',v='20261010-live-filters') }}"></script>{% endblock %}

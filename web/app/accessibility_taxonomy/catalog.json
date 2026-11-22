@@ -1,0 +1,1062 @@
+{
+  "version": "a11yharness-taxonomy-v4",
+  "source": {
+    "repository": "https://github.com/NadeenAhmad/AccessGuruLLM",
+    "commit": "bf45666aa281af7cca23aaabd9bfe3bd802b9036",
+    "retrieved_date": "2026-10-10",
+    "files": [
+      {
+        "path": "taxonomy_web_accessibility_violations.md",
+        "source_path": "taxonomy_web_accessibility_violations.md",
+        "url": "https://raw.githubusercontent.com/NadeenAhmad/AccessGuruLLM/bf45666aa281af7cca23aaabd9bfe3bd802b9036/taxonomy_web_accessibility_violations.md",
+        "sha256": "2538c7c0ecdc4410cb96e594f4e77c0cbe736120ea8c926d861883811d6a036a",
+        "bytes": 18077
+      },
+      {
+        "path": "LICENSE.txt",
+        "source_path": "LICENSE.txt",
+        "url": "https://raw.githubusercontent.com/NadeenAhmad/AccessGuruLLM/bf45666aa281af7cca23aaabd9bfe3bd802b9036/LICENSE.txt",
+        "sha256": "7fcb92f76d268c67c4b9e0311ee874e2ede7f4ecfb81ea3b44a5df9cfc6ddb88",
+        "bytes": 1073
+      },
+      {
+        "path": "violation_taxonomy.csv",
+        "source_path": "data/prompts_support/violation_taxonomy.csv",
+        "url": "https://raw.githubusercontent.com/NadeenAhmad/AccessGuruLLM/bf45666aa281af7cca23aaabd9bfe3bd802b9036/data/prompts_support/violation_taxonomy.csv",
+        "sha256": "f076f836146696208cf242b9ca87e291f75456e916df14e5d81eaca6911b8792",
+        "bytes": 2572
+      },
+      {
+        "path": "mapping_dict_file.json",
+        "source_path": "data/prompts_support/mapping_dict_file.json",
+        "url": "https://raw.githubusercontent.com/NadeenAhmad/AccessGuruLLM/bf45666aa281af7cca23aaabd9bfe3bd802b9036/data/prompts_support/mapping_dict_file.json",
+        "sha256": "f8988dec9014fd4c25fa10d9cfd12c809bf33d88f3b6832aef7c6c0a6b2a7778",
+        "bytes": 11068
+      }
+    ],
+    "purpose": "Taxonomy source only; no benchmark import or provider calls",
+    "base_catalog_version": "accessguru-bf45666-operational-v1"
+  },
+  "precedence": "Active rows in taxonomy_web_accessibility_violations.md; commented rows excluded. This current supplement differs from paper Table 13 and older CSV.",
+  "resolutions": [
+    {
+      "id": "frame-title",
+      "category": "Syntactic",
+      "reason": "Current full supplement classifies missing iframe names as syntax; older CSV says Layout."
+    },
+    {
+      "id": "color-only-distinction",
+      "category": null,
+      "reason": "Absent from active full supplement; commented legacy row is excluded. Paper Table 13 classifies it Layout; no automatic detector claimed."
+    }
+  ],
+  "violations": [
+    {
+      "id": "image-alt-not-descriptive",
+      "category": "Semantic",
+      "description": "Alternative text is present but is inaccurate, misleading, or does not correctly describe the content or purpose of the image, including an empty `alt=\"\"` on an informative image (`<img>`, `<svg role=\"img\">`, `role=\"img\"`, `<object>`).",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": "Image and surrounding context"
+    },
+    {
+      "id": "video-captions-inaccurate",
+      "category": "Semantic",
+      "description": "Captions are present but do not accurately represent the spoken content or meaningful audio information in the video.",
+      "wcag": [
+        "1.2.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": "Video/audio and captions"
+    },
+    {
+      "id": "lang-mismatch",
+      "category": "Semantic",
+      "description": "A valid page-level `lang` attribute is present, but its value does not match the actual language of the page content.",
+      "wcag": [
+        "3.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Page content"
+    },
+    {
+      "id": "language-of-parts-mismatch",
+      "category": "Semantic",
+      "description": "A valid language declaration is present on a passage or component, but it does not match the actual language of that content.",
+      "wcag": [
+        "3.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Text of the relevant passage/component"
+    },
+    {
+      "id": "link-text-mismatch",
+      "category": "Semantic",
+      "description": "Link text or its accessible name is present but does not accurately describe the destination or purpose of the link.",
+      "wcag": [
+        "2.4.4"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Surrounding context and destination/next state"
+    },
+    {
+      "id": "button-label-mismatch",
+      "category": "Semantic",
+      "description": "An element with the button role has a label or accessible name, but it does not accurately describe the action or result produced by activating it.",
+      "wcag": [
+        "2.4.6"
+      ],
+      "impact": "critical",
+      "supplementary_information": "Button context and resulting/next state"
+    },
+    {
+      "id": "form-label-mismatch",
+      "category": "Semantic",
+      "description": "A form control has a label, but the label does not accurately describe the control's purpose or the information expected from the user.",
+      "wcag": [
+        "2.4.6"
+      ],
+      "impact": "critical",
+      "supplementary_information": "Form control, surrounding context, and expected input"
+    },
+    {
+      "id": "widget-label-purpose-mismatch",
+      "category": "Semantic",
+      "description": "An element with a widget role other than button (e.g., `tab`, `menuitem`, `treeitem`, `option`, `switch`) has a label that does not accurately describe its content, purpose, or resulting action.",
+      "wcag": [
+        "2.4.6",
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Widget context and resulting/next state"
+    },
+    {
+      "id": "heading-not-descriptive",
+      "category": "Semantic",
+      "description": "A heading is present but does not accurately describe the topic or purpose of the content it introduces.",
+      "wcag": [
+        "2.4.6"
+      ],
+      "impact": "moderate",
+      "supplementary_information": "Heading and associated section content"
+    },
+    {
+      "id": "landmark-purpose-mismatch",
+      "category": "Semantic",
+      "description": "A landmark is structurally valid, but its role (e.g., `role=\"search\"`, `<nav>`, `<aside>`) or accessible label does not describe the actual purpose of the region.",
+      "wcag": [
+        "1.3.1",
+        "2.4.6"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Landmark content and surrounding document structure"
+    },
+    {
+      "id": "page-title-not-descriptive",
+      "category": "Semantic",
+      "description": "A page title is present but does not accurately describe the topic or purpose of the page.",
+      "wcag": [
+        "2.4.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Entire page content and purpose"
+    },
+    {
+      "id": "autocomplete-purpose-mismatch",
+      "category": "Semantic",
+      "description": "An input has a syntactically valid `autocomplete` value, but that value does not correspond to the actual purpose of the field.",
+      "wcag": [
+        "1.3.5"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Form-field label, expected input, and form context"
+    },
+    {
+      "id": "aria-state-mismatch",
+      "category": "Semantic",
+      "description": "A valid ARIA state or property is present, but its value does not correspond to the actual state of the interface, e.g., `aria-expanded=\"false\"` for content that is currently expanded.",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Current visual/interactive state"
+    },
+    {
+      "id": "table-header-association-mismatch",
+      "category": "Semantic",
+      "description": "Table header associations are syntactically present but associate data cells with headers that do not represent their actual row or column meaning.",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Entire table and header/data relationships"
+    },
+    {
+      "id": "error-message-mismatch",
+      "category": "Semantic",
+      "description": "An error message is present but identifies the wrong field, describes the wrong problem, or does not correspond to the actual invalid input.",
+      "wcag": [
+        "3.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Form values, validation state, and error message"
+    },
+    {
+      "id": "meta-viewport",
+      "category": "Layout",
+      "description": "Ensure `<meta name=\"viewport\">` does not disable text scaling and zooming",
+      "wcag": [
+        "1.4.4"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "meta-viewport-large",
+      "category": "Layout",
+      "description": "Ensure `<meta name=\"viewport\">` can scale a significant amount",
+      "wcag": [
+        "1.4.4"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "color-contrast",
+      "category": "Layout",
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AA minimum contrast ratio thresholds",
+      "wcag": [
+        "1.4.3"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Color information (background and foreground)"
+    },
+    {
+      "id": "avoid-inline-spacing",
+      "category": "Layout",
+      "description": "Ensure that text spacing set through style attributes can be adjusted with custom stylesheets",
+      "wcag": [
+        "1.4.12"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "target-size",
+      "category": "Layout",
+      "description": "Ensure touch targets have sufficient size and space",
+      "wcag": [
+        "2.5.8"
+      ],
+      "impact": "serious",
+      "supplementary_information": "",
+      "source_wcag": [
+        "2.5.5"
+      ]
+    },
+    {
+      "id": "color-contrast-enhanced",
+      "category": "Layout",
+      "description": "Ensure the contrast between foreground and background colors meets WCAG 2 AAA enhanced contrast ratio thresholds",
+      "wcag": [
+        "1.4.6"
+      ],
+      "impact": "serious",
+      "supplementary_information": "Color information (background and foreground)"
+    },
+    {
+      "id": "blink",
+      "category": "Syntactic",
+      "description": "Ensure `<blink>` elements are not used",
+      "wcag": [
+        "2.2.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "scope-attr-valid",
+      "category": "Syntactic",
+      "description": "Ensure the scope attribute is used correctly on tables",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-allowed-attr",
+      "category": "Syntactic",
+      "description": "Ensure an element's role supports its ARIA attributes",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-allowed-role",
+      "category": "Syntactic",
+      "description": "Ensure role attribute has an appropriate value for the element",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-valid-attr",
+      "category": "Syntactic",
+      "description": "Ensure attributes that begin with aria- are valid ARIA attributes",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-valid-attr-value",
+      "category": "Syntactic",
+      "description": "Ensure all ARIA attributes have valid values",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "autocomplete-valid",
+      "category": "Syntactic",
+      "description": "Ensure the autocomplete attribute is correct and suitable for the form field",
+      "wcag": [
+        "1.3.5"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "role-img-alt",
+      "category": "Syntactic",
+      "description": "Ensure `[role=\"img\"]` elements have alternative text",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "td-headers-attr",
+      "category": "Syntactic",
+      "description": "Ensure that each cell in a table that uses the headers attribute refers only to other `<th>` elements in that table",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "area-alt",
+      "category": "Syntactic",
+      "description": "Ensure `<area>` elements of image maps have alternative text",
+      "wcag": [
+        "2.4.4",
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "object-alt",
+      "category": "Syntactic",
+      "description": "Ensure `<object>` elements have alternative text",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "svg-img-alt",
+      "category": "Syntactic",
+      "description": "Ensure `<svg>` elements with an img, graphics-document or graphics-symbol role have an accessible text",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "input-image-alt",
+      "category": "Syntactic",
+      "description": "Ensure `<input type=\"image\">` elements have alternative text",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "image-alt",
+      "category": "Syntactic",
+      "description": "Ensure `<img>` elements have alternative text or a role of none or presentation",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "html-lang-valid",
+      "category": "Syntactic",
+      "description": "Ensure the lang attribute of the `<html>` element has a valid value",
+      "wcag": [
+        "3.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "html-xml-lang-mismatch",
+      "category": "Syntactic",
+      "description": "Ensure that HTML elements with both valid lang and xml:lang attributes agree on the base language of the page",
+      "wcag": [
+        "3.1.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "duplicate-id-aria",
+      "category": "Syntactic",
+      "description": "Ensure every id attribute value used in ARIA and in labels is unique",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "tabindex",
+      "category": "Syntactic",
+      "description": "Ensure tabindex attribute values are not greater than 0",
+      "wcag": [
+        "2.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "valid-lang",
+      "category": "Syntactic",
+      "description": "Ensure lang attributes have valid values",
+      "wcag": [
+        "3.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-required-attr",
+      "category": "Syntactic",
+      "description": "Ensure elements with ARIA roles have all required ARIA attributes",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-required-parent",
+      "category": "Syntactic",
+      "description": "Ensure elements with an ARIA role that require parent roles are contained by them",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-required-children",
+      "category": "Syntactic",
+      "description": "Ensure elements with an ARIA role that require child roles contain them",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-deprecated-role",
+      "category": "Syntactic",
+      "description": "Ensure elements do not use deprecated roles",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "presentation-role-conflict",
+      "category": "Syntactic",
+      "description": "Ensure elements marked as presentational do not have global ARIA or tabindex so that all screen readers ignore them",
+      "wcag": [
+        "1.3.1",
+        "4.1.2"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-prohibited-attr",
+      "category": "Syntactic",
+      "description": "Ensure ARIA attributes are not prohibited for an element's role",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "list",
+      "category": "Syntactic",
+      "description": "Ensure that lists are structured correctly",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "frame-focusable-content",
+      "category": "Syntactic",
+      "description": "Ensure `<frame>` and `<iframe>` elements with focusable content do not have tabindex=-1",
+      "wcag": [
+        "2.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "meta-refresh",
+      "category": "Syntactic",
+      "description": "Ensure `<meta http-equiv=\"refresh\">` is not used for delayed refresh",
+      "wcag": [
+        "2.2.1"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "marquee",
+      "category": "Syntactic",
+      "description": "Ensure `<marquee>` elements are not used",
+      "wcag": [
+        "2.2.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "skip-link",
+      "category": "Syntactic",
+      "description": "Ensure all skip links have a focusable target",
+      "wcag": [
+        "2.4.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-no-duplicate-contentinfo",
+      "category": "Syntactic",
+      "description": "Ensure the document has at most one contentinfo landmark",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-contentinfo-is-top-level",
+      "category": "Syntactic",
+      "description": "Ensure the contentinfo landmark is at top level",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-one-main",
+      "category": "Syntactic",
+      "description": "Ensure the document has a main landmark",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-unique",
+      "category": "Syntactic",
+      "description": "Ensure landmarks are unique",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-banner-is-top-level",
+      "category": "Syntactic",
+      "description": "Ensure the banner landmark is at top level",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-main-is-top-level",
+      "category": "Syntactic",
+      "description": "Ensure the main landmark is at top level",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-no-duplicate-main",
+      "category": "Syntactic",
+      "description": "Ensure the document has at most one main landmark",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "landmark-no-duplicate-banner",
+      "category": "Syntactic",
+      "description": "Ensure the document has at most one banner landmark",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "document-title",
+      "category": "Syntactic",
+      "description": "Ensure each HTML document contains a non-empty `<title>` element",
+      "wcag": [
+        "2.4.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "label",
+      "category": "Syntactic",
+      "description": "Ensure every form element has a label",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "label-title-only",
+      "category": "Syntactic",
+      "description": "Ensure that every form element has a visible label and is not solely labeled using hidden labels, or the title or aria-describedby attributes",
+      "wcag": [
+        "3.3.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "summary-name",
+      "category": "Syntactic",
+      "description": "Ensure summary elements have discernible text",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "definition-list",
+      "category": "Syntactic",
+      "description": "Ensure `<dl>` elements are structured correctly",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "dlitem",
+      "category": "Syntactic",
+      "description": "Ensure `<dt>` and `<dd>` elements are contained by a `<dl>",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "th-has-data-cells",
+      "category": "Syntactic",
+      "description": "Ensure that `<th>` elements and elements with role=columnheader/rowheader have data cells they describe",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "empty-table-header",
+      "category": "Syntactic",
+      "description": "Ensure table headers have discernible text",
+      "wcag": [
+        "1.3.1",
+        "2.4.6"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "empty-heading",
+      "category": "Syntactic",
+      "description": "Ensure headings have discernible text",
+      "wcag": [
+        "1.3.1",
+        "2.4.6"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "listitem",
+      "category": "Syntactic",
+      "description": "Ensure `<li>` elements are used semantically",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "image-redundant-alt",
+      "category": "Syntactic",
+      "description": "Ensure image alternative is not repeated as text",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "link-name",
+      "category": "Syntactic",
+      "description": "Ensure links have discernible text",
+      "wcag": [
+        "2.4.4",
+        "2.4.9"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "link-in-text-block",
+      "category": "Layout",
+      "description": "Ensure links are distinguished from surrounding text in a way that does not rely on color",
+      "wcag": [
+        "1.4.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": "",
+      "source_category": "Syntactic"
+    },
+    {
+      "id": "input-button-name",
+      "category": "Syntactic",
+      "description": "Ensure input buttons have discernible text",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-text",
+      "category": "Syntactic",
+      "description": "Ensure role=\"text\" is used on elements with no focusable descendants",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-tooltip-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA tooltip node has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-command-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA button, link and menuitem has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-input-field-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA input field has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-meter-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA meter node has an accessible name",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-progressbar-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA progressbar node has an accessible name",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-dialog-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA dialog and alertdialog node has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-toggle-field-name",
+      "category": "Syntactic",
+      "description": "Ensure every ARIA toggle field has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-hidden-body",
+      "category": "Syntactic",
+      "description": "Ensure aria-hidden=\"true\" is not present on the document body",
+      "wcag": [
+        "1.3.1",
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-hidden-focus",
+      "category": "Syntactic",
+      "description": "Ensure aria-hidden elements are not focusable nor contain focusable elements",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "nested-interactive",
+      "category": "Syntactic",
+      "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "scrollable-region-focusable",
+      "category": "Syntactic",
+      "description": "Ensure elements that have scrollable content are accessible by keyboard",
+      "wcag": [
+        "2.1.1",
+        "2.4.3"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "no-autoplay-audio",
+      "category": "Syntactic",
+      "description": "Ensure `<video>` or `<audio>` elements do not autoplay audio for more than 3 seconds without a control mechanism to stop or mute the audio",
+      "wcag": [
+        "1.4.2"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "region",
+      "category": "Syntactic",
+      "description": "Ensure all page content is contained by landmarks",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "frame-title",
+      "category": "Syntactic",
+      "description": "Ensure `<iframe>` and `<frame>` elements have an accessible name",
+      "wcag": [
+        "4.1.2",
+        "2.4.2"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "frame-title-unique",
+      "category": "Syntactic",
+      "description": "Ensure `<iframe>` and `<frame>` elements contain a unique title attribute",
+      "wcag": [
+        "4.1.2",
+        "2.4.2"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "video-caption",
+      "category": "Syntactic",
+      "description": "Ensure `<video>` elements have captions",
+      "wcag": [
+        "1.2.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "heading-order",
+      "category": "Syntactic",
+      "description": "Ensure the order of headings is semantically correct",
+      "wcag": [
+        "1.3.1"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "accesskeys",
+      "category": "Syntactic",
+      "description": "Ensure every accesskey attribute value is unique",
+      "wcag": [
+        "2.1.1",
+        "2.4.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "page-has-heading-one",
+      "category": "Syntactic",
+      "description": "Ensure that the page, or at least one of its frames contains a level-one heading",
+      "wcag": [
+        "2.4.6"
+      ],
+      "impact": "moderate",
+      "supplementary_information": ""
+    },
+    {
+      "id": "bypass",
+      "category": "Syntactic",
+      "description": "Ensure each page has at least one mechanism for a user to bypass navigation and jump straight to the content",
+      "wcag": [
+        "2.4.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "server-side-image-map",
+      "category": "Syntactic",
+      "description": "Ensure that server-side image maps are not used",
+      "wcag": [
+        "1.1.1"
+      ],
+      "impact": "minor",
+      "supplementary_information": ""
+    },
+    {
+      "id": "button-name",
+      "category": "Syntactic",
+      "description": "Ensure buttons have discernible text",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "aria-roles",
+      "category": "Syntactic",
+      "description": "Ensure all elements with a role attribute use a valid value",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    },
+    {
+      "id": "html-has-lang",
+      "category": "Syntactic",
+      "description": "Ensure every HTML document has a lang attribute",
+      "wcag": [
+        "3.1.1"
+      ],
+      "impact": "serious",
+      "supplementary_information": ""
+    },
+    {
+      "id": "select-name",
+      "category": "Syntactic",
+      "description": "Ensure select element has an accessible name",
+      "wcag": [
+        "4.1.2"
+      ],
+      "impact": "critical",
+      "supplementary_information": ""
+    }
+  ],
+  "name": "A11yHarness Accessibility Taxonomy"
+}

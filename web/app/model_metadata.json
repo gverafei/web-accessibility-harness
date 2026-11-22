@@ -1,0 +1,265 @@
+{
+  "meta-llama/llama-4-maverick": {
+    "context_length": 1048576,
+    "input_usd_per_million": 0.1875,
+    "output_usd_per_million": 0.6525,
+    "vision": true,
+    "temperature_supported": true,
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08",
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08)"
+  },
+  "qwen/qwen3-coder-plus": {
+    "context_length": 1000000,
+    "input_usd_per_million": 0.65,
+    "output_usd_per_million": 3.25,
+    "vision": false,
+    "temperature_supported": true,
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08",
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08)"
+  },
+  "openai/gpt-6-luna": {
+    "model": "openai/gpt-6-luna",
+    "label": "OpenAI: GPT-6 Luna",
+    "input_modalities": [
+      "file",
+      "image",
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "tool_choice",
+      "tools",
+      "verbosity"
+    ],
+    "context_length": 1050000,
+    "max_completion_tokens": 128000,
+    "input_usd_per_million": 0.1,
+    "output_usd_per_million": 0.5,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": [
+      {
+        "min_prompt_tokens": 272000,
+        "input_usd_per_million": 0.19999999999999998,
+        "output_usd_per_million": 0.75
+      }
+    ]
+  },
+  "google/gemini-3.8-flash": {
+    "model": "google/gemini-3.8-flash",
+    "label": "Google: Gemini 3.8 Flash",
+    "input_modalities": [
+      "text",
+      "image",
+      "video",
+      "file",
+      "audio"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": true,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "stop",
+      "structured_outputs",
+      "temperature",
+      "tool_choice",
+      "tools",
+      "top_p"
+    ],
+    "context_length": 1048576,
+    "max_completion_tokens": 65536,
+    "input_usd_per_million": 0.75,
+    "output_usd_per_million": 3.75,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": []
+  },
+  "openai/gpt-6.1-sol": {
+    "model": "openai/gpt-6.1-sol",
+    "label": "OpenAI: GPT-6.1 Sol",
+    "input_modalities": [
+      "file",
+      "image",
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "tool_choice",
+      "tools",
+      "verbosity"
+    ],
+    "context_length": 1050000,
+    "max_completion_tokens": 128000,
+    "input_usd_per_million": 2.0,
+    "output_usd_per_million": 10.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": [
+      {
+        "min_prompt_tokens": 272000,
+        "input_usd_per_million": 4.0,
+        "output_usd_per_million": 15.0
+      }
+    ]
+  },
+  "openai/gpt-6-astra": {
+    "model": "openai/gpt-6-astra",
+    "label": "OpenAI: GPT-6 Astra",
+    "input_modalities": [
+      "file",
+      "image",
+      "text"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "seed",
+      "structured_outputs",
+      "tool_choice",
+      "tools",
+      "verbosity"
+    ],
+    "context_length": 1050000,
+    "max_completion_tokens": 128000,
+    "input_usd_per_million": 10.0,
+    "output_usd_per_million": 50.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": [
+      {
+        "min_prompt_tokens": 272000,
+        "input_usd_per_million": 20.0,
+        "output_usd_per_million": 75.0
+      }
+    ]
+  },
+  "anthropic/claude-opus-5.5": {
+    "model": "anthropic/claude-opus-5.5",
+    "label": "Anthropic: Claude Opus 5.5",
+    "input_modalities": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "stop",
+      "structured_outputs",
+      "tool_choice",
+      "tools",
+      "verbosity"
+    ],
+    "context_length": 1000000,
+    "max_completion_tokens": 128000,
+    "input_usd_per_million": 4.0,
+    "output_usd_per_million": 20.0,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": []
+  },
+  "anthropic/claude-haiku-5.5": {
+    "model": "anthropic/claude-haiku-5.5",
+    "label": "Anthropic: Claude Haiku 5.5",
+    "input_modalities": [
+      "text",
+      "image",
+      "file"
+    ],
+    "output_modalities": [
+      "text"
+    ],
+    "vision": true,
+    "temperature_supported": false,
+    "reasoning_supported": true,
+    "supported_parameters": [
+      "include_reasoning",
+      "max_completion_tokens",
+      "max_tokens",
+      "reasoning",
+      "reasoning_effort",
+      "response_format",
+      "stop",
+      "structured_outputs",
+      "tool_choice",
+      "tools",
+      "verbosity"
+    ],
+    "context_length": 1000000,
+    "max_completion_tokens": 128000,
+    "input_usd_per_million": 0.1,
+    "output_usd_per_million": 0.5,
+    "pricing_source": "https://openrouter.ai/api/v1/models (2026-10-08T23:03:19.959973+00:00)",
+    "metadata_source": "https://openrouter.ai/api/v1/models",
+    "metadata_checked_at": "2026-10-08T23:03:19.959973+00:00",
+    "pricing_overrides": [
+      {
+        "min_prompt_tokens": 100000,
+        "input_usd_per_million": 0.5,
+        "output_usd_per_million": 2.5
+      }
+    ]
+  }
+}

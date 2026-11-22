@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}{{ _("Activity") }}{% endblock %}
+{% block extra_head %}
+<link rel="stylesheet" href="{{ url_for('static',filename='css/dashboard_activity.css',v='20261019-visible-p5') }}">
+{% endblock %}
+{% block content %}
+{% set board=activity|default({}) %}
+{% set totals=board.totals|default({}) %}
+{% set selected=board.filters|default({}) %}
+<div class="activity-board" id="dashboardActivity" data-endpoint="{{ url_for('experiments.dashboard_activity') }}">
+    <header class="dashboard-hero activity-hero">
+        <div>
+            <h1>{{ _('Activity') }}</h1>
+            <p>{{ _("Execution activity, quality and resource use.") }}</p>
+        </div>
+        <div class="dashboard-hero-actions">
+            <a class="btn btn-outline-light btn-sm" href="{{ url_for('workspace.launch') }}">✦ {{ _("New remediation") }}</a>
+        </div>
+    </header>
+    <form class="activity-toolbar" id="dashboardFilters" method="get" action="{{ url_for('experiments.index') }}">
+        <label>{{ _('Period') }}
+            <select name="period" class="form-select form-select-sm">
+                {% for value,label in [('all',_('All time')),('7',_('Last 7 days')),('30',_('Last 30 days')),('90',_('Last 90 days'))] %}
+                <option value="{{ value }}"{% if selected.period|default('all')==value %} selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <label>{{ _('Model') }}
+            <select name="model" class="form-select form-select-sm">
+                <option value="">{{ _('All models') }}</option>
+                {% for item in board.profiles|default([]) %}<option value="{{ item.id }}"{% if selected.model==item.id %} selected{% endif %}>{{ item.label }}</option>{% endfor %}
+            </select>
+        </label>
+        <label>{{ _('Strategy') }}
+            <select name="policy" class="form-select form-select-sm">
+                <option value="">{{ _('All strategies') }}</option>
+                {% for policy in board.policies|default([]) %}<option value="{{ policy }}"{% if selected.policy==policy %} selected{% endif %}>{{ policy }}</option>{% endfor %}
+            </select>
+        </label>
+        <label>{{ _('Status') }}
+            <select name="status" class="form-select form-select-sm">
+                {% for value,label in [('',_('All statuses')),('accepted',_('Accepted')),('completed_with_warnings',_('Completed with warnings')),('failed',_('Failed')),('queued',_('Queued')),('running',_('Running'))] %}
+                <option value="{{ value }}"{% if selected.status|default('')==value %} selected{% endif %}>{{ label }}</option>
+                {% endfor %}
+            </select>
+        </label>
+        <span class="activity-live" role="status" id="dashboardStatus">{{ _('Live activity') }}</span>
+    </form>
+    {% from "_summary_metric.html" import metric,duration %}
+    <section class="metric-grid summary-metrics dashboard-metrics activity-metrics">
+        {{ metric(_('Captures'), totals.evaluations|default(0), key='evaluations') }}
+        {{ metric(_('Average Axe · captures'), '%.1f'|format(totals.evaluation_axe) if totals.evaluation_axe is defined and totals.evaluation_axe is not none else '—', key='evaluation_axe') }}
+        {{ metric(_('Average Lighthouse · captures'), '%.1f'|format(totals.evaluation_lighthouse) if totals.evaluation_lighthouse is defined and totals.evaluation_lighthouse is not none else '—', key='evaluation_lighthouse') }}
+        {{ metric(_('Executions'), totals.runs|default(0), key='runs') }}
+        {{ metric(_('Average Axe · remediated'), '%.1f'|format(totals.axe) if totals.axe is defined and totals.axe is not none else '—', key='axe') }}
+        {{ metric(_('Average Lighthouse · remediated'), '%.1f'|format(totals.lighthouse) if totals.lighthouse is defined and totals.lighthouse is not none else '—', key='lighthouse') }}
+        {{ metric(_('Total run time'), duration(totals.seconds|default(0)), key='seconds') }}
+        {{ metric(_('Total recorded cost'), '$%.4f'|format(totals.cost|default(0)), _('Evaluation cost') ~ ' $' ~ ('%.4f'|format(totals.evaluation_cost|default(0))) ~ ' · ' ~ _('Remediation cost') ~ ' $' ~ ('%.4f'|format(totals.remediation_cost|default(0))), key='cost') }}
+    </section>
+    <p id="dashboardMessage" class="async-list-status form-text" role="status" aria-live="polite"></p>
+    <div class="activity-rankings">
+        <article class="card activity-ranking"><header><h2>{{ _('Models') }}</h2><a href="{{ url_for('remediation.runs') }}">{{ _('Explore') }} ›</a></header><ol data-dashboard-ranking="models"></ol></article>
+        <article class="card activity-ranking"><header><h2>{{ _('Strategies') }}</h2><a href="{{ url_for('remediation.runs') }}">{{ _('Explore') }} ›</a></header><ol data-dashboard-ranking="strategies"></ol></article>
+    </div>
+    {% from '_activity_chart.html' import chart with context %}
+    <div class="activity-chart-grid">
+        {{ chart('activity-models',_('Remediation activity · models'),true) }}
+        {{ chart('activity-strategies',_('Remediation activity · strategies'),true) }}
+    </div>
+    {% for dimension,heading in [('models',_('By model')),('strategies',_('By strategy'))] %}
+    <section class="activity-chart-section" aria-labelledby="chartsHeading-{{ dimension }}">
+        <h2 id="chartsHeading-{{ dimension }}">{{ heading }}{% if dimension=='models' %}<small>{{ _('Fixed P0–P4 runs') }}</small>{% endif %}</h2>
+        <div class="activity-chart-grid">
+            {% for key,title in [('cost',_('Axe reduction and cost')),('time',_('Axe reduction and time')),('content',_('Axe reduction and content retention')),('iterations',_('Evaluated iterations'))] %}
+            {{ chart(key ~ '-' ~ dimension,title) }}
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+    <script type="application/json" id="dashboardActivityData">{{ board|tojson }}</script>
+    <script type="application/json" id="dashboardActivityLabels">{{ {
+        'runs':_('runs'),'completed':_('completed'),'active':_('active'),'total':_('Total'),
+        'evaluationCost':_('Evaluation cost'),'remediationCost':_('Remediation cost'),
+        'removed':_('Axe issues removed'),'cost':_('Cost (USD)'),
+        'seconds':_('Time (s)'),'content':_('Content retention') ~ ' (%)',
+        'iterations':_('Evaluated iterations'),'iterationsTotal':_('Evaluated iterations (total)'),'strategy':_('Strategy'),'model':_('Model'),
+        'live':_('Live activity'),'updated':_('Updated'),'quadrant':_('Most attractive quadrant'),
+        'trend':_('First to last recorded period'),
+        'improving':_('Improving'),'worsening':_('Worsening'),'unchanged':_('Unchanged'),
+        'activity':_('Activity over time'),'unavailable':_('Not enough measurements'),
+        'error':_('Could not update the dashboard. Previous measurements remain visible.'),
+        'empty':_('No measurements in this period.')
+    }|tojson }}</script>
+</div>
+{% endblock %}
+{% block scripts %}<script src="{{ url_for('static',filename='js/dashboard_activity.js',v='20261025-continuous-trends') }}" defer></script>{% endblock %}

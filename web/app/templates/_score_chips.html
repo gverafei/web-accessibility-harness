@@ -1,0 +1,7 @@
+{% macro score_chips(axe, lighthouse, aim=none, state_class='') -%}
+<div class="remediated-result {{ state_class }}">
+  <span><small>Axe</small><strong>{{ axe if axe is not none else '—' }}</strong></span>
+  <span><small>Lighthouse</small><strong>{{ '%g'|format(lighthouse) if lighthouse is not none else '—' }}</strong></span>
+
+</div>
+{%- endmacro %}

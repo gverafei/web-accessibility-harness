@@ -1,0 +1,5 @@
+# Preserve exported evidence bytes and their checksum bindings.
+experiments/TWEB/experiment-*/data/** -text -whitespace
+
+# Preserve the supplied ACM class without reformatting it.
+experiments/TWEB/experiment-*/acmart.cls -text -whitespace

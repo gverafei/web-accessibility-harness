@@ -1,0 +1,23 @@
+<section class="execution-route" aria-labelledby="executionRouteTitle">
+  <div class="execution-route-heading">
+    <h3 id="executionRouteTitle">{{ _('Execution route') }}</h3>
+    <span>{{ run.execution_route.policy or _('Not recorded') }}</span>
+  </div>
+  {% if run.execution_route.steps %}
+  <p class="execution-route-note">{{ _('Strategies recorded for evaluated pages; the retained result is marked.') }}</p>
+  <ol class="execution-route-steps">
+    {% for step in run.execution_route.steps %}
+    <li{% if step.retained %} class="is-retained"{% endif %}>
+      <a href="#iteration-{{ step.id }}">
+        <small>{{ _('Iteration') }} {{ step.iteration }}</small>
+        <span><strong>{{ step.policy or _('Not recorded') }}</strong> {{ _(step.name) if step.name else '' }}</span>
+      </a>
+      {% if step.model %}<small class="execution-route-model">{{ step.model }}</small>{% endif %}
+      {% if step.retained %}<small class="execution-route-retained">✓ {{ _('Retained result') }}</small>{% endif %}
+    </li>
+    {% endfor %}
+  </ol>
+  {% else %}
+  <p>{{ _('The route will appear as pages are evaluated.') }}</p>
+  {% endif %}
+</section>

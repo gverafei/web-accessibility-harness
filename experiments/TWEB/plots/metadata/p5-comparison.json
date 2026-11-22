@@ -1,0 +1,3924 @@
+{
+  "means": [
+    {
+      "policy": "P0",
+      "conditions": 90,
+      "axe": 10.88888888888889,
+      "lighthouse": 96.63333333333334,
+      "Syntactic": 1.0222222222222221,
+      "Semantic": 5.088888888888889,
+      "Layout": 13.011111111111111,
+      "Syntactic_coverage": 0.998729565616912,
+      "Semantic_coverage": 0.9162887042303182,
+      "Layout_coverage": 0.9897740245770437,
+      "text_percent": 67.935,
+      "links_percent": 72.54722222222222,
+      "images_percent": 55.46666666666667,
+      "content_retention": 65.31622222222222,
+      "cost_usd": 0.13352804394444445,
+      "seconds": 191.03106048538632,
+      "input_tokens": 545792.8333333334,
+      "output_tokens": 12665.844444444445,
+      "total_tokens": 558458.6777777778,
+      "evaluated_candidates": 1.0,
+      "observed_cost_usd": 12.017523955
+    },
+    {
+      "policy": "P1",
+      "conditions": 90,
+      "axe": 4.711111111111111,
+      "lighthouse": 97.37777777777778,
+      "Syntactic": 1.2555555555555555,
+      "Semantic": 17.58888888888889,
+      "Layout": 7.2555555555555555,
+      "Syntactic_coverage": 0.9907931449512977,
+      "Semantic_coverage": 0.8270431026954831,
+      "Layout_coverage": 0.9608605080957064,
+      "text_percent": 100.0,
+      "links_percent": 100.0,
+      "images_percent": 100.0,
+      "content_retention": 100.0,
+      "cost_usd": 0.099695231,
+      "seconds": 550.4835366666666,
+      "input_tokens": 797739.8444444444,
+      "output_tokens": 10089.766666666666,
+      "total_tokens": 807829.6111111111,
+      "evaluated_candidates": 3.7444444444444445,
+      "observed_cost_usd": 8.97257079
+    },
+    {
+      "policy": "P2",
+      "conditions": 90,
+      "axe": 2.422222222222222,
+      "lighthouse": 98.12222222222222,
+      "Syntactic": 1.0888888888888888,
+      "Semantic": 18.3,
+      "Layout": 5.211111111111111,
+      "Syntactic_coverage": 0.9908156521157865,
+      "Semantic_coverage": 0.8276486221272619,
+      "Layout_coverage": 0.9613644375015042,
+      "text_percent": 100.0,
+      "links_percent": 100.0,
+      "images_percent": 100.0,
+      "content_retention": 100.0,
+      "cost_usd": 0.10486919844444445,
+      "seconds": 575.6491788888889,
+      "input_tokens": 815676.0666666667,
+      "output_tokens": 15755.366666666667,
+      "total_tokens": 831431.4333333333,
+      "evaluated_candidates": 3.811111111111111,
+      "observed_cost_usd": 9.43822786
+    },
+    {
+      "policy": "P3",
+      "conditions": 90,
+      "axe": 0.3333333333333333,
+      "lighthouse": 99.76666666666667,
+      "Syntactic": 0.0,
+      "Semantic": 1.0888888888888888,
+      "Layout": 1.2888888888888888,
+      "Syntactic_coverage": 0.9972195631015903,
+      "Semantic_coverage": 0.9635832288334408,
+      "Layout_coverage": 0.9989851521398687,
+      "text_percent": 44.18033333333334,
+      "links_percent": 51.19711111111111,
+      "images_percent": 32.754666666666665,
+      "content_retention": 42.7107037037037,
+      "cost_usd": 0.11336893511111111,
+      "seconds": 218.38113444444446,
+      "input_tokens": 453285.6777777778,
+      "output_tokens": 12670.7,
+      "total_tokens": 465956.3777777778,
+      "evaluated_candidates": 1.6555555555555554,
+      "observed_cost_usd": 10.20320416
+    },
+    {
+      "policy": "P4",
+      "conditions": 90,
+      "axe": 0.24444444444444446,
+      "lighthouse": 99.87777777777778,
+      "Syntactic": 0.0,
+      "Semantic": 2.033333333333333,
+      "Layout": 1.2444444444444445,
+      "Syntactic_coverage": 0.9961893395374071,
+      "Semantic_coverage": 0.9542500092655684,
+      "Layout_coverage": 0.9996304546913365,
+      "text_percent": 50.44444444444444,
+      "links_percent": 60.12455555555556,
+      "images_percent": 43.38077777777778,
+      "content_retention": 51.31659259259259,
+      "cost_usd": 0.056249455777777776,
+      "seconds": 217.07603555555556,
+      "input_tokens": 334989.44444444444,
+      "output_tokens": 14051.777777777777,
+      "total_tokens": 349041.22222222225,
+      "evaluated_candidates": 1.7222222222222223,
+      "observed_cost_usd": 5.06245102
+    },
+    {
+      "policy": "P5",
+      "conditions": 30,
+      "axe": 1.4333333333333333,
+      "lighthouse": 98.66666666666667,
+      "Syntactic": 0.8,
+      "Semantic": 17.966666666666665,
+      "Layout": 4.533333333333333,
+      "Syntactic_coverage": 0.9909068599931453,
+      "Semantic_coverage": 0.8275392162381358,
+      "Layout_coverage": 0.9616257402965674,
+      "text_percent": 100.0,
+      "links_percent": 100.0,
+      "images_percent": 100.0,
+      "content_retention": 100.0,
+      "cost_usd": 0.136840253,
+      "seconds": 468.17285104815164,
+      "input_tokens": 1188570.5,
+      "output_tokens": 15949.6,
+      "total_tokens": 1204520.1,
+      "evaluated_candidates": 4.266666666666667,
+      "observed_cost_usd": 4.10520759
+    }
+  ],
+  "paired_comparisons": [
+    {
+      "domain": "apple.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "512",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "502",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "492",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "450",
+      "p5_run_id": "1343",
+      "status": "fixed"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "409",
+      "p5_run_id": "1343",
+      "status": "fixed"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "408",
+      "p5_run_id": "1343",
+      "status": "fixed"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "460",
+      "p5_run_id": "1343",
+      "status": "fixed"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "411",
+      "p5_run_id": "1343",
+      "status": "fixed"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "410",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "470",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "381",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "380",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "482",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "383",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "apple.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "382",
+      "p5_run_id": "1343",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "508",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "498",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "488",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "446",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "369",
+      "p5_run_id": "1344",
+      "status": "fixed"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "368",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "456",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "371",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "370",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "466",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "373",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "372",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "478",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "375",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "linkedin.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "374",
+      "p5_run_id": "1344",
+      "status": "adaptive"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "513",
+      "p5_run_id": "1345",
+      "status": "adaptive"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "503",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "493",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "451",
+      "p5_run_id": "1345",
+      "status": "adaptive"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "413",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "412",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "461",
+      "p5_run_id": "1345",
+      "status": "fixed"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "415",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "414",
+      "p5_run_id": "1345",
+      "status": "adaptive"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "473",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "417",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "416",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "483",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "419",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "amazon.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "418",
+      "p5_run_id": "1345",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "884",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "883",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "882",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "887",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "886",
+      "p5_run_id": "1346",
+      "status": "fixed"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "885",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "890",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "889",
+      "p5_run_id": "1346",
+      "status": "fixed"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "888",
+      "p5_run_id": "1346",
+      "status": "fixed"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "893",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "892",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "891",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "896",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "895",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "gandi.net",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "894",
+      "p5_run_id": "1346",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "899",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "898",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "897",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "902",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "901",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "900",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "905",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "904",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "903",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "908",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "907",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "906",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "911",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "910",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "whatsapp.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "909",
+      "p5_run_id": "1347",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "685",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "684",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "683",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "688",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "687",
+      "p5_run_id": "1348",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "686",
+      "p5_run_id": "1348",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "691",
+      "p5_run_id": "1348",
+      "status": "fixed"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "690",
+      "p5_run_id": "1348",
+      "status": "fixed"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "689",
+      "p5_run_id": "1348",
+      "status": "fixed"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "694",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "693",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "692",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "697",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "696",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "nginx.org",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "695",
+      "p5_run_id": "1348",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "877",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "876",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "874",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "879",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "878",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "875",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "912",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "881",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "880",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "915",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "914",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "913",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "918",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "917",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "samsung.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "916",
+      "p5_run_id": "1349",
+      "status": "adaptive"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "921",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "920",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "919",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "924",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "923",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "922",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "927",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "926",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "925",
+      "p5_run_id": "1350",
+      "status": "fixed"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "930",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "929",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "928",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "933",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "932",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "triplinkintl.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "931",
+      "p5_run_id": "1350",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "936",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "935",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "934",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "939",
+      "p5_run_id": "1351",
+      "status": "fixed"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "938",
+      "p5_run_id": "1351",
+      "status": "fixed"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "937",
+      "p5_run_id": "1351",
+      "status": "fixed"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "942",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "941",
+      "p5_run_id": "1351",
+      "status": "fixed"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "940",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "945",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "944",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "943",
+      "p5_run_id": "1351",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "948",
+      "p5_run_id": "1351",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "947",
+      "p5_run_id": "1351",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mts.ru",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "946",
+      "p5_run_id": "1351",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "951",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "950",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "949",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "954",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "953",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "952",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "958",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "956",
+      "p5_run_id": "1352",
+      "status": "adaptive"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "955",
+      "p5_run_id": "1352",
+      "status": "adaptive"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "960",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "959",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "957",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "963",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "962",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "forbes.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "961",
+      "p5_run_id": "1352",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "966",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "965",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "964",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "969",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "968",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "967",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "972",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "971",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "970",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "975",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "974",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "973",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "978",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "977",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "ubuntu.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "976",
+      "p5_run_id": "1353",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "522",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "521",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "520",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "525",
+      "p5_run_id": "1354",
+      "status": "fixed"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "524",
+      "p5_run_id": "1354",
+      "status": "fixed"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "523",
+      "p5_run_id": "1354",
+      "status": "fixed"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "528",
+      "p5_run_id": "1354",
+      "status": "fixed"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "527",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "526",
+      "p5_run_id": "1354",
+      "status": "fixed"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "531",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "530",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "529",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "534",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "533",
+      "p5_run_id": "1354",
+      "status": "adaptive"
+    },
+    {
+      "domain": "nist.gov",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "532",
+      "p5_run_id": "1354",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "510",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "500",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "490",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "447",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "393",
+      "p5_run_id": "1355",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "392",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "458",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "395",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "394",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "468",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "397",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "396",
+      "p5_run_id": "1355",
+      "status": "adaptive"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "480",
+      "p5_run_id": "1355",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "399",
+      "p5_run_id": "1355",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "stripe.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "398",
+      "p5_run_id": "1355",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "981",
+      "p5_run_id": "1356",
+      "status": "adaptive"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "980",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "979",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "984",
+      "p5_run_id": "1356",
+      "status": "fixed"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "983",
+      "p5_run_id": "1356",
+      "status": "fixed"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "982",
+      "p5_run_id": "1356",
+      "status": "fixed"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "987",
+      "p5_run_id": "1356",
+      "status": "fixed"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "986",
+      "p5_run_id": "1356",
+      "status": "fixed"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "985",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "991",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "989",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "988",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "993",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "992",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "pubmatic.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "990",
+      "p5_run_id": "1356",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "996",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "995",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "994",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "999",
+      "p5_run_id": "1373",
+      "status": "fixed"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "998",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "997",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1002",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1001",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1000",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1005",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1004",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1003",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1010",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1008",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "drom.ru",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1006",
+      "p5_run_id": "1373",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "715",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "714",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "713",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "718",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "717",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "716",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "721",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "720",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "719",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "724",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "723",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "722",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "727",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "726",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "php.net",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "725",
+      "p5_run_id": "1358",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1011",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1007",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1009",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1014",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1013",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1012",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1017",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1016",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1015",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1020",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1019",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1018",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1023",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1022",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "media.net",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1021",
+      "p5_run_id": "1359",
+      "status": "adaptive"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1026",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1027",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1024",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1029",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1028",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1025",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1032",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1031",
+      "p5_run_id": "1360",
+      "status": "fixed"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1030",
+      "p5_run_id": "1360",
+      "status": "fixed"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1035",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1034",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1033",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1038",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1037",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "tp-link.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1036",
+      "p5_run_id": "1360",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1041",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1040",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1039",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1044",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1043",
+      "p5_run_id": "1361",
+      "status": "fixed"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1042",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1047",
+      "p5_run_id": "1361",
+      "status": "fixed"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1046",
+      "p5_run_id": "1361",
+      "status": "fixed"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1045",
+      "p5_run_id": "1361",
+      "status": "fixed"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1050",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1049",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1048",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1053",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1052",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "line.me",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1051",
+      "p5_run_id": "1361",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1056",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1055",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1054",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1059",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1058",
+      "p5_run_id": "1362",
+      "status": "adaptive"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1057",
+      "p5_run_id": "1362",
+      "status": "fixed"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1062",
+      "p5_run_id": "1362",
+      "status": "fixed"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1061",
+      "p5_run_id": "1362",
+      "status": "fixed"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1060",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1065",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1064",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1063",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1068",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1067",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "brave.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1066",
+      "p5_run_id": "1362",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1071",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1070",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1069",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1074",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1073",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1072",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1077",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1076",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1075",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1080",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1079",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1078",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1083",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1082",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "go.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1081",
+      "p5_run_id": "1363",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1103",
+      "p5_run_id": "1364",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1102",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1101",
+      "p5_run_id": "1364",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1106",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1105",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1104",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1109",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1108",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1107",
+      "p5_run_id": "1364",
+      "status": "fixed"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1112",
+      "p5_run_id": "1364",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1111",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1110",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1115",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1114",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mikrotik.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1113",
+      "p5_run_id": "1364",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "538",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "537",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "536",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "541",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "540",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "539",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "559",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "558",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "542",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "562",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "561",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "560",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "565",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "564",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "docker.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "563",
+      "p5_run_id": "1365",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1118",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1117",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1116",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1123",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1122",
+      "p5_run_id": "1366",
+      "status": "fixed"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1120",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1124",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1119",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1121",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1127",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1126",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1125",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1130",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1129",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "eventbrite.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1128",
+      "p5_run_id": "1366",
+      "status": "adaptive"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "745",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "744",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "743",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "748",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "747",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "746",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "751",
+      "p5_run_id": "1367",
+      "status": "fixed"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "750",
+      "p5_run_id": "1367",
+      "status": "fixed"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "749",
+      "p5_run_id": "1367",
+      "status": "fixed"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "754",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "753",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "752",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "757",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "756",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "mysql.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "755",
+      "p5_run_id": "1367",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "515",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "505",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "495",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "453",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "429",
+      "p5_run_id": "1368",
+      "status": "fixed"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "428",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "463",
+      "p5_run_id": "1368",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "431",
+      "p5_run_id": "1368",
+      "status": "fixed"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "430",
+      "p5_run_id": "1368",
+      "status": "fixed"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "475",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "433",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "432",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "485",
+      "p5_run_id": "1368",
+      "status": "adaptive"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "435",
+      "p5_run_id": "1368",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "time.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "434",
+      "p5_run_id": "1368",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1090",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1089",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1087",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1091",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1086",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1088",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1094",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1093",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1092",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1097",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1096",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1095",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1100",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1099",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "deviantart.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1098",
+      "p5_run_id": "1369",
+      "status": "adaptive"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1133",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1132",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1131",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1136",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1135",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1134",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1139",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1138",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1137",
+      "p5_run_id": "1370",
+      "status": "fixed"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1142",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1141",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1140",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1145",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1144",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "consultant.ru",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1143",
+      "p5_run_id": "1370",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1186",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1185",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1189",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1190",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1187",
+      "p5_run_id": "1371",
+      "status": "fixed"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1188",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1193",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1192",
+      "p5_run_id": "1371",
+      "status": "fixed"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1191",
+      "p5_run_id": "1371",
+      "status": "fixed"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1196",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1195",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1194",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1199",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1198",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "wps.com",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1197",
+      "p5_run_id": "1371",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P0",
+      "profile": "haiku-low",
+      "fixed_run_id": "1148",
+      "p5_run_id": "1372",
+      "status": "adaptive"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P0",
+      "profile": "luna-high",
+      "fixed_run_id": "1147",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P0",
+      "profile": "luna-light",
+      "fixed_run_id": "1146",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P1",
+      "profile": "haiku-low",
+      "fixed_run_id": "1151",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P1",
+      "profile": "luna-high",
+      "fixed_run_id": "1150",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P1",
+      "profile": "luna-light",
+      "fixed_run_id": "1149",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P2",
+      "profile": "haiku-low",
+      "fixed_run_id": "1154",
+      "p5_run_id": "1372",
+      "status": "adaptive"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P2",
+      "profile": "luna-high",
+      "fixed_run_id": "1153",
+      "p5_run_id": "1372",
+      "status": "fixed"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P2",
+      "profile": "luna-light",
+      "fixed_run_id": "1152",
+      "p5_run_id": "1372",
+      "status": "fixed"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P3",
+      "profile": "haiku-low",
+      "fixed_run_id": "1157",
+      "p5_run_id": "1372",
+      "status": "adaptive"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P3",
+      "profile": "luna-high",
+      "fixed_run_id": "1156",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P3",
+      "profile": "luna-light",
+      "fixed_run_id": "1155",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P4",
+      "profile": "haiku-low",
+      "fixed_run_id": "1160",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P4",
+      "profile": "luna-high",
+      "fixed_run_id": "1159",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    },
+    {
+      "domain": "thenai.org",
+      "policy": "P4",
+      "profile": "luna-light",
+      "fixed_run_id": "1158",
+      "p5_run_id": "1372",
+      "status": "tradeoff"
+    }
+  ],
+  "paired_totals": {
+    "P0": {
+      "tradeoff": 46,
+      "adaptive": 44
+    },
+    "P1": {
+      "fixed": 29,
+      "adaptive": 33,
+      "tradeoff": 28
+    },
+    "P2": {
+      "fixed": 38,
+      "tradeoff": 15,
+      "adaptive": 37
+    },
+    "P3": {
+      "tradeoff": 49,
+      "adaptive": 41
+    },
+    "P4": {
+      "tradeoff": 60,
+      "adaptive": 30
+    }
+  },
+  "profile_points": [
+    {
+      "policy": "P0",
+      "profile": "luna-light",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 51.827444444444446,
+      "axe": 241.0
+    },
+    {
+      "policy": "P0",
+      "profile": "luna-high",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 75.94222222222223,
+      "axe": 143.0
+    },
+    {
+      "policy": "P0",
+      "profile": "haiku-low",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 68.179,
+      "axe": 232.0
+    },
+    {
+      "policy": "P1",
+      "profile": "luna-light",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 386.0
+    },
+    {
+      "policy": "P1",
+      "profile": "luna-high",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 390.0
+    },
+    {
+      "policy": "P1",
+      "profile": "haiku-low",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 396.0
+    },
+    {
+      "policy": "P2",
+      "profile": "luna-light",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 441.0
+    },
+    {
+      "policy": "P2",
+      "profile": "luna-high",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 469.0
+    },
+    {
+      "policy": "P2",
+      "profile": "haiku-low",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 468.0
+    },
+    {
+      "policy": "P3",
+      "profile": "luna-light",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 35.97022222222222,
+      "axe": 530.0
+    },
+    {
+      "policy": "P3",
+      "profile": "luna-high",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 42.800555555555555,
+      "axe": 531.0
+    },
+    {
+      "policy": "P3",
+      "profile": "haiku-low",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 49.361333333333334,
+      "axe": 505.0
+    },
+    {
+      "policy": "P4",
+      "profile": "luna-light",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 44.04644444444445,
+      "axe": 532.0
+    },
+    {
+      "policy": "P4",
+      "profile": "luna-high",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 48.281333333333336,
+      "axe": 531.0
+    },
+    {
+      "policy": "P4",
+      "profile": "haiku-low",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 61.622,
+      "axe": 511.0
+    },
+    {
+      "policy": "P5",
+      "profile": "adaptive",
+      "domains": 30,
+      "source_axe": 532.0,
+      "x": 100.0,
+      "axe": 489.0
+    }
+  ],
+  "frontier": [
+    [
+      44.04644444444445,
+      532.0
+    ],
+    [
+      48.281333333333336,
+      531.0
+    ],
+    [
+      61.622,
+      511.0
+    ],
+    [
+      100.0,
+      489.0
+    ]
+  ],
+  "source_files": {
+    "sources.csv": "c485aec4ba9e9f33385033d5b500c0bad437006c86209f958a200d0d8f9b8b18",
+    "runs.csv": "bf325b0f4b5c35d164ef2b50b9f2c551dedacbc51299535fbe5315daf228e2db",
+    "fixed-conditions.csv": "75fd6c4b098b91a3b700d9a1f69d3f6ef4b33f79bfe1f2e105daeee7de2c3498"
+  },
+  "aggregation": "Equal-source means; fixed configurations averaged within each source.",
+  "intervals": "95% percentile intervals from 10000 whole-source resamples.",
+  "provider_calls": 0
+}

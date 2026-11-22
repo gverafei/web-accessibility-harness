@@ -1,0 +1,1125 @@
+{
+  "version": "a11yharness-curated-taxonomy-v4",
+  "basis": "accessguru-bf45666-operational-v1",
+  "categories": [
+    "Syntactic",
+    "Semantic",
+    "Layout"
+  ],
+  "unit": "A failed, applicable opportunity in an observed document; a type is not a page failure count.",
+  "adaptations": [
+    {
+      "types": [
+        "image-alt-not-descriptive"
+      ],
+      "title": "Image content and function",
+      "criterion": "Distinguish informative, functional and decorative images. A functional alternative may describe the link or control purpose; a decorative or redundant image may use an empty alternative. Judge the observed image and surrounding markup together.",
+      "detector": "Luna vision",
+      "evidence": "Verified image bytes and surrounding context",
+      "status": "Implemented and checked on bounded controls"
+    },
+    {
+      "types": [
+        "color-contrast"
+      ],
+      "title": "Measured contrast",
+      "criterion": "Use measured foreground/background colors and the applicable font threshold. Decisions judges applicability, not a numerical ratio. Unresolved painting, opacity or occlusion requires abstention.",
+      "detector": "Measured contrast + Decisions Luna",
+      "evidence": "Rendered text, verified background colors, font size and weight",
+      "status": "Implemented and checked on bounded controls"
+    },
+    {
+      "types": [
+        "image-alt",
+        "image-alt-not-descriptive"
+      ],
+      "title": "Comparable before and after evidence",
+      "criterion": "Keep missing alternatives in the syntactic category and inaccurate existing alternatives in the semantic category. Report newly assessable opportunities separately; a category change does not prove a regression or a repair.",
+      "detector": "Recorded opportunity matching",
+      "evidence": "Original and retained document evidence",
+      "status": "Implemented"
+    },
+    {
+      "types": [
+        "link-text-mismatch",
+        "button-label-mismatch",
+        "widget-label-purpose-mismatch",
+        "aria-state-mismatch",
+        "table-header-association-mismatch",
+        "error-message-mismatch"
+      ],
+      "title": "Observed purpose and relationships",
+      "criterion": "Judge configured purpose from accessible names, programmatic context, explicit targets, table associations and field constraints. Verify native state and controlled visibility when required. Do not infer remote content or successful tasks; missing independent evidence requires abstention.",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed context and verified rendered state where required",
+      "status": "Implemented; extended calibration in progress"
+    }
+  ],
+  "limitations": "The active catalog contains executable WCAG structural/presentation checks and fourteen contextual assessment paths. Six relational paths await extended calibration. Audio/captions/audiovisual controls and inactive diagnostic rules are omitted. No complete WCAG or human-equivalence claim.",
+  "excluded_types": {
+    "video-caption": "Audiovisual accessibility is outside this study scope.",
+    "video-captions-inaccurate": "Audiovisual accessibility is outside this study scope.",
+    "no-autoplay-audio": "Audiovisual accessibility is outside this study scope.",
+    "meta-viewport-large": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "scope-attr-valid": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "aria-allowed-role": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "tabindex": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "presentation-role-conflict": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "skip-link": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-no-duplicate-contentinfo": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-contentinfo-is-top-level": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-one-main": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-unique": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-banner-is-top-level": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-main-is-top-level": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-no-duplicate-main": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "landmark-no-duplicate-banner": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "label-title-only": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "empty-table-header": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "empty-heading": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "image-redundant-alt": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "aria-text": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "aria-dialog-name": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "region": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "heading-order": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "accesskeys": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid.",
+    "page-has-heading-one": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+  },
+  "review_policy": {
+    "version": "operational-criterion-review-v1",
+    "admission": "Retain a criterion only with a distinct practical barrier, declared evidence, bounded verdict and traceable detector. A missing witness is not a pass.",
+    "counting": "Count distinct failed type/element opportunities. Detector aliases must not be summed as independent overall barriers. Category counts are not a total WCAG score.",
+    "proposal_policy": "New criteria require an implemented witness and independent calibration before inclusion in the active experiment instrument."
+  },
+  "operational_criteria": {
+    "link-in-text-block": {
+      "en": "A link within running text must be visually distinguishable without relying only on its color. Inspect the rendered link and surrounding text; this is a presentation criterion, not missing HTML syntax.",
+      "es": "Un enlace dentro de un bloque de texto debe distinguirse visualmente sin depender únicamente de su color. Se comprueban el enlace renderizado y el texto circundante; es un criterio de presentación."
+    },
+    "target-size": {
+      "en": "Under the WCAG 2.2 AA profile, assess target size and spacing against SC 2.5.8, including its exceptions. This Axe rule does not establish the stricter SC 2.5.5 requirement.",
+      "es": "En el perfil WCAG 2.2 AA, comprobar el tamaño y espaciado de los objetivos conforme a 2.5.8 y sus excepciones. Esta regla de Axe no demuestra el cumplimiento del criterio más estricto 2.5.5."
+    },
+    "button-label-mismatch": {
+      "en": "Compare the accessible name with the configured action, controlled target or observed form purpose. A generic label is not automatically a failure when its programmatic context identifies its purpose. Do not infer successful activation.",
+      "es": "Comparar el nombre accesible con la acción configurada, el destino controlado o el propósito observado del formulario. Una etiqueta genérica no es automáticamente un fallo si su contexto programático identifica el propósito. No inferir éxito al activarlo."
+    },
+    "aria-state-mismatch": {
+      "en": "Compare a valid declared state with an independent native-state or controlled-panel visibility witness from the same stabilized document. An ARIA attribute alone cannot verify itself.",
+      "es": "Comparar el estado declarado válido con evidencia independiente del estado nativo o de visibilidad del panel controlado en el mismo documento estabilizado. Un atributo ARIA no puede verificarse a sí mismo."
+    },
+    "table-header-association-mismatch": {
+      "en": "Verify that existing associations describe the observed data-cell meaning using the headers and surrounding table context. Missing or invalid references are structural defects; incorrect existing meaning is a semantic defect.",
+      "es": "Verificar que las asociaciones existentes describen el significado observado de la celda con sus encabezados y contexto de tabla. Referencias ausentes o inválidas son defectos estructurales; significado existente incorrecto es un defecto semántico."
+    }
+  },
+  "criterion_review": [
+    {
+      "type": "image-alt-not-descriptive",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Luna vision",
+      "evidence": "Verified image bytes and programmatic context",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "video-captions-inaccurate",
+      "decision": "remove",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "Audiovisual accessibility is outside this study scope."
+    },
+    {
+      "type": "lang-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "language-of-parts-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "link-text-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "button-label-mismatch",
+      "decision": "reformulate",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "form-label-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "widget-label-purpose-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "heading-not-descriptive",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "landmark-purpose-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "page-title-not-descriptive",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "autocomplete-purpose-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-state-mismatch",
+      "decision": "reformulate",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "table-header-association-mismatch",
+      "decision": "reformulate",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "error-message-mismatch",
+      "decision": "retain",
+      "category": "Semantic",
+      "family": "Meaning and configured purpose",
+      "detector": "Decisions Luna",
+      "evidence": "Complete observed configured purpose, relationships and independent state when required",
+      "measurement_profile": "contextual",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "meta-viewport",
+      "decision": "retain",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "meta-viewport-large",
+      "decision": "defer",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "color-contrast",
+      "decision": "retain",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "avoid-inline-spacing",
+      "decision": "retain",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "target-size",
+      "decision": "reformulate",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "color-contrast-enhanced",
+      "decision": "retain",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "blink",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "scope-attr-valid",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "aria-allowed-attr",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-allowed-role",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "aria-valid-attr",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-valid-attr-value",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "autocomplete-valid",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "role-img-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "td-headers-attr",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "area-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "object-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "svg-img-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "input-image-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "image-alt",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "html-lang-valid",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "html-xml-lang-mismatch",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "duplicate-id-aria",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "tabindex",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "valid-lang",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-required-attr",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-required-parent",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-required-children",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-deprecated-role",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "presentation-role-conflict",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "aria-prohibited-attr",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "list",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "frame-focusable-content",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "meta-refresh",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "marquee",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "skip-link",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-no-duplicate-contentinfo",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-contentinfo-is-top-level",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-one-main",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-unique",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-banner-is-top-level",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-main-is-top-level",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-no-duplicate-main",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "landmark-no-duplicate-banner",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "document-title",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "label",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "label-title-only",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "summary-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "definition-list",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "dlitem",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "th-has-data-cells",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "empty-table-header",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "empty-heading",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "listitem",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "image-redundant-alt",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "link-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "link-in-text-block",
+      "decision": "reformulate",
+      "category": "Layout",
+      "family": "Visual presentation",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "input-button-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-text",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "aria-tooltip-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-command-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-input-field-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-meter-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-progressbar-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-dialog-name",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "aria-toggle-field-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-hidden-body",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-hidden-focus",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "nested-interactive",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "scrollable-region-focusable",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "no-autoplay-audio",
+      "decision": "remove",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "Audiovisual accessibility is outside this study scope."
+    },
+    {
+      "type": "region",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "frame-title",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "frame-title-unique",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "video-caption",
+      "decision": "remove",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "Audiovisual accessibility is outside this study scope."
+    },
+    {
+      "type": "heading-order",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "accesskeys",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "page-has-heading-one",
+      "decision": "defer",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": null,
+      "evidence": null,
+      "measurement_profile": "outside_scope",
+      "reason": "No detector runs this criterion in the current measurement profile. Omitted from the active taxonomy until implemented and calibrated; omission does not assert that the proposed barrier is invalid."
+    },
+    {
+      "type": "bypass",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "server-side-image-map",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "button-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "aria-roles",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "html-has-lang",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    },
+    {
+      "type": "select-name",
+      "decision": "retain",
+      "category": "Syntactic",
+      "family": "Required structure and programmatic exposure",
+      "detector": "Axe WCAG",
+      "evidence": "Same stabilized rendered document and selected WCAG profile",
+      "measurement_profile": "wcag",
+      "reason": "Distinct observed accessibility property; preserve rule identity and declared evidence."
+    }
+  ],
+  "sources": [
+    "https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html",
+    "https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html",
+    "https://www.w3.org/WAI/tutorials/images/decision-tree/"
+  ],
+  "candidate_additions": [
+    {
+      "id": "visible-label-accessible-name-mismatch",
+      "category": "Semantic",
+      "criterion": "The accessible name of a text-labeled control must include its visible label, with WCAG exceptions and normalization; do not confuse this lexical requirement with adequacy of the configured action.",
+      "wcag": [
+        "2.5.3"
+      ],
+      "implementation": "Requires same-document computed accessible name and visible-label witnesses; existing experimental Axe rule may be evaluated as a separate supplement.",
+      "status": "Not admitted: detector and independent controls pending"
+    }
+  ]
+}

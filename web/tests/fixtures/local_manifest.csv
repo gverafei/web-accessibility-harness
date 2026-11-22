@@ -1,0 +1,2 @@
+path,observation_id,pair_id,condition,stratum,expected_label
+local_original.html,fixture-original,fixture-pair,original,images,1
